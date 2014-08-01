@@ -10,10 +10,12 @@
 
 @interface Consts : NSObject
 
-//系统主色
-@property(nonatomic) UIColor *mainColor;
-//系统字体
-@property(nonatomic) NSString *fontName;
+/*系统主色*/
+@property(nonatomic) UIColor *MAIN_COLOR;
+/*系统字体*/
+@property(nonatomic) NSString *FONT_NAME;
+/*系统字体-加粗*/
+@property(nonatomic) NSString *FONT_NAME_BOLD;
 
 + (Consts *)sharedInstance;
 

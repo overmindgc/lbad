@@ -7,14 +7,19 @@
 //
 
 #import "LbadDateSelectorViewController.h"
-#import "CalendarView.h"
 #import "LbadCalendarView.h"
+
+#define HIGH_CALENDER_HIGHT 343
+#define LOW_CALENDER_HIGHT 300
 
 @interface LbadDateSelectorViewController ()
 
 @end
 
 @implementation LbadDateSelectorViewController
+{
+    NSInteger currCalenderHight;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,9 +39,11 @@
 //    [self.smpleCalendar setBackgroundColor:[UIColor whiteColor]];
 //    self.smpleCalendar.calendarDate = [NSDate date];
 //    self.view = self.smpleCalendar;
-    LbadCalendarView *calendar = [[LbadCalendarView alloc] initWithFrame:CGRectMake(0, self.view.bounds.size.height - 300, self.view.bounds.size.width, 300)];
-    [calendar setBackgroundColor:[UIColor whiteColor]];
-    self.view = calendar;
+
+    self.calendarView = [[LbadCalendarView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height - LOW_CALENDER_HIGHT, self.view.bounds.size.width, LOW_CALENDER_HIGHT)];
+    self.calendarView.delegate = self;
+    [self.calendarView setBackgroundColor:[UIColor whiteColor]];
+    self.view = self.calendarView;
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,9 +63,44 @@
 }
 */
 
--(void)tappedOnDate:(NSDate *)selectedDate
+#pragma mark LbadCalendarDelegates
+
+/*完成日期选择回调*/
+- (void)selectedOn:(NSDate *)beginDate to:(NSDate *)endDate withSize:(NSInteger)size
 {
-    NSLog(@"tappedOnDate %@(GMT)",selectedDate);
+    if (size == 0) {
+        
+    }
 }
 
+/*日历高度变化*/
+- (void)setCalendarHigh
+{
+    if (currCalenderHight != HIGH_CALENDER_HIGHT) {
+        currCalenderHight = HIGH_CALENDER_HIGHT;
+        //开始动画
+        [UIView beginAnimations:nil context:nil];
+        //设定动画持续时间
+        [UIView setAnimationDuration:0.2f];
+        //动画的内容
+        self.view.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - HIGH_CALENDER_HIGHT, self.view.bounds.size.width, HIGH_CALENDER_HIGHT);
+        //动画结束
+        [UIView commitAnimations];
+    }
+}
+
+- (void)setCalendarLow
+{
+    if (currCalenderHight != LOW_CALENDER_HIGHT) {
+        currCalenderHight = LOW_CALENDER_HIGHT;
+        //开始动画
+        [UIView beginAnimations:nil context:nil];
+        //设定动画持续时间
+        [UIView setAnimationDuration:0.2f];
+        //动画的内容
+        self.view.frame = CGRectMake(0, [UIScreen mainScreen].bounds.size.height - LOW_CALENDER_HIGHT, self.view.bounds.size.width, LOW_CALENDER_HIGHT);
+        //动画结束
+        [UIView commitAnimations];
+    }
+}
 @end

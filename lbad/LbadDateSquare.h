@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-//格子类型
+/*格子类型*/
 enum {
     SQUARE_TYPE_NORMAL = 0,//正常
     SQUARE_TYPE_EXPIRED = 1,//过期
@@ -27,8 +27,8 @@ enum {
 //描述标签
 @property UILabel *descLabel;
 
-//设置选中状态
+/*设置选中状态*/
 - (void)setSelectedWith:(NSString *)descText andColor:(UIColor *)bgColor;
-//取消选中
+/*取消选中*/
 - (void)setUnSelected;
 @end

@@ -10,7 +10,6 @@
 		7B1692B71987586C008C4EBC /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1692B41987586C008C4EBC /* MJPopupBackgroundView.m */; };
 		7B1692B81987586C008C4EBC /* UIViewController+MJPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1692B61987586C008C4EBC /* UIViewController+MJPopupViewController.m */; };
 		7B1692BB19875C0D008C4EBC /* LbadDateSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1692BA19875C0D008C4EBC /* LbadDateSelectorViewController.m */; };
-		7B1693061987799A008C4EBC /* CalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1693051987799A008C4EBC /* CalendarView.m */; };
 		7B16930919878C5D008C4EBC /* LbadCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B16930819878C5D008C4EBC /* LbadCalendarView.m */; };
 		7B16930F19879147008C4EBC /* LbadDateSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B16930E19879147008C4EBC /* LbadDateSquare.m */; };
 		7B169316198897C0008C4EBC /* Consts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B169315198897C0008C4EBC /* Consts.m */; };
@@ -57,8 +56,6 @@
 		7B1692B61987586C008C4EBC /* UIViewController+MJPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MJPopupViewController.m"; sourceTree = "<group>"; };
 		7B1692B919875C0D008C4EBC /* LbadDateSelectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LbadDateSelectorViewController.h; sourceTree = "<group>"; };
 		7B1692BA19875C0D008C4EBC /* LbadDateSelectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LbadDateSelectorViewController.m; sourceTree = "<group>"; };
-		7B1693041987799A008C4EBC /* CalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarView.h; sourceTree = "<group>"; };
-		7B1693051987799A008C4EBC /* CalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarView.m; sourceTree = "<group>"; };
 		7B16930719878C5D008C4EBC /* LbadCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LbadCalendarView.h; sourceTree = "<group>"; };
 		7B16930819878C5D008C4EBC /* LbadCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LbadCalendarView.m; sourceTree = "<group>"; };
 		7B16930D19879147008C4EBC /* LbadDateSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LbadDateSquare.h; sourceTree = "<group>"; };
@@ -128,7 +125,6 @@
 		7B1692B1198757D8008C4EBC /* opensourcecomps */ = {
 			isa = PBXGroup;
 			children = (
-				7B169303198778A4008C4EBC /* sampleCalendar */,
 				7B1692B219875858008C4EBC /* MJPopupViewController */,
 			);
 			name = opensourcecomps;
@@ -143,15 +139,6 @@
 				7B1692B61987586C008C4EBC /* UIViewController+MJPopupViewController.m */,
 			);
 			name = MJPopupViewController;
-			sourceTree = "<group>";
-		};
-		7B169303198778A4008C4EBC /* sampleCalendar */ = {
-			isa = PBXGroup;
-			children = (
-				7B1693041987799A008C4EBC /* CalendarView.h */,
-				7B1693051987799A008C4EBC /* CalendarView.m */,
-			);
-			name = sampleCalendar;
 			sourceTree = "<group>";
 		};
 		7B42013719862457000FEA19 /* dateselector */ = {
@@ -467,7 +454,6 @@
 				7B5A128A1981F0A900482191 /* AppDelegate.m in Sources */,
 				7B1692BB19875C0D008C4EBC /* LbadDateSelectorViewController.m in Sources */,
 				7B5A12B9198220FC00482191 /* LoginHomeViewController.m in Sources */,
-				7B1693061987799A008C4EBC /* CalendarView.m in Sources */,
 				7B1693251989090E008C4EBC /* DateUtils.m in Sources */,
 				7B16930F19879147008C4EBC /* LbadDateSquare.m in Sources */,
 				7B1692B81987586C008C4EBC /* UIViewController+MJPopupViewController.m in Sources */,

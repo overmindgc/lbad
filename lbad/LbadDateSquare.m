@@ -35,7 +35,6 @@
     switch (squareType) {
         case SQUARE_TYPE_NORMAL:
             [self setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
-            [self.titleLabel setFont:[UIFont fontWithName:[Consts sharedInstance].fontName size:15.0f]];
             break;
         case SQUARE_TYPE_EXPIRED:
             [self setTitleColor:[UIColor colorWithWhite:0.8 alpha:1.0] forState:UIControlStateNormal];
@@ -47,14 +46,14 @@
             [self setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
             break;
     }
-    [self.titleLabel setFont:[UIFont fontWithName:[Consts sharedInstance].fontName size:15.0f]];
+    [self.titleLabel setFont:[UIFont fontWithName:[Consts sharedInstance].FONT_NAME_BOLD size:16.0f]];
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
 }
 
 - (void)setSelectedWith:(NSString *)descText andColor:(UIColor *)bgColor
 {
     if (bgColor == nil) {
-        bgColor = [Consts sharedInstance].mainColor;
+        bgColor = [Consts sharedInstance].MAIN_COLOR;
     }
     self.selected = YES;
     [self setBackgroundColor:bgColor];
@@ -76,10 +75,16 @@
         if (descLabel != nil) {
             [descLabel removeFromSuperview];
         }
-        descLabel = [[UILabel alloc] initWithFrame:CGRectMake(2, 27, 40, 20)];
+        descLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.frame.size.height - 18, self.frame.size.width - 2, 18)];
         //    descLabel.text = defaultDescText;
+        [descLabel setFont:[UIFont fontWithName:[Consts sharedInstance].FONT_NAME size:11.0f]];
+        if ([descText isEqualToString:@"启程"]) {
+            [descLabel setFont:[UIFont fontWithName:[Consts sharedInstance].FONT_NAME size:12.0f]];
+        } else if ([descText isEqualToString:@"返程"]) {
+            [descLabel setFont:[UIFont fontWithName:[Consts sharedInstance].FONT_NAME size:12.0f]];
+        }
+        descLabel.textAlignment = NSTextAlignmentCenter;
         descLabel.text = descText;
-        [descLabel setFont:[UIFont fontWithName:[Consts sharedInstance].fontName size:12.0f]];
         descLabel.textColor = [UIColor whiteColor];
         [self addSubview:descLabel];
     } else {

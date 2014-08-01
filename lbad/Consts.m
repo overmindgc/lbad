@@ -10,14 +10,19 @@
 
 @implementation Consts
 
-- (UIColor *)mainColor
+- (UIColor *)MAIN_COLOR
 {
     return [UIColor colorWithRed:66.0f/255.0f green:133.0f/255.0f blue:60.0f/255.0f alpha:1];
 }
 
-- (NSString *)fontName
+- (NSString *)FONT_NAME
 {
     return @"HelveticaNeue";
+}
+
+- (NSString *)FONT_NAME_BOLD
+{
+    return @"HelveticaNeue-Bold";
 }
 
 

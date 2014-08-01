@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CalendarView.h"
+#import "LbadCalendarView.h"
 
-@interface LbadDateSelectorViewController : UIViewController <CalendarDelegate>
+@interface LbadDateSelectorViewController : UIViewController <LbadCalendarDelegate>
 
-@property(nonatomic) CalendarView *smpleCalendar;
+@property(nonatomic) LbadCalendarView *calendarView;
 
 @end
