@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LbadCalendarDelegate.h"
 
-@interface CreateJourneyViewController : UIViewController <UIActionSheetDelegate>
+@interface CreateJourneyViewController : UIViewController <UIActionSheetDelegate,LbadCalendarDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *labelDate;
 
 @end

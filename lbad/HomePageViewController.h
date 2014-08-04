@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface HomePageViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *homeBackgroundView;
 
 @end

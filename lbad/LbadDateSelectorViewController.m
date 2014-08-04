@@ -68,9 +68,8 @@
 /*完成日期选择回调*/
 - (void)selectedOn:(NSDate *)beginDate to:(NSDate *)endDate withSize:(NSInteger)size
 {
-    if (size == 0) {
-        
-    }
+    //关闭动作需要再上层的弹出者进行，继续调用弹出者的代理方法
+    [self.delegate selectedOn:beginDate to:endDate withSize:size];
 }
 
 /*日历高度变化*/

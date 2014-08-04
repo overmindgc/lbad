@@ -16,6 +16,10 @@
 		7B1693211988F7EC008C4EBC /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B16931F1988F7EC008C4EBC /* left.png */; };
 		7B1693221988F7EC008C4EBC /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B1693201988F7EC008C4EBC /* right.png */; };
 		7B1693251989090E008C4EBC /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1693241989090E008C4EBC /* DateUtils.m */; };
+		7B2BFF25198F6DF6000BE62E /* ButtonWithNumTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BFF24198F6DF6000BE62E /* ButtonWithNumTipView.m */; };
+		7B2BFF29198F700C000BE62E /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2BFF26198F700C000BE62E /* chat.png */; };
+		7B2BFF2A198F700C000BE62E /* clipboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2BFF27198F700C000BE62E /* clipboard.png */; };
+		7B2BFF2B198F700C000BE62E /* speedometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2BFF28198F700C000BE62E /* speedometer.png */; };
 		7B5A127A1981F0A800482191 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5A12791981F0A800482191 /* Foundation.framework */; };
 		7B5A127C1981F0A800482191 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5A127B1981F0A800482191 /* CoreGraphics.framework */; };
 		7B5A127E1981F0A800482191 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5A127D1981F0A800482191 /* UIKit.framework */; };
@@ -66,6 +70,12 @@
 		7B1693201988F7EC008C4EBC /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		7B1693231989090E008C4EBC /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtils.h; sourceTree = "<group>"; };
 		7B1693241989090E008C4EBC /* DateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtils.m; sourceTree = "<group>"; };
+		7B2BFF22198F27DC000BE62E /* LbadCalendarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LbadCalendarDelegate.h; sourceTree = "<group>"; };
+		7B2BFF23198F6DF6000BE62E /* ButtonWithNumTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonWithNumTipView.h; sourceTree = "<group>"; };
+		7B2BFF24198F6DF6000BE62E /* ButtonWithNumTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonWithNumTipView.m; sourceTree = "<group>"; };
+		7B2BFF26198F700C000BE62E /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
+		7B2BFF27198F700C000BE62E /* clipboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clipboard.png; sourceTree = "<group>"; };
+		7B2BFF28198F700C000BE62E /* speedometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speedometer.png; sourceTree = "<group>"; };
 		7B5A12761981F0A800482191 /* lbad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lbad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5A12791981F0A800482191 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B5A127B1981F0A800482191 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -150,6 +160,7 @@
 				7B16930819878C5D008C4EBC /* LbadCalendarView.m */,
 				7B16930D19879147008C4EBC /* LbadDateSquare.h */,
 				7B16930E19879147008C4EBC /* LbadDateSquare.m */,
+				7B2BFF22198F27DC000BE62E /* LbadCalendarDelegate.h */,
 			);
 			name = dateselector;
 			sourceTree = "<group>";
@@ -251,6 +262,9 @@
 		7B5A12A91982192500482191 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				7B2BFF26198F700C000BE62E /* chat.png */,
+				7B2BFF27198F700C000BE62E /* clipboard.png */,
+				7B2BFF28198F700C000BE62E /* speedometer.png */,
 				7B16931F1988F7EC008C4EBC /* left.png */,
 				7B1693201988F7EC008C4EBC /* right.png */,
 				7B5A12BB1982216100482191 /* login_bg.png */,
@@ -297,6 +311,8 @@
 			children = (
 				7B42013B198632A5000FEA19 /* base */,
 				7B42013719862457000FEA19 /* dateselector */,
+				7B2BFF23198F6DF6000BE62E /* ButtonWithNumTipView.h */,
+				7B2BFF24198F6DF6000BE62E /* ButtonWithNumTipView.m */,
 			);
 			name = comps;
 			sourceTree = "<group>";
@@ -427,6 +443,9 @@
 			files = (
 				7B5A12841981F0A900482191 /* InfoPlist.strings in Resources */,
 				7B5A12CF198250CB00482191 /* CreateJourneyViewController.xib in Resources */,
+				7B2BFF2A198F700C000BE62E /* clipboard.png in Resources */,
+				7B2BFF2B198F700C000BE62E /* speedometer.png in Resources */,
+				7B2BFF29198F700C000BE62E /* chat.png in Resources */,
 				7B1693221988F7EC008C4EBC /* right.png in Resources */,
 				7B1693211988F7EC008C4EBC /* left.png in Resources */,
 				7B5A12C11982226300482191 /* HomePageViewController.xib in Resources */,
@@ -456,6 +475,7 @@
 				7B5A12B9198220FC00482191 /* LoginHomeViewController.m in Sources */,
 				7B1693251989090E008C4EBC /* DateUtils.m in Sources */,
 				7B16930F19879147008C4EBC /* LbadDateSquare.m in Sources */,
+				7B2BFF25198F6DF6000BE62E /* ButtonWithNumTipView.m in Sources */,
 				7B1692B81987586C008C4EBC /* UIViewController+MJPopupViewController.m in Sources */,
 				7B1692B71987586C008C4EBC /* MJPopupBackgroundView.m in Sources */,
 				7B5A12C71982480C00482191 /* HomeNavigationController.m in Sources */,

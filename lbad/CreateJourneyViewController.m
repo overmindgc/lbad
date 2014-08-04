@@ -9,6 +9,7 @@
 #import "CreateJourneyViewController.h"
 #import "LbadDateSelectorViewController.h"
 #import "UIViewController+MJPopupViewController.h"
+#import "DateUtils.h"
 
 @interface CreateJourneyViewController ()
 
@@ -45,6 +46,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark LbadCalendarDelegates
+
+/*完成日期选择回调*/
+- (void)selectedOn:(NSDate *)beginDate to:(NSDate *)endDate withSize:(NSInteger)size
+{
+    if (size == 0) {
+        [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationSlideBottomBottom];
+    } else {
+        NSString *beginStr = [DateUtils dateToString:@"M月d日" date:beginDate];
+        NSString *endStr = [DateUtils dateToString:@"M月d日" date:endDate];
+        labelDate.text = [NSString stringWithFormat:@"%@ 至 %@ %ld天",beginStr,endStr,size];
+        [self dismissPopupViewControllerWithanimationType:MJPopupViewAnimationSlideBottomBottom];
+    }
+}
+
 #pragma mark actions
 
 - (IBAction)backToHomeAction:(id)sender {
@@ -54,6 +70,7 @@
 - (void)labelDateTaped:(UITapGestureRecognizer *)sender
 {
     LbadDateSelectorViewController *dateSelector = [[LbadDateSelectorViewController alloc] init];
+    dateSelector.delegate = self;
     [self presentPopupViewController:dateSelector animationType:MJPopupViewAnimationSlideBottomBottom];
 }
 

@@ -13,4 +13,6 @@
 
 @property(nonatomic) LbadCalendarView *calendarView;
 
+@property (nonatomic,weak) id<LbadCalendarDelegate> delegate;
+
 @end
