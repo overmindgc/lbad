@@ -11,7 +11,7 @@
 
 @interface LbadDateSelectorViewController : UIViewController <LbadCalendarDelegate>
 
-@property(nonatomic) LbadCalendarView *calendarView;
+@property(nonatomic,strong) LbadCalendarView *calendarView;
 
 @property (nonatomic,weak) id<LbadCalendarDelegate> delegate;
 

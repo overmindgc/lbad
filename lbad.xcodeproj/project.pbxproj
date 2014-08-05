@@ -12,7 +12,6 @@
 		7B1692BB19875C0D008C4EBC /* LbadDateSelectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1692BA19875C0D008C4EBC /* LbadDateSelectorViewController.m */; };
 		7B16930919878C5D008C4EBC /* LbadCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B16930819878C5D008C4EBC /* LbadCalendarView.m */; };
 		7B16930F19879147008C4EBC /* LbadDateSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B16930E19879147008C4EBC /* LbadDateSquare.m */; };
-		7B169316198897C0008C4EBC /* Consts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B169315198897C0008C4EBC /* Consts.m */; };
 		7B1693211988F7EC008C4EBC /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B16931F1988F7EC008C4EBC /* left.png */; };
 		7B1693221988F7EC008C4EBC /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B1693201988F7EC008C4EBC /* right.png */; };
 		7B1693251989090E008C4EBC /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1693241989090E008C4EBC /* DateUtils.m */; };
@@ -64,8 +63,6 @@
 		7B16930819878C5D008C4EBC /* LbadCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LbadCalendarView.m; sourceTree = "<group>"; };
 		7B16930D19879147008C4EBC /* LbadDateSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LbadDateSquare.h; sourceTree = "<group>"; };
 		7B16930E19879147008C4EBC /* LbadDateSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LbadDateSquare.m; sourceTree = "<group>"; };
-		7B169314198897C0008C4EBC /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
-		7B169315198897C0008C4EBC /* Consts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consts.m; sourceTree = "<group>"; };
 		7B16931F1988F7EC008C4EBC /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		7B1693201988F7EC008C4EBC /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		7B1693231989090E008C4EBC /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtils.h; sourceTree = "<group>"; };
@@ -106,6 +103,7 @@
 		7B5A12CB198250CA00482191 /* CreateJourneyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateJourneyViewController.h; sourceTree = "<group>"; };
 		7B5A12CC198250CA00482191 /* CreateJourneyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateJourneyViewController.m; sourceTree = "<group>"; };
 		7B5A12CD198250CA00482191 /* CreateJourneyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateJourneyViewController.xib; sourceTree = "<group>"; };
+		7B9CC2EC1990E251000D2A4E /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				7B5A12A81982191B00482191 /* assets */,
+				7B9CC2EB1990E0D3000D2A4E /* macro */,
 				7B5A12B119821A6900482191 /* utils */,
 				7B1692B1198757D8008C4EBC /* opensourcecomps */,
 				7B5A12B219821A7A00482191 /* comps */,
@@ -298,8 +297,6 @@
 		7B5A12B119821A6900482191 /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				7B169314198897C0008C4EBC /* Consts.h */,
-				7B169315198897C0008C4EBC /* Consts.m */,
 				7B1693231989090E008C4EBC /* DateUtils.h */,
 				7B1693241989090E008C4EBC /* DateUtils.m */,
 			);
@@ -309,10 +306,9 @@
 		7B5A12B219821A7A00482191 /* comps */ = {
 			isa = PBXGroup;
 			children = (
+				7B9CC2ED1990E8B5000D2A4E /* homepagebtn */,
 				7B42013B198632A5000FEA19 /* base */,
 				7B42013719862457000FEA19 /* dateselector */,
-				7B2BFF23198F6DF6000BE62E /* ButtonWithNumTipView.h */,
-				7B2BFF24198F6DF6000BE62E /* ButtonWithNumTipView.m */,
 			);
 			name = comps;
 			sourceTree = "<group>";
@@ -364,6 +360,23 @@
 				7B5A12CD198250CA00482191 /* CreateJourneyViewController.xib */,
 			);
 			name = create;
+			sourceTree = "<group>";
+		};
+		7B9CC2EB1990E0D3000D2A4E /* macro */ = {
+			isa = PBXGroup;
+			children = (
+				7B9CC2EC1990E251000D2A4E /* AppMacro.h */,
+			);
+			name = macro;
+			sourceTree = "<group>";
+		};
+		7B9CC2ED1990E8B5000D2A4E /* homepagebtn */ = {
+			isa = PBXGroup;
+			children = (
+				7B2BFF23198F6DF6000BE62E /* ButtonWithNumTipView.h */,
+				7B2BFF24198F6DF6000BE62E /* ButtonWithNumTipView.m */,
+			);
+			name = homepagebtn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,7 +497,6 @@
 				7B16930919878C5D008C4EBC /* LbadCalendarView.m in Sources */,
 				7B5A12C01982226300482191 /* HomePageViewController.m in Sources */,
 				7B5A12861981F0A900482191 /* main.m in Sources */,
-				7B169316198897C0008C4EBC /* Consts.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

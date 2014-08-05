@@ -10,12 +10,19 @@
 
 @interface ButtonWithNumTipView : UIButton
 
-@property NSString *btnType;
+@property (nonatomic,copy) NSString *btnType;
 
-@property NSString *btnNum;
+@property (nonatomic,copy) NSString *btnNum;
 
-@property NSString *imgPath;
+@property (nonatomic,copy) NSString *imgPath;
+
+@property (nonatomic,copy) NSString *btnText;
 
 //@property UIButton *btnImgView;
+
+/*显示提示数字*/
+- (void)showTipNumber:(NSString *)num;
+/*隐藏提示数字*/
+- (void)hideTipNumber;
 
 @end

@@ -15,6 +15,6 @@
 @property (nonatomic,strong) NSDate *defaultDate;
 @property (nonatomic,weak) id<LbadCalendarDelegate> delegate;
 /*保存已选中的日期*/
-@property (nonatomic) NSMutableArray *selectedDateArray;
+@property (nonatomic,strong) NSMutableArray *selectedDateArray;
 
 @end

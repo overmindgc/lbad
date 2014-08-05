@@ -10,9 +10,14 @@
 #import "HomePageViewController.h"
 #import "CreateJourneyViewController.h"
 #import "ButtonWithNumTipView.h"
-#import "Consts.h"
+#import "AppMacro.h"
 
 @interface HomePageViewController ()
+{
+    ButtonWithNumTipView *payListBtn;
+    ButtonWithNumTipView *myLbBtn;
+    ButtonWithNumTipView *messageBtn;
+}
 
 @end
 
@@ -32,19 +37,31 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.homeBackgroundView setBackgroundColor:[Consts sharedInstance].MAIN_COLOR];
+    [self.homeBackgroundView setBackgroundColor:APP_MAIN_COLOR];
     //创建三个图标
-    ButtonWithNumTipView *payListBtn = [[ButtonWithNumTipView alloc] initWithFrame:CGRectMake(30, 120, 55, 55)];
+    NSInteger imgSize = 55;//图标大小
+    float imgGap = ([UIScreen mainScreen].bounds.size.width - imgSize*3) / 4;
+    payListBtn = [[ButtonWithNumTipView alloc] initWithFrame:CGRectMake(imgGap, 115, imgSize, imgSize)];
+    payListBtn.btnText = @"账单";
     payListBtn.imgPath = @"clipboard.png";
     [self.view addSubview:payListBtn];
     
-    ButtonWithNumTipView *myLbBtn = [[ButtonWithNumTipView alloc] initWithFrame:CGRectMake(30+55+30, 120, 55, 55)];
+    myLbBtn = [[ButtonWithNumTipView alloc] initWithFrame:CGRectMake(imgGap*2+imgSize, 115, imgSize, imgSize)];
+    myLbBtn.btnText = @"我的旅伴";
     myLbBtn.imgPath = @"speedometer.png";
     [self.view addSubview:myLbBtn];
     
-    ButtonWithNumTipView *messageBtn = [[ButtonWithNumTipView alloc] initWithFrame:CGRectMake(30+55+30+30+55, 120, 55, 55)];
+    messageBtn = [[ButtonWithNumTipView alloc] initWithFrame:CGRectMake(imgGap*3+imgSize*2, 115, imgSize, imgSize)];
+    messageBtn.btnText = @"消息";
     messageBtn.imgPath = @"chat.png";
     [self.view addSubview:messageBtn];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [payListBtn showTipNumber:@"6"];
+    [myLbBtn showTipNumber:@"53"];
+    [messageBtn showTipNumber:@"1"];
 }
 
 - (void)didReceiveMemoryWarning

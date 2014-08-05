@@ -22,10 +22,10 @@ enum {
 //是否是今天
 @property BOOL isToday;
 //当前格子的日期
-@property NSDate *currDate;
+@property (nonatomic,strong) NSDate *currDate;
 
 //描述标签
-@property UILabel *descLabel;
+@property (nonatomic,strong) UILabel *descLabel;
 
 /*设置选中状态*/
 - (void)setSelectedWith:(NSString *)descText andColor:(UIColor *)bgColor;

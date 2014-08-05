@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E0C58E5B-8632-4B4D-BD84-C28B38203C17</string>
+	<key>IDESourceControlProjectName</key>
+	<string>lbad</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>19D1FA92-348A-45B3-A766-92FBB9999BAA</key>
+		<string>https://github.com/overmindgc/lbad.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>lbad.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>19D1FA92-348A-45B3-A766-92FBB9999BAA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/overmindgc/lbad.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>19D1FA92-348A-45B3-A766-92FBB9999BAA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>19D1FA92-348A-45B3-A766-92FBB9999BAA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>lbad</string>
+		</dict>
+	</array>
+</dict>
+</plist>

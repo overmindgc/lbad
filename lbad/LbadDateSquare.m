@@ -7,7 +7,7 @@
 //
 
 #import "LbadDateSquare.h"
-#import "Consts.h"
+#import "AppMacro.h"
 
 @implementation LbadDateSquare
 
@@ -46,14 +46,14 @@
             [self setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
             break;
     }
-    [self.titleLabel setFont:[UIFont fontWithName:[Consts sharedInstance].FONT_NAME_BOLD size:16.0f]];
+    [self.titleLabel setFont:[UIFont fontWithName:APP_FONT_NAME_BOLD size:16.0f]];
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
 }
 
 - (void)setSelectedWith:(NSString *)descText andColor:(UIColor *)bgColor
 {
     if (bgColor == nil) {
-        bgColor = [Consts sharedInstance].MAIN_COLOR;
+        bgColor = APP_MAIN_COLOR;
     }
     self.selected = YES;
     [self setBackgroundColor:bgColor];
@@ -77,11 +77,11 @@
         }
         descLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.frame.size.height - 18, self.frame.size.width - 2, 18)];
         //    descLabel.text = defaultDescText;
-        [descLabel setFont:[UIFont fontWithName:[Consts sharedInstance].FONT_NAME size:11.0f]];
+        [descLabel setFont:[UIFont fontWithName:APP_FONT_NAME size:11.0f]];
         if ([descText isEqualToString:@"启程"]) {
-            [descLabel setFont:[UIFont fontWithName:[Consts sharedInstance].FONT_NAME size:12.0f]];
+            [descLabel setFont:[UIFont fontWithName:APP_FONT_NAME size:12.0f]];
         } else if ([descText isEqualToString:@"返程"]) {
-            [descLabel setFont:[UIFont fontWithName:[Consts sharedInstance].FONT_NAME size:12.0f]];
+            [descLabel setFont:[UIFont fontWithName:APP_FONT_NAME size:12.0f]];
         }
         descLabel.textAlignment = NSTextAlignmentCenter;
         descLabel.text = descText;
