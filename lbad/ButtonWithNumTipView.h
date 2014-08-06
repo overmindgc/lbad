@@ -18,8 +18,6 @@
 
 @property (nonatomic,copy) NSString *btnText;
 
-//@property UIButton *btnImgView;
-
 /*显示提示数字*/
 - (void)showTipNumber:(NSString *)num;
 /*隐藏提示数字*/

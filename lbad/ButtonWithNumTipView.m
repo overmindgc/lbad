@@ -7,9 +7,6 @@
 //
 
 #import "ButtonWithNumTipView.h"
-#import "AppMacro.h"
-
-#define PI 3.14159265358979323846
 
 @implementation ButtonWithNumTipView
 {
@@ -41,7 +38,7 @@
     UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake(-5, self.frame.size.height, self.frame.size.width+10, 25)];
     textLabel.text = btnText;
     textLabel.textColor = [UIColor whiteColor];
-    textLabel.font = [UIFont fontWithName:APP_FONT_NAME_BOLD size:15];
+    textLabel.font = APP_FONT_BOLD(15);
     textLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:textLabel];
     
@@ -51,7 +48,7 @@
     [cicleView setHidden:YES];
     
     numLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
-    numLab.font = [UIFont fontWithName:APP_FONT_NAME_BOLD size:12];
+    numLab.font = APP_FONT_BOLD(12);
     numLab.textColor = [UIColor whiteColor];
     numLab.textAlignment = NSTextAlignmentCenter;
     [numLab setHidden:YES];

@@ -19,6 +19,12 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    
+    //初始代理类
+    self.loginService = [[LoginService alloc] initWithHostName:APP_NETWORK_HOST];
+    [self.loginService useCache];
+    
+    
     [self openHomeView];
     
     return YES;

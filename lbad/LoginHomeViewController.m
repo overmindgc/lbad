@@ -37,6 +37,7 @@
 }
 
 - (IBAction)loginAction:(id)sender {
+    [ApplicationDelegate.loginService doLoginWithUserName:@"qd_admin" password:@"qd_admin"];
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [appDelegate openHomeView];
 }

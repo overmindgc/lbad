@@ -7,7 +7,6 @@
 //
 
 #import "LbadDateSquare.h"
-#import "AppMacro.h"
 
 @implementation LbadDateSquare
 
@@ -46,7 +45,7 @@
             [self setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
             break;
     }
-    [self.titleLabel setFont:[UIFont fontWithName:APP_FONT_NAME_BOLD size:16.0f]];
+    [self.titleLabel setFont:APP_FONT_BOLD(16)];
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
 }
 
@@ -77,11 +76,11 @@
         }
         descLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, self.frame.size.height - 18, self.frame.size.width - 2, 18)];
         //    descLabel.text = defaultDescText;
-        [descLabel setFont:[UIFont fontWithName:APP_FONT_NAME size:11.0f]];
+        [descLabel setFont:APP_FONT_BOLD(11)];
         if ([descText isEqualToString:@"启程"]) {
-            [descLabel setFont:[UIFont fontWithName:APP_FONT_NAME size:12.0f]];
+            [descLabel setFont:APP_FONT_BOLD(12)];
         } else if ([descText isEqualToString:@"返程"]) {
-            [descLabel setFont:[UIFont fontWithName:APP_FONT_NAME size:12.0f]];
+            [descLabel setFont:APP_FONT_BOLD(12)];
         }
         descLabel.textAlignment = NSTextAlignmentCenter;
         descLabel.text = descText;

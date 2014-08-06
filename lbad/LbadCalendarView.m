@@ -9,7 +9,6 @@
 #import "LbadCalendarView.h"
 #import "LbadDateSquare.h"
 #import "DateUtils.h"
-#import "AppMacro.h"
 
 #define columns 7
 #define squareWidth 45
@@ -86,7 +85,7 @@
     titleText.textAlignment = NSTextAlignmentCenter;
     NSString *dateString = [DateUtils dateToString:@"yyyy 年 MM 月" date:self.defaultDate];
     [titleText setText:dateString];
-    [titleText setFont:[UIFont fontWithName:APP_FONT_NAME_BOLD size:18.0f]];
+    [titleText setFont:APP_FONT_BOLD(18)];
     [titleText setTextColor:[UIColor brownColor]];
     [self addSubview:titleText];
     
@@ -108,7 +107,7 @@
     [doneBtn setTitle:@"确定" forState:UIControlStateNormal];
     [doneBtn setTitleColor:APP_MAIN_COLOR forState:UIControlStateNormal];
     [doneBtn setTitleColor:[UIColor brownColor] forState:UIControlStateHighlighted];
-    [doneBtn.titleLabel setFont:[UIFont fontWithName:APP_FONT_NAME_BOLD size:20.0f]];
+    [doneBtn.titleLabel setFont:APP_FONT_BOLD(20)];
     [doneBtn addTarget:self action:@selector(doneBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:doneBtn];
     
@@ -117,7 +116,7 @@
     [todayBtn setTitle:@"今日" forState:UIControlStateNormal];
     [todayBtn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     [todayBtn setTitleColor:[UIColor brownColor] forState:UIControlStateHighlighted];
-    [todayBtn.titleLabel setFont:[UIFont fontWithName:APP_FONT_NAME_BOLD size:18.0f]];
+    [todayBtn.titleLabel setFont:APP_FONT_BOLD(18)];
     [todayBtn addTarget:self action:@selector(todayBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:todayBtn];
     
@@ -128,7 +127,7 @@
         [weekNameLabel setTitle:[_weekNames objectAtIndex:i] forState:UIControlStateNormal];
         [weekNameLabel setFrame:CGRectMake(originX+(squareWidth*(i%columns)), originY + 10, squareWidth, squareWidth - 10)];
         [weekNameLabel setTitleColor:[UIColor brownColor] forState:UIControlStateNormal];
-        [weekNameLabel.titleLabel setFont:[UIFont fontWithName:APP_FONT_NAME_BOLD size:14.0f]];
+        [weekNameLabel.titleLabel setFont:APP_FONT_BOLD(14)];
         weekNameLabel.userInteractionEnabled = NO;
         [self addSubview:weekNameLabel];
     }

@@ -10,7 +10,6 @@
 #import "HomePageViewController.h"
 #import "CreateJourneyViewController.h"
 #import "ButtonWithNumTipView.h"
-#import "AppMacro.h"
 
 @interface HomePageViewController ()
 {
