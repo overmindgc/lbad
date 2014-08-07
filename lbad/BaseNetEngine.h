@@ -11,6 +11,7 @@
 
 @interface BaseNetEngine : MKNetworkEngine
 
-- (MKNetworkOperation *)startRequestWithPath:(NSString *)path param:(NSMutableDictionary *)dict type:(NSString *)type;
+typedef void (^completeBlock)(NSDictionary *resDict);
+- (MKNetworkOperation *)startRequestWithPath:(NSString *)path param:(NSMutableDictionary *)dict completeBlock:(completeBlock)completeBlock type:(NSString *)type;
 
 @end

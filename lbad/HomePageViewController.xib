@@ -34,7 +34,7 @@
                     <color key="backgroundColor" red="0.2588235438" green="0.52156865600000002" blue="0.23529413339999999" alpha="1" colorSpace="deviceRGB"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HT-5w-uW2">
-                    <rect key="frame" x="86" y="355" width="149" height="45"/>
+                    <rect key="frame" x="86" y="508" width="149" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="创建旅程">
@@ -45,6 +45,11 @@
                         <action selector="createNewAction:" destination="-1" eventType="touchUpInside" id="Rb1-zR-NUz"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ca0-EF-d0j">
+                    <rect key="frame" x="0.0" y="200" width="320" height="295"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

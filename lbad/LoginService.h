@@ -10,6 +10,7 @@
 
 @interface LoginService : BaseNetEngine
 
-- (void)doLoginWithUserName:(NSString *)username password:(NSString *)password;
+typedef void (^loginCompleteBlock)(NSDictionary *resDict);
+- (void)doLoginWithUserName:(NSString *)username password:(NSString *)password completeBlock:(loginCompleteBlock) completionBlock;
 
 @end

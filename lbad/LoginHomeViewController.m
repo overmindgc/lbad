@@ -37,9 +37,16 @@
 }
 
 - (IBAction)loginAction:(id)sender {
-    [ApplicationDelegate.loginService doLoginWithUserName:@"qd_admin" password:@"qd_admin"];
+    [ApplicationDelegate.loginService doLoginWithUserName:@"qd_admin" password:@"qd_admin" completeBlock:loginCompBlock];
     AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
     [appDelegate openHomeView];
 }
+
+void(^loginCompBlock)(NSDictionary *resDict) = ^(NSDictionary *resDict)
+{
+    NSLog(@"%@",resDict);
+};
+
+
 
 @end

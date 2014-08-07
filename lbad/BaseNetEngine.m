@@ -10,7 +10,7 @@
 
 @implementation BaseNetEngine
 
-- (MKNetworkOperation *)startRequestWithPath:(NSString *)path param:(NSMutableDictionary *)dict type:(NSString *)type
+- (MKNetworkOperation *)startRequestWithPath:(NSString *)path param:(NSMutableDictionary *)dict completeBlock:(completeBlock)completeBlock type:(NSString *)type
 {
     if (type == nil) {
         type = @"POST";
@@ -18,17 +18,21 @@
     MKNetworkOperation *op = [self operationWithPath:path params:dict httpMethod:type];
 //    [op setPostDataEncoding:MKNKPostDataEncodingTypeJSON];
     [op addCompletionHandler:^(MKNetworkOperation *operation) {
-        NSLog(@"responseData : %@", [operation responseString]);
+//        NSLog(@"responseData : %@", [operation responseString]);
         NSData *data = [operation responseData];
         NSDictionary *resDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        NSLog(@"%@",resDict);
-    } errorHandler:^(MKNetworkOperation *errorOp, NSError *err) {
-        NSLog(@"MKNetWork请求错误 ：%@",[err localizedDescription]);
-    }];
+//        NSLog(@"%@",resDict);
+        completeBlock(resDict);
+    } errorHandler:errorBlock];
     
     [self enqueueOperation:op];
     
     return op;
 }
+
+/*通信错误block*/
+void (^errorBlock)(MKNetworkOperation *errorOp, NSError *err) = ^(MKNetworkOperation *errorOp, NSError *err) {
+    NSLog(@"MKNetWork请求错误 ：%@",[err localizedDescription]);
+};
 
 @end

@@ -12,12 +12,12 @@
 
 @implementation LoginService
 
-- (void)doLoginWithUserName:(NSString *)username password:(NSString *)password
+- (void)doLoginWithUserName:(NSString *)username password:(NSString *)password completeBlock:(loginCompleteBlock) completionBlock
 {
     NSMutableDictionary *paramDict = [[NSMutableDictionary alloc] init];
     [paramDict setValue:@"username" forKey:username];
     [paramDict setValue:@"password" forKey:password];
-    [self startRequestWithPath:LOGIN_URL param:paramDict type:@"GET"];
+    [self startRequestWithPath:LOGIN_URL param:paramDict completeBlock:completionBlock type:@"POST"];
 }
 
 @end
