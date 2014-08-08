@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePageViewController">
             <connections>
                 <outlet property="homeBackgroundView" destination="MNB-o8-btj" id="9qW-AS-lkb"/>
+                <outlet property="tableViewPlan" destination="ca0-EF-d0j" id="pnm-02-16u"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,25 +34,41 @@
                     </subviews>
                     <color key="backgroundColor" red="0.2588235438" green="0.52156865600000002" blue="0.23529413339999999" alpha="1" colorSpace="deviceRGB"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HT-5w-uW2">
-                    <rect key="frame" x="86" y="508" width="149" height="45"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HT-5w-uW2">
+                    <rect key="frame" x="80" y="518" width="160" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.2588235438" green="0.52156865600000002" blue="0.23529413339999999" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="idd-cK-0kD"/>
+                    </constraints>
                     <state key="normal" title="创建旅程">
-                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="createNewAction:" destination="-1" eventType="touchUpInside" id="Rb1-zR-NUz"/>
                     </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ca0-EF-d0j">
-                    <rect key="frame" x="0.0" y="200" width="320" height="295"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ca0-EF-d0j">
+                    <rect key="frame" x="0.0" y="200" width="320" height="310"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="1lB-x0-ijT"/>
+                        <outlet property="delegate" destination="-1" id="WEg-Af-y0x"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="7HT-5w-uW2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="AyG-Ir-MzO"/>
+                <constraint firstAttribute="trailing" secondItem="ca0-EF-d0j" secondAttribute="trailing" id="DIT-Kw-GgT"/>
+                <constraint firstAttribute="trailing" secondItem="7HT-5w-uW2" secondAttribute="trailing" constant="80" id="Mfq-MR-CTX"/>
+                <constraint firstItem="ca0-EF-d0j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OKr-2x-ygH"/>
+                <constraint firstAttribute="bottom" secondItem="7HT-5w-uW2" secondAttribute="bottom" constant="15" id="gQJ-oJ-WON"/>
+                <constraint firstItem="ca0-EF-d0j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="rRR-hs-bAA"/>
+                <constraint firstAttribute="bottom" secondItem="ca0-EF-d0j" secondAttribute="bottom" constant="58" id="xja-Bx-vcV"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

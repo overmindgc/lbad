@@ -10,5 +10,6 @@
 
 @interface HomePageViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *homeBackgroundView;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewPlan;
 
 @end

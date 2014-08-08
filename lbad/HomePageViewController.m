@@ -10,12 +10,16 @@
 #import "HomePageViewController.h"
 #import "CreateJourneyViewController.h"
 #import "ButtonWithNumTipView.h"
+#import "TravelPlanVO.h"
 
 @interface HomePageViewController ()
 {
     ButtonWithNumTipView *payListBtn;
     ButtonWithNumTipView *myLbBtn;
     ButtonWithNumTipView *messageBtn;
+    
+    /*进行中的旅程数据源*/
+    NSArray *runningPlanSource;
 }
 
 @end
@@ -37,6 +41,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.homeBackgroundView setBackgroundColor:APP_MAIN_COLOR];
+    
     //创建三个图标
     NSInteger imgSize = 55;//图标大小
     float imgGap = ([UIScreen mainScreen].bounds.size.width - imgSize*3) / 4;
@@ -54,6 +59,9 @@
     messageBtn.btnText = @"消息";
     messageBtn.imgPath = @"chat.png";
     [self.view addSubview:messageBtn];
+    
+    //初始读取正在进行的计划列表
+    [self getRunningPlanList];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -73,7 +81,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    //如果是正在进行的列表
+    if (section == 0) {
+        return [runningPlanSource count];
+    } else {//已结算旅程
+        return 1;
+    }
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -81,7 +94,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    NSInteger section = indexPath.section;
+    
+    NSInteger row = indexPath.row;
+    static NSString *tableViewIndentifier = @"cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewIndentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableViewIndentifier];
+    }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
+    if (section == 0) {
+        TravelPlanVO *tpVO = [runningPlanSource objectAtIndex:row];
+        cell.textLabel.text = tpVO.description;
+    } else {
+        cell.textLabel.text = @"已结算旅程";
+    }
+    
+    return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -89,14 +121,37 @@
     return 2;
 }// Default is 1 if not implemented
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return @"";
-}// fixed font style. use custom view (UILabel) if you want something different
+    //如果是正在进行的列表
+    if (section == 0) {
+        return 10;
+    } else {//已结算旅程
+        return 0;
+    }
+    
+}
 
-- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    return @"";
+    return 10;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *currCell = [tableView cellForRowAtIndexPath:indexPath];
+    currCell.selected = NO;
+    
+    [SVProgressHUD showSuccessWithStatus:@"别着急，我还没实现呢!"];
+}
+
+#pragma mark service functions
+- (void)getRunningPlanList
+{
+    [ApplicationDelegate.travelPlanService getRunningTravelPlanList:^(NSDictionary *resDict)
+    {
+        runningPlanSource = [resDict objectForKey:@"data"];
+    }];
 }
 
 

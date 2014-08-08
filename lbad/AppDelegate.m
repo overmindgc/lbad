@@ -19,11 +19,16 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    
-    //初始代理类
+    //设置弹出提示组件样式
+    [SVProgressHUD setBackgroundColor:[UIColor colorWithWhite:0.15 alpha:0.8]];
+    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
+    /**初始代理类*/
+    //登陆服务
     self.loginService = [[LoginService alloc] initWithHostName:APP_NETWORK_HOST];
     [self.loginService useCache];
-    
+    //旅程计划服务
+    self.travelPlanService = [[TravelPlanService alloc] initWithHostName:APP_NETWORK_HOST];
+    [self.travelPlanService useCache];
     
     [self openHomeView];
     

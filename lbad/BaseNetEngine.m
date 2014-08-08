@@ -10,7 +10,7 @@
 
 @implementation BaseNetEngine
 
-- (MKNetworkOperation *)startRequestWithPath:(NSString *)path param:(NSMutableDictionary *)dict completeBlock:(completeBlock)completeBlock type:(NSString *)type
+- (MKNetworkOperation *)startRequestWithPath:(NSString *)path param:(NSMutableDictionary *)dict completeBlock:(completeBlock)completeBlock errorBlock:(errorBlock)errorBlock type:(NSString *)type
 {
     if (type == nil) {
         type = @"POST";
@@ -23,16 +23,19 @@
         NSDictionary *resDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
 //        NSLog(@"%@",resDict);
         completeBlock(resDict);
-    } errorHandler:errorBlock];
+    } errorHandler:^(MKNetworkOperation *errorOp, NSError *err) {
+        //如果有自定义的error处理，则调用，否则调用默认处理
+        if (errorBlock == nil) {
+            NSLog(@"MKNetWork请求错误 ：%@",[err localizedDescription]);
+        } else
+        {
+            errorBlock([err localizedDescription]);
+        }
+    }];
     
     [self enqueueOperation:op];
     
     return op;
 }
-
-/*通信错误block*/
-void (^errorBlock)(MKNetworkOperation *errorOp, NSError *err) = ^(MKNetworkOperation *errorOp, NSError *err) {
-    NSLog(@"MKNetWork请求错误 ：%@",[err localizedDescription]);
-};
 
 @end

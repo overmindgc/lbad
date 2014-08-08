@@ -17,7 +17,7 @@
     NSMutableDictionary *paramDict = [[NSMutableDictionary alloc] init];
     [paramDict setValue:@"username" forKey:username];
     [paramDict setValue:@"password" forKey:password];
-    [self startRequestWithPath:LOGIN_URL param:paramDict completeBlock:completionBlock type:@"POST"];
+    [self startRequestWithPath:LOGIN_URL param:paramDict completeBlock:completionBlock errorBlock:nil type:@"POST"];
 }
 
 @end

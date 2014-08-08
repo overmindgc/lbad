@@ -55,6 +55,11 @@
 		7B7850901991EAF100214260 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B78508F1991EAF100214260 /* SystemConfiguration.framework */; };
 		7B7850921991EAFB00214260 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7850911991EAFB00214260 /* Security.framework */; };
 		7B7850951991F67900214260 /* BaseNetEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7850941991F67900214260 /* BaseNetEngine.m */; };
+		7BBE7FC71994699F008D22FF /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7BBE7FC41994699F008D22FF /* SVProgressHUD.bundle */; };
+		7BBE7FC81994699F008D22FF /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE7FC61994699F008D22FF /* SVProgressHUD.m */; };
+		7BBE7FCB19949E69008D22FF /* TravelPlanVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE7FCA19949E69008D22FF /* TravelPlanVO.m */; };
+		7BBE7FCE19949F65008D22FF /* TravelPlanService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE7FCD19949F65008D22FF /* TravelPlanService.m */; };
+		7BBE7FD11994B4FB008D22FF /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE7FD01994B4FB008D22FF /* UserInfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +153,15 @@
 		7B7850931991F67900214260 /* BaseNetEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNetEngine.h; sourceTree = "<group>"; };
 		7B7850941991F67900214260 /* BaseNetEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNetEngine.m; sourceTree = "<group>"; };
 		7B9CC2EC1990E251000D2A4E /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
+		7BBE7FC41994699F008D22FF /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		7BBE7FC51994699F008D22FF /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		7BBE7FC61994699F008D22FF /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		7BBE7FC919949E69008D22FF /* TravelPlanVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelPlanVO.h; sourceTree = "<group>"; };
+		7BBE7FCA19949E69008D22FF /* TravelPlanVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelPlanVO.m; sourceTree = "<group>"; };
+		7BBE7FCC19949F65008D22FF /* TravelPlanService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelPlanService.h; sourceTree = "<group>"; };
+		7BBE7FCD19949F65008D22FF /* TravelPlanService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelPlanService.m; sourceTree = "<group>"; };
+		7BBE7FCF1994B4FB008D22FF /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		7BBE7FD01994B4FB008D22FF /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +194,7 @@
 		7B1692B1198757D8008C4EBC /* opensourcecomps */ = {
 			isa = PBXGroup;
 			children = (
+				7BBE7FC21994699F008D22FF /* SVProgressHUD */,
 				7B1692B219875858008C4EBC /* MJPopupViewController */,
 			);
 			name = opensourcecomps;
@@ -256,7 +271,6 @@
 				7B5A12A81982191B00482191 /* assets */,
 				7B9CC2EB1990E0D3000D2A4E /* macro */,
 				7B5A12B119821A6900482191 /* utils */,
-				7B1692B1198757D8008C4EBC /* opensourcecomps */,
 				7B5A12B219821A7A00482191 /* comps */,
 				7B5A12C919824B3B00482191 /* delegates */,
 				7B5A12AF19821A4000482191 /* models */,
@@ -333,6 +347,8 @@
 		7B5A12AF19821A4000482191 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				7BBE7FC919949E69008D22FF /* TravelPlanVO.h */,
+				7BBE7FCA19949E69008D22FF /* TravelPlanVO.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -345,6 +361,8 @@
 				7B7850941991F67900214260 /* BaseNetEngine.m */,
 				7B5F384C1991FF8B00177671 /* LoginService.h */,
 				7B5F384D1991FF8B00177671 /* LoginService.m */,
+				7BBE7FCC19949F65008D22FF /* TravelPlanService.h */,
+				7BBE7FCD19949F65008D22FF /* TravelPlanService.m */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -352,6 +370,8 @@
 		7B5A12B119821A6900482191 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				7BBE7FCF1994B4FB008D22FF /* UserInfo.h */,
+				7BBE7FD01994B4FB008D22FF /* UserInfo.m */,
 				7B1693231989090E008C4EBC /* DateUtils.h */,
 				7B1693241989090E008C4EBC /* DateUtils.m */,
 			);
@@ -361,6 +381,7 @@
 		7B5A12B219821A7A00482191 /* comps */ = {
 			isa = PBXGroup;
 			children = (
+				7B1692B1198757D8008C4EBC /* opensourcecomps */,
 				7B9CC2ED1990E8B5000D2A4E /* homepagebtn */,
 				7B42013B198632A5000FEA19 /* base */,
 				7B42013719862457000FEA19 /* dateselector */,
@@ -479,6 +500,16 @@
 			name = homepagebtn;
 			sourceTree = "<group>";
 		};
+		7BBE7FC21994699F008D22FF /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				7BBE7FC41994699F008D22FF /* SVProgressHUD.bundle */,
+				7BBE7FC51994699F008D22FF /* SVProgressHUD.h */,
+				7BBE7FC61994699F008D22FF /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -561,6 +592,7 @@
 				7B2BFF29198F700C000BE62E /* chat.png in Resources */,
 				7B1693221988F7EC008C4EBC /* right.png in Resources */,
 				7B1693211988F7EC008C4EBC /* left.png in Resources */,
+				7BBE7FC71994699F008D22FF /* SVProgressHUD.bundle in Resources */,
 				7B5A12C11982226300482191 /* HomePageViewController.xib in Resources */,
 				7B5A128C1981F0A900482191 /* Images.xcassets in Resources */,
 				7B5A12BA198220FC00482191 /* LoginHomeViewController.xib in Resources */,
@@ -588,7 +620,9 @@
 				7B5A128A1981F0A900482191 /* AppDelegate.m in Sources */,
 				7B5F384E1991FF8B00177671 /* LoginService.m in Sources */,
 				7B7850881991D5A800214260 /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
+				7BBE7FC81994699F008D22FF /* SVProgressHUD.m in Sources */,
 				7B1692BB19875C0D008C4EBC /* LbadDateSelectorViewController.m in Sources */,
+				7BBE7FCB19949E69008D22FF /* TravelPlanVO.m in Sources */,
 				7B5A12B9198220FC00482191 /* LoginHomeViewController.m in Sources */,
 				7B1693251989090E008C4EBC /* DateUtils.m in Sources */,
 				7B7850871991D5A800214260 /* NSString+MKNetworkKitAdditions.m in Sources */,
@@ -608,6 +642,8 @@
 				7B7850891991D5A800214260 /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				7B5A12C01982226300482191 /* HomePageViewController.m in Sources */,
 				7B5A12861981F0A900482191 /* main.m in Sources */,
+				7BBE7FCE19949F65008D22FF /* TravelPlanService.m in Sources */,
+				7BBE7FD11994B4FB008D22FF /* UserInfo.m in Sources */,
 				7B7850841991D5A800214260 /* NSData+MKBase64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginService.h"
+#import "TravelPlanService.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) LoginService *loginService;
+
+@property (strong, nonatomic) TravelPlanService *travelPlanService;
 
 - (void)openLoginView;
 
