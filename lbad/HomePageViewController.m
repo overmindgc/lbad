@@ -11,6 +11,7 @@
 #import "CreateJourneyViewController.h"
 #import "ButtonWithNumTipView.h"
 #import "TravelPlanVO.h"
+#import "JourneyMainViewController.h"
 
 @interface HomePageViewController ()
 {
@@ -62,7 +63,9 @@
     
     //初始读取正在进行的计划列表
     [self getRunningPlanList];
+
 }
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -109,8 +112,10 @@
     if (section == 0) {
         TravelPlanVO *tpVO = [runningPlanSource objectAtIndex:row];
         cell.textLabel.text = tpVO.description;
+        cell.tag = 1;//标记1
     } else {
         cell.textLabel.text = @"已结算旅程";
+        cell.tag = 2;//已结算标记2
     }
     
     return cell;
@@ -142,7 +147,15 @@
     UITableViewCell *currCell = [tableView cellForRowAtIndexPath:indexPath];
     currCell.selected = NO;
     
-    [SVProgressHUD showSuccessWithStatus:@"别着急，我还没实现呢!"];
+    if (currCell.tag == 2) {
+        [SVProgressHUD showSuccessWithStatus:@"别着急，我还没实现呢!"];
+    } else {
+        TravelPlanVO *currTpVO = [runningPlanSource objectAtIndex:indexPath.row];
+        JourneyMainViewController *journeyVC = [[JourneyMainViewController alloc] initWithNibName:@"JourneyMainViewController" bundle:nil];
+        journeyVC.currTPVO = currTpVO;
+        [self.navigationController pushViewController:journeyVC animated:YES];
+    }
+
 }
 
 #pragma mark service functions
@@ -151,6 +164,7 @@
     [ApplicationDelegate.travelPlanService getRunningTravelPlanList:^(NSDictionary *resDict)
     {
         runningPlanSource = [resDict objectForKey:@"data"];
+        [self.tableViewPlan reloadData];
     }];
 }
 

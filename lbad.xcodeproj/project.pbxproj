@@ -55,6 +55,14 @@
 		7B7850901991EAF100214260 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B78508F1991EAF100214260 /* SystemConfiguration.framework */; };
 		7B7850921991EAFB00214260 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B7850911991EAFB00214260 /* Security.framework */; };
 		7B7850951991F67900214260 /* BaseNetEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7850941991F67900214260 /* BaseNetEngine.m */; };
+		7B7E4D7E19986B0B002B90DF /* JourneyMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E4D7C19986B0B002B90DF /* JourneyMainViewController.m */; };
+		7B7E4D7F19986B0B002B90DF /* JourneyMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B7E4D7D19986B0B002B90DF /* JourneyMainViewController.xib */; };
+		7B7E4D861998952D002B90DF /* JourneyExpendListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B7E4D851998952D002B90DF /* JourneyExpendListView.xib */; };
+		7B7E4D8919989784002B90DF /* JourneyExpendListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E4D8819989784002B90DF /* JourneyExpendListView.m */; };
+		7B7E4D8D1998A23F002B90DF /* JourneyTravelersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B7E4D8C1998A23F002B90DF /* JourneyTravelersView.xib */; };
+		7B7E4D901998A24C002B90DF /* JourneyTravelersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E4D8F1998A24C002B90DF /* JourneyTravelersView.m */; };
+		7B7E4D931998A348002B90DF /* JourneyTravelRouteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E4D921998A348002B90DF /* JourneyTravelRouteView.m */; };
+		7B7E4D951998A361002B90DF /* JourneyTravelRouteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B7E4D941998A361002B90DF /* JourneyTravelRouteView.xib */; };
 		7BBE7FC71994699F008D22FF /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7BBE7FC41994699F008D22FF /* SVProgressHUD.bundle */; };
 		7BBE7FC81994699F008D22FF /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE7FC61994699F008D22FF /* SVProgressHUD.m */; };
 		7BBE7FCB19949E69008D22FF /* TravelPlanVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE7FCA19949E69008D22FF /* TravelPlanVO.m */; };
@@ -152,6 +160,19 @@
 		7B7850911991EAFB00214260 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		7B7850931991F67900214260 /* BaseNetEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNetEngine.h; sourceTree = "<group>"; };
 		7B7850941991F67900214260 /* BaseNetEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNetEngine.m; sourceTree = "<group>"; };
+		7B7E4D7B19986B0B002B90DF /* JourneyMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JourneyMainViewController.h; sourceTree = "<group>"; };
+		7B7E4D7C19986B0B002B90DF /* JourneyMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JourneyMainViewController.m; sourceTree = "<group>"; };
+		7B7E4D7D19986B0B002B90DF /* JourneyMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JourneyMainViewController.xib; sourceTree = "<group>"; };
+		7B7E4D851998952D002B90DF /* JourneyExpendListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JourneyExpendListView.xib; sourceTree = "<group>"; };
+		7B7E4D8719989784002B90DF /* JourneyExpendListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JourneyExpendListView.h; sourceTree = "<group>"; };
+		7B7E4D8819989784002B90DF /* JourneyExpendListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JourneyExpendListView.m; sourceTree = "<group>"; };
+		7B7E4D8A19989F89002B90DF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		7B7E4D8C1998A23F002B90DF /* JourneyTravelersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JourneyTravelersView.xib; sourceTree = "<group>"; };
+		7B7E4D8E1998A24C002B90DF /* JourneyTravelersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JourneyTravelersView.h; sourceTree = "<group>"; };
+		7B7E4D8F1998A24C002B90DF /* JourneyTravelersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JourneyTravelersView.m; sourceTree = "<group>"; };
+		7B7E4D911998A348002B90DF /* JourneyTravelRouteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JourneyTravelRouteView.h; sourceTree = "<group>"; };
+		7B7E4D921998A348002B90DF /* JourneyTravelRouteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JourneyTravelRouteView.m; sourceTree = "<group>"; };
+		7B7E4D941998A361002B90DF /* JourneyTravelRouteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JourneyTravelRouteView.xib; sourceTree = "<group>"; };
 		7B9CC2EC1990E251000D2A4E /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		7BBE7FC41994699F008D22FF /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		7BBE7FC51994699F008D22FF /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
@@ -254,6 +275,7 @@
 		7B5A12781981F0A800482191 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7B7E4D8A19989F89002B90DF /* QuartzCore.framework */,
 				7B7850911991EAFB00214260 /* Security.framework */,
 				7B78508F1991EAF100214260 /* SystemConfiguration.framework */,
 				7B78508D1991EAE400214260 /* CFNetwork.framework */,
@@ -277,6 +299,10 @@
 				7B5A12B019821A4B00482191 /* services */,
 				7B5A12B519821BE200482191 /* viewmodels */,
 				7B5A12AE19821A3400482191 /* controllers */,
+				7B5A12C21982465200482191 /* LoginNavigationController.h */,
+				7B5A12C31982465200482191 /* LoginNavigationController.m */,
+				7B5A12C51982480C00482191 /* HomeNavigationController.h */,
+				7B5A12C61982480C00482191 /* HomeNavigationController.m */,
 				7B5A12881981F0A900482191 /* AppDelegate.h */,
 				7B5A12891981F0A900482191 /* AppDelegate.m */,
 				7B5A128B1981F0A900482191 /* Images.xcassets */,
@@ -338,8 +364,13 @@
 		7B5A12AE19821A3400482191 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7B5A12B419821AF000482191 /* home */,
 				7B5A12B319821AEA00482191 /* login */,
+				7B5A12B419821AF000482191 /* home */,
+				7B7E4D7619986793002B90DF /* journey */,
+				7B7E4D791998699D002B90DF /* accounting */,
+				7B7E4D77199868BA002B90DF /* bills */,
+				7B7E4D78199868CD002B90DF /* messages */,
+				7B7E4D7A19986A1C002B90DF /* setting */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -395,8 +426,6 @@
 				7B5A12B6198220FC00482191 /* LoginHomeViewController.h */,
 				7B5A12B7198220FC00482191 /* LoginHomeViewController.m */,
 				7B5A12B8198220FC00482191 /* LoginHomeViewController.xib */,
-				7B5A12C21982465200482191 /* LoginNavigationController.h */,
-				7B5A12C31982465200482191 /* LoginNavigationController.m */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -408,8 +437,6 @@
 				7B5A12BD1982226300482191 /* HomePageViewController.h */,
 				7B5A12BE1982226300482191 /* HomePageViewController.m */,
 				7B5A12BF1982226300482191 /* HomePageViewController.xib */,
-				7B5A12C51982480C00482191 /* HomeNavigationController.h */,
-				7B5A12C61982480C00482191 /* HomeNavigationController.m */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -480,6 +507,77 @@
 				7B7850821991D5A800214260 /* Reachability.m */,
 			);
 			path = Reachability;
+			sourceTree = "<group>";
+		};
+		7B7E4D7619986793002B90DF /* journey */ = {
+			isa = PBXGroup;
+			children = (
+				7B7E4D8219986B1C002B90DF /* travelroute */,
+				7B7E4D8119986B1A002B90DF /* expendlist */,
+				7B7E4D8019986B18002B90DF /* travelers */,
+				7B7E4D7B19986B0B002B90DF /* JourneyMainViewController.h */,
+				7B7E4D7C19986B0B002B90DF /* JourneyMainViewController.m */,
+				7B7E4D7D19986B0B002B90DF /* JourneyMainViewController.xib */,
+			);
+			name = journey;
+			sourceTree = "<group>";
+		};
+		7B7E4D77199868BA002B90DF /* bills */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = bills;
+			sourceTree = "<group>";
+		};
+		7B7E4D78199868CD002B90DF /* messages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = messages;
+			sourceTree = "<group>";
+		};
+		7B7E4D791998699D002B90DF /* accounting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = accounting;
+			sourceTree = "<group>";
+		};
+		7B7E4D7A19986A1C002B90DF /* setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = setting;
+			sourceTree = "<group>";
+		};
+		7B7E4D8019986B18002B90DF /* travelers */ = {
+			isa = PBXGroup;
+			children = (
+				7B7E4D8E1998A24C002B90DF /* JourneyTravelersView.h */,
+				7B7E4D8F1998A24C002B90DF /* JourneyTravelersView.m */,
+				7B7E4D8C1998A23F002B90DF /* JourneyTravelersView.xib */,
+			);
+			name = travelers;
+			sourceTree = "<group>";
+		};
+		7B7E4D8119986B1A002B90DF /* expendlist */ = {
+			isa = PBXGroup;
+			children = (
+				7B7E4D8719989784002B90DF /* JourneyExpendListView.h */,
+				7B7E4D8819989784002B90DF /* JourneyExpendListView.m */,
+				7B7E4D851998952D002B90DF /* JourneyExpendListView.xib */,
+			);
+			name = expendlist;
+			sourceTree = "<group>";
+		};
+		7B7E4D8219986B1C002B90DF /* travelroute */ = {
+			isa = PBXGroup;
+			children = (
+				7B7E4D911998A348002B90DF /* JourneyTravelRouteView.h */,
+				7B7E4D921998A348002B90DF /* JourneyTravelRouteView.m */,
+				7B7E4D941998A361002B90DF /* JourneyTravelRouteView.xib */,
+			);
+			name = travelroute;
 			sourceTree = "<group>";
 		};
 		7B9CC2EB1990E0D3000D2A4E /* macro */ = {
@@ -594,9 +692,13 @@
 				7B1693211988F7EC008C4EBC /* left.png in Resources */,
 				7BBE7FC71994699F008D22FF /* SVProgressHUD.bundle in Resources */,
 				7B5A12C11982226300482191 /* HomePageViewController.xib in Resources */,
+				7B7E4D8D1998A23F002B90DF /* JourneyTravelersView.xib in Resources */,
+				7B7E4D7F19986B0B002B90DF /* JourneyMainViewController.xib in Resources */,
 				7B5A128C1981F0A900482191 /* Images.xcassets in Resources */,
+				7B7E4D861998952D002B90DF /* JourneyExpendListView.xib in Resources */,
 				7B5A12BA198220FC00482191 /* LoginHomeViewController.xib in Resources */,
 				7B5A12BC1982216100482191 /* login_bg.png in Resources */,
+				7B7E4D951998A361002B90DF /* JourneyTravelRouteView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +720,7 @@
 				7B7850831991D5A800214260 /* NSAlert+MKNetworkKitAdditions.m in Sources */,
 				7B7850861991D5A800214260 /* NSDictionary+RequestEncoding.m in Sources */,
 				7B5A128A1981F0A900482191 /* AppDelegate.m in Sources */,
+				7B7E4D931998A348002B90DF /* JourneyTravelRouteView.m in Sources */,
 				7B5F384E1991FF8B00177671 /* LoginService.m in Sources */,
 				7B7850881991D5A800214260 /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				7BBE7FC81994699F008D22FF /* SVProgressHUD.m in Sources */,
@@ -635,14 +738,17 @@
 				7B1692B71987586C008C4EBC /* MJPopupBackgroundView.m in Sources */,
 				7B5A12C71982480C00482191 /* HomeNavigationController.m in Sources */,
 				7B5A12CE198250CA00482191 /* CreateJourneyViewController.m in Sources */,
+				7B7E4D901998A24C002B90DF /* JourneyTravelersView.m in Sources */,
 				7B5A12C41982465200482191 /* LoginNavigationController.m in Sources */,
 				7B16930919878C5D008C4EBC /* LbadCalendarView.m in Sources */,
 				7B78508B1991D5A800214260 /* MKNetworkOperation.m in Sources */,
 				7B7850951991F67900214260 /* BaseNetEngine.m in Sources */,
 				7B7850891991D5A800214260 /* UIImageView+MKNetworkKitAdditions.m in Sources */,
+				7B7E4D8919989784002B90DF /* JourneyExpendListView.m in Sources */,
 				7B5A12C01982226300482191 /* HomePageViewController.m in Sources */,
 				7B5A12861981F0A900482191 /* main.m in Sources */,
 				7BBE7FCE19949F65008D22FF /* TravelPlanService.m in Sources */,
+				7B7E4D7E19986B0B002B90DF /* JourneyMainViewController.m in Sources */,
 				7BBE7FD11994B4FB008D22FF /* UserInfo.m in Sources */,
 				7B7850841991D5A800214260 /* NSData+MKBase64.m in Sources */,
 			);
