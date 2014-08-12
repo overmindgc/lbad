@@ -48,17 +48,17 @@
     float imgGap = ([UIScreen mainScreen].bounds.size.width - imgSize*3) / 4;
     payListBtn = [[ButtonWithNumTipView alloc] initWithFrame:CGRectMake(imgGap, 115, imgSize, imgSize)];
     payListBtn.btnText = @"账单";
-    payListBtn.imgPath = @"clipboard.png";
+    payListBtn.imgPath = @"paylist.png";
     [self.view addSubview:payListBtn];
     
     myLbBtn = [[ButtonWithNumTipView alloc] initWithFrame:CGRectMake(imgGap*2+imgSize, 115, imgSize, imgSize)];
     myLbBtn.btnText = @"我的旅伴";
-    myLbBtn.imgPath = @"speedometer.png";
+    myLbBtn.imgPath = @"peoples.png";
     [self.view addSubview:myLbBtn];
     
     messageBtn = [[ButtonWithNumTipView alloc] initWithFrame:CGRectMake(imgGap*3+imgSize*2, 115, imgSize, imgSize)];
     messageBtn.btnText = @"消息";
-    messageBtn.imgPath = @"chat.png";
+    messageBtn.imgPath = @"message.png";
     [self.view addSubview:messageBtn];
     
     //初始读取正在进行的计划列表

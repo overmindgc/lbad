@@ -12,6 +12,9 @@
 @interface JourneyMainViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UINavigationBar *topNavBar;
 @property (weak, nonatomic) IBOutlet UINavigationItem *topTitleItem;
+@property (weak, nonatomic) IBOutlet UILabel *routeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *expendListLabel;
+@property (weak, nonatomic) IBOutlet UILabel *travelersLabel;
 
 /*存储当前旅程的model对象*/
 @property (nonatomic, strong) TravelPlanVO *currTPVO;

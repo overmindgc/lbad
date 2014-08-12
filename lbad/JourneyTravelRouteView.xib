@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JourneyTravelRouteView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="PKM-KM-5gy">
+        <view contentMode="scaleToFill" id="PKM-KM-5gy" customClass="JourneyTravelRouteView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>

@@ -20,7 +20,8 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <items>
                         <navigationItem title="创建旅程" id="zAz-Mb-CO9">
-                            <barButtonItem key="leftBarButtonItem" title="返回" id="dmM-hY-xXV">
+                            <barButtonItem key="leftBarButtonItem" image="back.png" id="dmM-hY-xXV">
+                                <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <connections>
                                     <action selector="backToHomeAction:" destination="-1" id="VkJ-8G-dWS"/>
                                 </connections>
@@ -100,4 +101,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="back.png" width="13" height="22"/>
+    </resources>
 </document>

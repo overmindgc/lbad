@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JourneyExpendListView : UIView
+@interface JourneyExpendListView : UIView <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UILabel *personalExpendLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalExpendLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewExpend;
 
 @end

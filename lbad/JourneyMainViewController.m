@@ -33,6 +33,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
         UISwipeGestureRecognizer * swipeleft = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeleft:)];
         swipeleft.direction = UISwipeGestureRecognizerDirectionLeft;
         [self.view addGestureRecognizer:swipeleft];
@@ -47,6 +48,16 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //给标签添加点击手势
+    UITapGestureRecognizer * tapRoute = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchRoute:)];
+    self.routeLabel.userInteractionEnabled = YES;
+    [self.routeLabel addGestureRecognizer:tapRoute];
+    UITapGestureRecognizer * tapExpendList = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchExpendList:)];
+    self.expendListLabel.userInteractionEnabled = YES;
+    [self.expendListLabel addGestureRecognizer:tapExpendList];
+    UITapGestureRecognizer * tapTravelers = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchTravelers:)];
+    self.travelersLabel.userInteractionEnabled = YES;
+    [self.travelersLabel addGestureRecognizer:tapTravelers];
     
     //获得nib视图数组
     NSArray *nib1 = [[NSBundle mainBundle]loadNibNamed:@"JourneyTravelRouteView" owner:self options:nil];
@@ -73,6 +84,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     self.topTitleItem.title = self.currTPVO.description;
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,6 +98,25 @@
 
 - (IBAction)backAction:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)touchRoute:(UISwipeGestureRecognizer *)gestureRecognizer
+{
+    [self showViewFromRight:jurTravelRouteView];
+}
+
+- (void)touchExpendList:(UISwipeGestureRecognizer *)gestureRecognizer
+{
+    if ([currShowView isEqual:jurTraversView]) {
+        [self showViewFromRight:jurExpendListView];
+    } else if ([currShowView isEqual:jurTravelRouteView]){
+        [self showViewFromLeft:jurExpendListView];
+    }
+}
+
+- (void)touchTravelers:(UISwipeGestureRecognizer *)gestureRecognizer
+{
+    [self showViewFromLeft:jurTraversView];
 }
 
 - (void)swipeleft:(UISwipeGestureRecognizer *)gestureRecognizer
@@ -112,44 +143,48 @@
 
 - (void)showViewFromLeft:(UIView *)showView
 {
-    CATransition *animation = [CATransition animation];
-    animation.duration = 0.2f;
-    animation.type = kCATransitionPush;//设置上面4种动画效果
-    animation.subtype = kCATransitionFromLeft;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
-    [currShowView setHidden:YES];
-    [currShowView.layer addAnimation:animation forKey:@"animationIDLeft"];
-    
-
-    CATransition *animation2 = [CATransition animation];
-    animation2.duration = 0.1f;
-    animation2.type = kCATransitionFade;//设置上面4种动画效果
-    animation2.subtype = kCATransitionFromLeft;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
-    [showView setHidden:NO];
-    [showView.layer addAnimation:animation2 forKey:@"animationIDLeft"];
-    
-    [showView setHidden:NO];
-    currShowView = showView;
+    if (![currShowView isEqual:showView]) {
+        CATransition *animation = [CATransition animation];
+        animation.duration = 0.2f;
+        animation.type = kCATransitionPush;//设置上面4种动画效果
+        animation.subtype = kCATransitionFromLeft;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
+        [currShowView setHidden:YES];
+        [currShowView.layer addAnimation:animation forKey:@"animationIDLeft"];
+        
+        
+        CATransition *animation2 = [CATransition animation];
+        animation2.duration = 0.1f;
+        animation2.type = kCATransitionFade;//设置上面4种动画效果
+        animation2.subtype = kCATransitionFromLeft;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
+        [showView setHidden:NO];
+        [showView.layer addAnimation:animation2 forKey:@"animationIDLeft"];
+        
+        [showView setHidden:NO];
+        currShowView = showView;
+    }
 }
 
 - (void)showViewFromRight:(UIView *)showView
 {
-    CATransition *animation = [CATransition animation];
-    animation.duration = 0.2f;
-    animation.type = kCATransitionPush;//设置上面4种动画效果
-    animation.subtype = kCATransitionFromRight;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
-    [currShowView setHidden:YES];
-    [currShowView.layer addAnimation:animation forKey:@"animationIDRight"];
-    
-    
-    CATransition *animation2 = [CATransition animation];
-    animation2.duration = 0.1f;
-    animation2.type = kCATransitionFade;//设置上面4种动画效果
-    animation2.subtype = kCATransitionFromRight;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
-    [showView setHidden:NO];
-    [showView.layer addAnimation:animation2 forKey:@"animationIDRight"];
-    
-    [showView setHidden:NO];
-    currShowView = showView;
+    if (![currShowView isEqual:showView]) {
+        CATransition *animation = [CATransition animation];
+        animation.duration = 0.2f;
+        animation.type = kCATransitionPush;//设置上面4种动画效果
+        animation.subtype = kCATransitionFromRight;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
+        [currShowView setHidden:YES];
+        [currShowView.layer addAnimation:animation forKey:@"animationIDRight"];
+        
+        
+        CATransition *animation2 = [CATransition animation];
+        animation2.duration = 0.1f;
+        animation2.type = kCATransitionFade;//设置上面4种动画效果
+        animation2.subtype = kCATransitionFromRight;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
+        [showView setHidden:NO];
+        [showView.layer addAnimation:animation2 forKey:@"animationIDRight"];
+        
+        [showView setHidden:NO];
+        currShowView = showView;
+    }
 }
 
 @end

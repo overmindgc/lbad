@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JourneyTravelersView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="WyG-Hj-mg1" customClass="JourneyTravelersView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
@@ -26,6 +26,10 @@
                     <rect key="frame" x="0.0" y="6" width="320" height="449"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="WyG-Hj-mg1" id="GT3-G7-rTP"/>
+                        <outlet property="delegate" destination="WyG-Hj-mg1" id="w5y-Ij-zTQ"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -35,6 +39,9 @@
                 <constraint firstAttribute="trailing" secondItem="oIp-W7-fA5" secondAttribute="trailing" id="P80-M9-W78"/>
                 <constraint firstItem="oIp-W7-fA5" firstAttribute="leading" secondItem="WyG-Hj-mg1" secondAttribute="leading" id="sc7-xR-Iny"/>
             </constraints>
+            <connections>
+                <outlet property="tableViewTraverler" destination="oIp-W7-fA5" id="KHI-To-3wu"/>
+            </connections>
         </view>
     </objects>
 </document>

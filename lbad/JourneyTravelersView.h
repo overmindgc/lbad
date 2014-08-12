@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JourneyTravelersView : UIView
+@interface JourneyTravelersView : UIView <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableViewTraverler;
 
 @end

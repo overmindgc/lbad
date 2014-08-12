@@ -10,7 +10,16 @@
 
 @interface TravelPlanService : BaseNetEngine
 
+/*获取正在进行的旅程列表*/
 typedef void (^runningPlanCompleteBlock)(NSDictionary *resDict);
 - (void)getRunningTravelPlanList:(runningPlanCompleteBlock)completionBlock;
+
+/*获取旅程的所有消费清单数据*/
+typedef void (^expendListCompleteBlock)(NSDictionary *resDict);
+- (void)getAllExpendListDataByTravelId:(NSString *)travelId completion:(expendListCompleteBlock)completionBlock;
+
+/*查询同程旅伴列表*/
+typedef void (^sameRouteTravelerCompleteBlock)(NSDictionary *resDict);
+- (void)getSameRouteTravelerListByTravelId:(NSString *)travelId completion:(sameRouteTravelerCompleteBlock)completionBlock;
 
 @end
