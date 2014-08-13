@@ -17,5 +17,6 @@
     #import "UtilMacro.h"
     #import "MKNetworkKit.h"
     #import "UserInfo.h"
+    #import "CommonUtils.h"
     #import "SVProgressHUD.h"
 #endif

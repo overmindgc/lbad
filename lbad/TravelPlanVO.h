@@ -11,7 +11,7 @@
 @interface TravelPlanVO : NSObject
 
 /*旅程id*/
-@property (nonatomic,copy) NSString *travelId;
+@property (nonatomic,copy) NSString *travel_id;
 /*旅程描述（标题）*/
 @property (nonatomic,copy) NSString *description;
 

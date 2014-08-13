@@ -102,6 +102,6 @@
         </view>
     </objects>
     <resources>
-        <image name="back.png" width="13" height="22"/>
+        <image name="back.png" width="36" height="62"/>
     </resources>
 </document>

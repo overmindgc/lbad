@@ -10,6 +10,8 @@
 #import "TravelPlanVO.h"
 #import "TravelerVO.h"
 #import "ExpendVO.h"
+#import "TravelRouteCellVO.h"
+#import "WeatherVO.h"
 
 @implementation TravelPlanService
 
@@ -17,16 +19,16 @@
 {
     NSMutableDictionary *resultDict = [[NSMutableDictionary alloc] init];
     TravelPlanVO *tp1 = [[TravelPlanVO alloc] init];
-    tp1.travelId = @"1";
+    tp1.travel_id = @"1";
     tp1.description = @"8月青岛出差";
     TravelPlanVO *tp2 = [[TravelPlanVO alloc] init];
-    tp2.travelId = @"2";
+    tp2.travel_id = @"2";
     tp2.description = @"9月南京项目验收";
     TravelPlanVO *tp3 = [[TravelPlanVO alloc] init];
-    tp3.travelId = @"3";
+    tp3.travel_id = @"3";
     tp3.description = @"10月广州培训";
 //    TravelPlanVO *tp4 = [[TravelPlanVO alloc] init];
-//    tp4.travelId = @"4";
+//    tp4.travel_id = @"4";
 //    tp4.description = @"11月南京出差";
     
     NSArray *tpArr = [NSArray arrayWithObjects:tp1,tp2,tp3, nil];
@@ -40,50 +42,98 @@
 {
     NSMutableDictionary *resultDict = [[NSMutableDictionary alloc] init];
     
-    NSMutableDictionary *dataDict = [[NSMutableDictionary alloc] init];
-    [dataDict setValue:@"¥1000" forKey:@"personalMonay"];
-    [dataDict setValue:@"¥3500" forKey:@"totalMonay"];
+    NSMutableArray *dataArr = [[NSMutableArray alloc] init];
+
+    [dataArr addObject:@"¥1000"];
+    [dataArr addObject:@"¥3500"];
     
     ExpendVO *ep1 = [[ExpendVO alloc] init];
-    ep1.expendName = @"火车";
-    ep1.expendMoney = @"2500元";
-    ep1.travelerNum = @"5人";
+    ep1.expend_name = @"火车票";
+    ep1.expend_money = @"2500元";
+    ep1.traveler_num = @"5人";
     ExpendVO *ep2 = [[ExpendVO alloc] init];
-    ep2.expendName = @"出租车";
-    ep2.expendMoney = @"80元";
-    ep2.travelerNum = @"5人";
+    ep2.expend_name = @"出租车";
+    ep2.expend_money = @"80000元";
+    ep2.traveler_num = @"500人";
     ExpendVO *ep3 = [[ExpendVO alloc] init];
-    ep3.expendName = @"冷饮";
-    ep3.expendMoney = @"30元";
-    ep3.travelerNum = @"3人";
+    ep3.expend_name = @"冷饮";
+    ep3.expend_money = @"30元";
+    ep3.traveler_num = @"3人";
     ExpendVO *ep4 = [[ExpendVO alloc] init];
-    ep4.expendName = @"住宿费";
-    ep4.expendMoney = @"600元";
-    ep4.travelerNum = @"5人";
+    ep4.expend_name = @"住宿费";
+    ep4.expend_money = @"600元";
+    ep4.traveler_num = @"5人";
     NSArray *todayArr = [NSArray arrayWithObjects:ep1,ep2,ep3,ep4, nil];
-    [dataDict setValue:todayArr forKey:@"今日      个人支出¥1000   实际消费¥3500"];
+    NSDictionary *todayDict = [NSDictionary dictionaryWithObject:todayArr forKey:@"今日       个人支出¥1000   实际消费¥3500"];
+    [dataArr addObject:todayDict];
     
     ExpendVO *ep5 = [[ExpendVO alloc] init];
-    ep5.expendName = @"地铁";
-    ep5.expendMoney = @"24元";
-    ep5.travelerNum = @"3人";
+    ep5.expend_name = @"公交大巴";
+    ep5.expend_money = @"24元";
+    ep5.traveler_num = @"3人";
     ExpendVO *ep6 = [[ExpendVO alloc] init];
-    ep6.expendName = @"午饭";
-    ep6.expendMoney = @"150元";
-    ep6.travelerNum = @"5人";
+    ep6.expend_name = @"午饭";
+    ep6.expend_money = @"150元";
+    ep6.traveler_num = @"5人";
     NSArray *yesterdayArr = [NSArray arrayWithObjects:ep5,ep6, nil];
-    [dataDict setValue:yesterdayArr forKey:@"昨日"];
+    NSDictionary *yesterdayDict = [NSDictionary dictionaryWithObject:yesterdayArr forKey:@"昨日"];
+    [dataArr addObject:yesterdayDict];
     
     ExpendVO *ep7 = [[ExpendVO alloc] init];
-    ep7.expendName = @"早饭";
-    ep7.expendMoney = @"50元";
-    ep7.travelerNum = @"5人";
+    ep7.expend_name = @"早饭";
+    ep7.expend_money = @"50元";
+    ep7.traveler_num = @"5人";
     NSArray *earlydayArr = [NSArray arrayWithObjects:ep7, nil];
-    [dataDict setValue:earlydayArr forKey:@"8-2"];
+    NSDictionary *earlydayDict = [NSDictionary dictionaryWithObject:earlydayArr forKey:@"8-2"];
+    [dataArr addObject:earlydayDict];
+                                
     
-    NSDictionary *newDataDict = [NSDictionary dictionaryWithObjects:@[@"¥1000",@"¥3500",todayArr,yesterdayArr,earlydayArr] forKeys:@[@"personalMonay",@"totalMonay",@"今日      个人支出¥1000   实际消费¥3500",@"昨日",@"8-2"]];
+    [resultDict setValue:dataArr forKeyPath:@"data"];
+    completionBlock(resultDict);
+}
+
+- (void)getAllTravelRouteDataByTravelId:(NSString *)travelId completion:(travelRouteCompleteBlock)completionBlock
+{
+    NSMutableDictionary *resultDict = [[NSMutableDictionary alloc] init];
+    [resultDict setValue:@"14天" forKey:@"day_num"];
+    [resultDict setValue:@"8月2日至8月16日" forKey:@"date_range"];
     
-    [resultDict setValue:newDataDict forKeyPath:@"data"];
+    TravelRouteCellVO *tr1 = [[TravelRouteCellVO alloc] init];
+    tr1.route_date_type = @"8月2日 火车 G119";
+    tr1.route_time_dest = @"10:00北京南站 - 南京南站16:00";
+    TravelRouteCellVO *tr2 = [[TravelRouteCellVO alloc] init];
+    tr2.route_date_type = @"8月5日 火车";
+    tr2.route_time_dest = @"18:00南京南站 - 上海站20:00";
+    TravelRouteCellVO *tr3 = [[TravelRouteCellVO alloc] init];
+    tr3.route_date_type = @"8月10日 飞机 MH17";
+    tr3.route_time_dest = @"7:30上海国际机场 - 北京国际机场11:00";
+    NSArray *routeArr = [NSArray arrayWithObjects:tr1,tr2,tr3, nil];
+    [resultDict setValue:routeArr forKey:@"route_array"];
+    
+    WeatherVO *w1 = [[WeatherVO alloc] init];
+    w1.place_name = @"南京";
+    w1.weather_type = @"sunny";
+    w1.description = @"22-30度  西南风2-3级";
+    WeatherVO *w2 = [[WeatherVO alloc] init];
+    w2.place_name = @"上海";
+    w2.weather_type = @"cloudsun";
+    w2.description = @"23-30度  微风";
+    WeatherVO *w3 = [[WeatherVO alloc] init];
+    w3.place_name = @"北京";
+    w3.weather_type = @"torrentrain";
+    w3.description = @"18-24度  东北风6-7级";
+    WeatherVO *w4 = [[WeatherVO alloc] init];
+    w4.place_name = @"乌鲁木齐";
+    w4.weather_type = @"rain";
+    w4.description = @"18-24度  东北风6-7级";
+    WeatherVO *w5 = [[WeatherVO alloc] init];
+    w5.place_name = @"张家口";
+    w5.weather_type = @"cloudsun";
+    w5.description = @"18-24度  东北风6-7级";
+    NSArray *weatherArr = [NSArray arrayWithObjects:w1,w2,w3, nil];
+    [resultDict setValue:weatherArr forKey:@"weather_array"];
+    
+    [resultDict setValue:resultDict forKeyPath:@"data"];
     completionBlock(resultDict);
 }
 

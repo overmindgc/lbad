@@ -11,12 +11,12 @@
 @interface ExpendVO : NSObject
 
 /*消费类型id*/
-@property (nonatomic,copy)NSString *typeId;
+@property (nonatomic,copy)NSString *expend_id;
 /*消费名称*/
-@property (nonatomic,copy)NSString *expendName;
+@property (nonatomic,copy)NSString *expend_name;
 /*消费金额*/
-@property (nonatomic,copy)NSString *expendMoney;
+@property (nonatomic,copy)NSString *expend_money;
 /*消费人数*/
-@property (nonatomic,copy)NSString *travelerNum;
+@property (nonatomic,copy)NSString *traveler_num;
 
 @end

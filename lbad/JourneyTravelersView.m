@@ -54,16 +54,18 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableViewIndentifier];
     }
-//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     TravelerVO *tVO = [travelersSource objectAtIndex:row];
     cell.textLabel.text = tVO.user_name;
     cell.imageView.image = [UIImage imageNamed:tVO.user_portrait_url];
+    cell.imageView.layer.masksToBounds = YES;
+    cell.imageView.layer.cornerRadius = 22;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
     [SVProgressHUD showSuccessWithStatus:@"别着急，我还没实现呢!"];
 }
 

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JourneyTravelRouteView : UIView
+@interface JourneyTravelRouteView : UIView <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *dayNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateRangLabel;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewRoute;
 
 @end

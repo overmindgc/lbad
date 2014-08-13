@@ -10,13 +10,14 @@
 #import "CHTumblrMenuView.h"
 #import "AppDelegate.h"
 #import "ExpendVO.h"
+#import "ExpendMoneyCell.h"
 
 @implementation JourneyExpendListView
 {
     //消费列表页面总数据源
-    NSDictionary *expendDictSouece;
-    
-    NSMutableArray *expendDateArr;
+    NSArray *expendSouece;
+    //清单列表数据源
+    NSMutableArray *expendListArr;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -41,13 +42,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [expendDateArr count];
+    return [expendListArr count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSString *key = [expendDateArr objectAtIndex:section];
-    return [[expendDictSouece objectForKey:key] count];
+    NSDictionary *dict = [expendListArr objectAtIndex:section];
+    NSString *key = [[dict allKeys] objectAtIndex:0];
+    return [[dict objectForKey:key] count];
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -56,45 +58,51 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger section = indexPath.section;
-    NSString *key = [expendDateArr objectAtIndex:section];
     
     NSInteger row = indexPath.row;
     static NSString *tableViewIndentifier = @"cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewIndentifier];
+    ExpendMoneyCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewIndentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableViewIndentifier];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"ExpendMoneyCell" owner:self options:nil] objectAtIndex:0];
     }
-    [cell.textLabel setFont:APP_FONT(15)];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
-    NSArray *currArr = [expendDictSouece objectForKey:key];
+    NSDictionary *dict = [expendListArr objectAtIndex:section];
+    NSString *key = [[dict allKeys] objectAtIndex:0];
+    NSArray *currArr = [dict objectForKey:key];
     ExpendVO *epVO = [currArr objectAtIndex:row];
     cell.tag = section;
-    cell.textLabel.text = [NSString stringWithFormat:@"%@           %@  %@",epVO.expendName,epVO.expendMoney,epVO.travelerNum];
+    cell.nameLabel.text = epVO.expend_name;
+    cell.moneyLabel.text = epVO.expend_money;
+    cell.peopleNumLabel.text = epVO.traveler_num;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
     [SVProgressHUD showSuccessWithStatus:@"别着急，我还没实现呢!"];
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    return [expendDateArr objectAtIndex:section];
-}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    NSDictionary *dict = [expendListArr objectAtIndex:section];
+//    NSString *key = [[dict allKeys] objectAtIndex:0];
+//    return key;
+//}
 
 //自定义section样式
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView* myView = [[UIView alloc] init];
     myView.backgroundColor = [UIColor colorWithWhite:0.85 alpha:1];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, SCREEN_WIDTH-10, 22)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 0, SCREEN_WIDTH-10, 22)];
     titleLabel.font = APP_FONT(13);
-    titleLabel.text=[expendDateArr objectAtIndex:section];
+    NSDictionary *dict = [expendListArr objectAtIndex:section];
+    NSString *key = [[dict allKeys] objectAtIndex:0];
+    titleLabel.text = key;
     [myView addSubview:titleLabel];
     return myView;
 }
@@ -105,20 +113,19 @@
 {
     [ApplicationDelegate.travelPlanService getAllExpendListDataByTravelId:@"1" completion:^(NSDictionary *resDict)
      {
-         expendDictSouece = [resDict objectForKey:@"data"];
+         expendSouece = [resDict objectForKey:@"data"];
          
-         if (expendDictSouece.count >= 2) {
+         if (expendSouece.count > 2) {
              //设置个人和全部数据
-             self.personalExpendLabel.text = [NSString stringWithFormat:@"个人支出 %@",[expendDictSouece objectForKey:@"personalMonay"]];
-             self.totalExpendLabel.text = [NSString stringWithFormat:@"实际消费 %@",[expendDictSouece objectForKey:@"totalMonay"]];
+             self.personalExpendLabel.text = [NSString stringWithFormat:@"个人支出 %@",[expendSouece objectAtIndex:0]];
+             self.totalExpendLabel.text = [NSString stringWithFormat:@"实际消费 %@",[expendSouece objectAtIndex:1]];
              
              //取出消费列表数据的日起分类keys
-             expendDateArr = [[NSMutableArray alloc] init];
-             NSArray *keyArr = [expendDictSouece allKeys];
-             for (NSInteger i=0; i<keyArr.count; i++) {
-                 NSString *key = [keyArr objectAtIndex:i];
-                 if (![key isEqualToString:@"personalMonay"] && ![key isEqualToString:@"totalMonay"]) {
-                     [expendDateArr addObject:[keyArr objectAtIndex:i]];
+             expendListArr = [[NSMutableArray alloc] init];
+             for (NSInteger i=0; i<expendSouece.count; i++) {
+                 if (i > 1) {
+                     NSDictionary *expendDict = [expendSouece objectAtIndex:i];
+                     [expendListArr addObject:expendDict];
                  }
              }
          }

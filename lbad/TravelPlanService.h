@@ -18,6 +18,10 @@ typedef void (^runningPlanCompleteBlock)(NSDictionary *resDict);
 typedef void (^expendListCompleteBlock)(NSDictionary *resDict);
 - (void)getAllExpendListDataByTravelId:(NSString *)travelId completion:(expendListCompleteBlock)completionBlock;
 
+/*获取旅程行程所有数据*/
+typedef void (^travelRouteCompleteBlock)(NSDictionary *resDict);
+- (void)getAllTravelRouteDataByTravelId:(NSString *)travelId completion:(travelRouteCompleteBlock)completionBlock;
+
 /*查询同程旅伴列表*/
 typedef void (^sameRouteTravelerCompleteBlock)(NSDictionary *resDict);
 - (void)getSameRouteTravelerListByTravelId:(NSString *)travelId completion:(sameRouteTravelerCompleteBlock)completionBlock;
