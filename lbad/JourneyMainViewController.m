@@ -79,6 +79,7 @@
     [jurTraversView setFrame:CGRectMake(0, 96, SCREEN_WIDTH, SCREEN_HEIGHT - 96)];
     [jurTraversView setHidden:YES];
     [self.view addSubview:jurTraversView];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated

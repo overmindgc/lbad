@@ -12,4 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewTraverler;
 
+@property (nonatomic, strong) UIRefreshControl *refControl;
+
 @end

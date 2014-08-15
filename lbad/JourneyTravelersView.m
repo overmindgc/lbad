@@ -9,6 +9,7 @@
 #import "JourneyTravelersView.h"
 #import "TravelerVO.h"
 #import "AppDelegate.h"
+#import "TravelerCell.h"
 
 @implementation JourneyTravelersView
 {
@@ -30,7 +31,15 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
+    
+    self.refControl = [[UIRefreshControl alloc] init];
+    self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+    [self.refControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
+    [self.tableViewTraverler addSubview:self.refControl];
+    
     [self getTravelersList];
+    
+    self.tableViewTraverler.separatorInset = UIEdgeInsetsMake(0, 70, 0, 11);
 }
 
 
@@ -49,17 +58,18 @@
     NSInteger row = indexPath.row;
     static NSString *tableViewIndentifier = @"cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewIndentifier];
+    TravelerCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewIndentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableViewIndentifier];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"TravelerCell" owner:self options:nil] objectAtIndex:0];
     }
     
     TravelerVO *tVO = [travelersSource objectAtIndex:row];
-    cell.textLabel.text = tVO.user_name;
-    cell.imageView.image = [UIImage imageNamed:tVO.user_portrait_url];
-    cell.imageView.layer.masksToBounds = YES;
-    cell.imageView.layer.cornerRadius = 22;
+    cell.nameLabel.text = tVO.user_name;
+    UIImage *portraitImage = [UIImage imageNamed:tVO.user_portrait_url];
+    cell.portraitImageView.image = portraitImage;
+    cell.portraitImageView.layer.masksToBounds = YES;
+    cell.portraitImageView.layer.cornerRadius = 19;
     return cell;
 }
 
@@ -71,7 +81,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 5;
+    return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -87,8 +97,21 @@
     {
          travelersSource = [resDict objectForKey:@"data"];
          [self.tableViewTraverler reloadData];
+        
+        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+        [self.refControl endRefreshing];
     }];
     
+}
+
+
+#pragma mark actions
+- (void)refreshTableView
+{
+    if (self.refControl.refreshing) {
+        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"加载中..."];
+        [self performSelector:@selector(getTravelersList) withObject:nil afterDelay:2];
+    }
 }
 
 @end

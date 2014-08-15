@@ -94,6 +94,12 @@
 		7B7E4DA71999A3E5002B90DF /* post_type_bubble_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B7E4D9F1999A3E5002B90DF /* post_type_bubble_video@2x.png */; };
 		7B7E4DA81999A3E5002B90DF /* tab_bar_button_compose_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B7E4DA01999A3E5002B90DF /* tab_bar_button_compose_selected@2x.png */; };
 		7B7E4DA91999A3E5002B90DF /* tab_bar_button_compose_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B7E4DA11999A3E5002B90DF /* tab_bar_button_compose_unselected@2x.png */; };
+		7BA12B3F199DCCE100DDC471 /* TravelerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA12B3D199DCCE100DDC471 /* TravelerCell.m */; };
+		7BA12B40199DCCE100DDC471 /* TravelerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA12B3E199DCCE100DDC471 /* TravelerCell.xib */; };
+		7BA12B44199DF1AC00DDC471 /* TravelRouteTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA12B42199DF1AC00DDC471 /* TravelRouteTopCell.m */; };
+		7BA12B45199DF1AC00DDC471 /* TravelRouteTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA12B43199DF1AC00DDC471 /* TravelRouteTopCell.xib */; };
+		7BA12B49199DFBAC00DDC471 /* TravelExpendTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA12B47199DFBAC00DDC471 /* TravelExpendTopCell.m */; };
+		7BA12B4A199DFBAC00DDC471 /* TravelExpendTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA12B48199DFBAC00DDC471 /* TravelExpendTopCell.xib */; };
 		7BBE7FC71994699F008D22FF /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7BBE7FC41994699F008D22FF /* SVProgressHUD.bundle */; };
 		7BBE7FC81994699F008D22FF /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE7FC61994699F008D22FF /* SVProgressHUD.m */; };
 		7BBE7FCB19949E69008D22FF /* TravelPlanVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE7FCA19949E69008D22FF /* TravelPlanVO.m */; };
@@ -246,6 +252,15 @@
 		7B7E4DA01999A3E5002B90DF /* tab_bar_button_compose_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_button_compose_selected@2x.png"; sourceTree = "<group>"; };
 		7B7E4DA11999A3E5002B90DF /* tab_bar_button_compose_unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_button_compose_unselected@2x.png"; sourceTree = "<group>"; };
 		7B9CC2EC1990E251000D2A4E /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
+		7BA12B3C199DCCE100DDC471 /* TravelerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelerCell.h; sourceTree = "<group>"; };
+		7BA12B3D199DCCE100DDC471 /* TravelerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelerCell.m; sourceTree = "<group>"; };
+		7BA12B3E199DCCE100DDC471 /* TravelerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TravelerCell.xib; sourceTree = "<group>"; };
+		7BA12B41199DF1AC00DDC471 /* TravelRouteTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelRouteTopCell.h; sourceTree = "<group>"; };
+		7BA12B42199DF1AC00DDC471 /* TravelRouteTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelRouteTopCell.m; sourceTree = "<group>"; };
+		7BA12B43199DF1AC00DDC471 /* TravelRouteTopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TravelRouteTopCell.xib; sourceTree = "<group>"; };
+		7BA12B46199DFBAC00DDC471 /* TravelExpendTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelExpendTopCell.h; sourceTree = "<group>"; };
+		7BA12B47199DFBAC00DDC471 /* TravelExpendTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelExpendTopCell.m; sourceTree = "<group>"; };
+		7BA12B48199DFBAC00DDC471 /* TravelExpendTopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TravelExpendTopCell.xib; sourceTree = "<group>"; };
 		7BBE7FC41994699F008D22FF /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		7BBE7FC51994699F008D22FF /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		7BBE7FC61994699F008D22FF /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
@@ -320,6 +335,9 @@
 				7B2204D9199B45A500A1757A /* WeatherCell.h */,
 				7B2204DA199B45A500A1757A /* WeatherCell.m */,
 				7B2204DB199B45A500A1757A /* WeatherCell.xib */,
+				7BA12B3C199DCCE100DDC471 /* TravelerCell.h */,
+				7BA12B3D199DCCE100DDC471 /* TravelerCell.m */,
+				7BA12B3E199DCCE100DDC471 /* TravelerCell.xib */,
 			);
 			name = tablecells;
 			sourceTree = "<group>";
@@ -706,6 +724,9 @@
 				7B7E4D8719989784002B90DF /* JourneyExpendListView.h */,
 				7B7E4D8819989784002B90DF /* JourneyExpendListView.m */,
 				7B7E4D851998952D002B90DF /* JourneyExpendListView.xib */,
+				7BA12B46199DFBAC00DDC471 /* TravelExpendTopCell.h */,
+				7BA12B47199DFBAC00DDC471 /* TravelExpendTopCell.m */,
+				7BA12B48199DFBAC00DDC471 /* TravelExpendTopCell.xib */,
 			);
 			name = expendlist;
 			sourceTree = "<group>";
@@ -716,6 +737,9 @@
 				7B7E4D911998A348002B90DF /* JourneyTravelRouteView.h */,
 				7B7E4D921998A348002B90DF /* JourneyTravelRouteView.m */,
 				7B7E4D941998A361002B90DF /* JourneyTravelRouteView.xib */,
+				7BA12B41199DF1AC00DDC471 /* TravelRouteTopCell.h */,
+				7BA12B42199DF1AC00DDC471 /* TravelRouteTopCell.m */,
+				7BA12B43199DF1AC00DDC471 /* TravelRouteTopCell.xib */,
 			);
 			name = travelroute;
 			sourceTree = "<group>";
@@ -836,6 +860,7 @@
 				7B2204C0199B170100A1757A /* snow.png in Resources */,
 				7B7E4DA31999A3E5002B90DF /* post_type_bubble_link@2x.png in Resources */,
 				7B5A12841981F0A900482191 /* InfoPlist.strings in Resources */,
+				7BA12B40199DCCE100DDC471 /* TravelerCell.xib in Resources */,
 				7B5A12CF198250CB00482191 /* CreateJourneyViewController.xib in Resources */,
 				7BF32CFC1999F51800C7F72B /* u12.png in Resources */,
 				7B2204DD199B45A600A1757A /* WeatherCell.xib in Resources */,
@@ -857,6 +882,7 @@
 				7B2204E4199B642000A1757A /* more.png in Resources */,
 				7B7E4D8D1998A23F002B90DF /* JourneyTravelersView.xib in Resources */,
 				7B7E4DA81999A3E5002B90DF /* tab_bar_button_compose_selected@2x.png in Resources */,
+				7BA12B45199DF1AC00DDC471 /* TravelRouteTopCell.xib in Resources */,
 				7B2204C3199B170100A1757A /* cloudsun.png in Resources */,
 				7B248587199A0D9B00C387E1 /* config.png in Resources */,
 				7B7E4D7F19986B0B002B90DF /* JourneyMainViewController.xib in Resources */,
@@ -864,6 +890,7 @@
 				7B2204C7199B170100A1757A /* torrentrain.png in Resources */,
 				7B2204AB199AFE9D00A1757A /* more_clear.png in Resources */,
 				7B7E4D861998952D002B90DF /* JourneyExpendListView.xib in Resources */,
+				7BA12B4A199DFBAC00DDC471 /* TravelExpendTopCell.xib in Resources */,
 				7B5A12BA198220FC00482191 /* LoginHomeViewController.xib in Resources */,
 				7B24858C199A1DC300C387E1 /* wangbaoqiang.jpeg in Resources */,
 				7B2204D5199B444600A1757A /* TravelRouteCell.xib in Resources */,
@@ -930,6 +957,7 @@
 				7B2204CD199B31C300A1757A /* WeatherVO.m in Sources */,
 				7B78508A1991D5A800214260 /* MKNetworkEngine.m in Sources */,
 				7B1692B71987586C008C4EBC /* MJPopupBackgroundView.m in Sources */,
+				7BA12B3F199DCCE100DDC471 /* TravelerCell.m in Sources */,
 				7B5A12C71982480C00482191 /* HomeNavigationController.m in Sources */,
 				7B5A12CE198250CA00482191 /* CreateJourneyViewController.m in Sources */,
 				7B2204D0199B33A900A1757A /* TravelRouteCellVO.m in Sources */,
@@ -948,9 +976,11 @@
 				7BBE7FCE19949F65008D22FF /* TravelPlanService.m in Sources */,
 				7B24858A199A13CD00C387E1 /* ExpendVO.m in Sources */,
 				7B7E4D7E19986B0B002B90DF /* JourneyMainViewController.m in Sources */,
+				7BA12B49199DFBAC00DDC471 /* TravelExpendTopCell.m in Sources */,
 				7BBE7FD11994B4FB008D22FF /* UserInfo.m in Sources */,
 				7B2204DC199B45A600A1757A /* WeatherCell.m in Sources */,
 				7B7850841991D5A800214260 /* NSData+MKBase64.m in Sources */,
+				7BA12B44199DF1AC00DDC471 /* TravelRouteTopCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

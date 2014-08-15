@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "ExpendVO.h"
 #import "ExpendMoneyCell.h"
+#import "TravelExpendTopCell.h"
 
 @implementation JourneyExpendListView
 {
@@ -35,6 +36,12 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
+    
+    self.refControl = [[UIRefreshControl alloc] init];
+    self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+    [self.refControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
+    [self.tableViewExpend addSubview:self.refControl];
+    
     [self getAllExpendList];
 }
 
@@ -42,14 +49,18 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [expendListArr count];
+    return expendListArr.count + 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSDictionary *dict = [expendListArr objectAtIndex:section];
-    NSString *key = [[dict allKeys] objectAtIndex:0];
-    return [[dict objectForKey:key] count];
+    if (section == 0) {
+        return 1;
+    } else {
+        NSDictionary *dict = [expendListArr objectAtIndex:section-1];
+        NSString *key = [[dict allKeys] objectAtIndex:0];
+        return [[dict objectForKey:key] count];
+    }
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -60,22 +71,26 @@
     NSInteger section = indexPath.section;
     
     NSInteger row = indexPath.row;
-    static NSString *tableViewIndentifier = @"cell";
     
-    ExpendMoneyCell *cell = [tableView dequeueReusableCellWithIdentifier:tableViewIndentifier];
+    UITableViewCell *cell;
     
-    if (cell == nil) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"ExpendMoneyCell" owner:self options:nil] objectAtIndex:0];
+    if (section == 0) {
+        TravelExpendTopCell *teCell = [[[NSBundle mainBundle] loadNibNamed:@"TravelExpendTopCell" owner:self options:nil] objectAtIndex:0];
+        teCell.personalExpendLabel.text = [NSString stringWithFormat:@"个人支出 %@",[expendSouece objectAtIndex:0]];
+        teCell.totalExpendLabel.text = [NSString stringWithFormat:@"实际消费 %@",[expendSouece objectAtIndex:1]];
+        cell = teCell;
+    } else {
+        ExpendMoneyCell *emCell = [[[NSBundle mainBundle] loadNibNamed:@"ExpendMoneyCell" owner:self options:nil] objectAtIndex:0];
+        NSDictionary *dict = [expendListArr objectAtIndex:section-1];
+        NSString *key = [[dict allKeys] objectAtIndex:0];
+        NSArray *currArr = [dict objectForKey:key];
+        ExpendVO *epVO = [currArr objectAtIndex:row];
+        emCell.tag = section;
+        emCell.nameLabel.text = epVO.expend_name;
+        emCell.moneyLabel.text = epVO.expend_money;
+        emCell.peopleNumLabel.text = epVO.traveler_num;
+        cell = emCell;
     }
-    
-    NSDictionary *dict = [expendListArr objectAtIndex:section];
-    NSString *key = [[dict allKeys] objectAtIndex:0];
-    NSArray *currArr = [dict objectForKey:key];
-    ExpendVO *epVO = [currArr objectAtIndex:row];
-    cell.tag = section;
-    cell.nameLabel.text = epVO.expend_name;
-    cell.moneyLabel.text = epVO.expend_money;
-    cell.peopleNumLabel.text = epVO.traveler_num;
     
     return cell;
 }
@@ -83,7 +98,31 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
-    [SVProgressHUD showSuccessWithStatus:@"别着急，我还没实现呢!"];
+    
+    if (indexPath.section > 0) {
+        [SVProgressHUD showSuccessWithStatus:@"别着急，我还没实现呢!"];
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger section = indexPath.section;
+    
+    if(section == 0) {
+        return 40.0f;
+    }  else {
+        return 44.0f;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        return 0;
+    } else {
+        return 20;
+    }
 }
 
 //- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -97,13 +136,15 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView* myView = [[UIView alloc] init];
-    myView.backgroundColor = [UIColor colorWithWhite:0.85 alpha:1];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 0, SCREEN_WIDTH-10, 22)];
-    titleLabel.font = APP_FONT(13);
-    NSDictionary *dict = [expendListArr objectAtIndex:section];
-    NSString *key = [[dict allKeys] objectAtIndex:0];
-    titleLabel.text = key;
-    [myView addSubview:titleLabel];
+    if (section > 0) {
+        myView.backgroundColor = [UIColor colorWithWhite:0.85 alpha:1];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(18, 0, SCREEN_WIDTH-10, 22)];
+        titleLabel.font = APP_FONT(13);
+        NSDictionary *dict = [expendListArr objectAtIndex:section-1];
+        NSString *key = [[dict allKeys] objectAtIndex:0];
+        titleLabel.text = key;
+        [myView addSubview:titleLabel];
+    }
     return myView;
 }
 
@@ -116,10 +157,6 @@
          expendSouece = [resDict objectForKey:@"data"];
          
          if (expendSouece.count > 2) {
-             //设置个人和全部数据
-             self.personalExpendLabel.text = [NSString stringWithFormat:@"个人支出 %@",[expendSouece objectAtIndex:0]];
-             self.totalExpendLabel.text = [NSString stringWithFormat:@"实际消费 %@",[expendSouece objectAtIndex:1]];
-             
              //取出消费列表数据的日起分类keys
              expendListArr = [[NSMutableArray alloc] init];
              for (NSInteger i=0; i<expendSouece.count; i++) {
@@ -131,6 +168,9 @@
          }
          
          [self.tableViewExpend reloadData];
+         
+         self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+         [self.refControl endRefreshing];
      }];
     
 }
@@ -177,5 +217,13 @@
     }];
     
     [menuView show];
+}
+
+- (void)refreshTableView
+{
+    if (self.refControl.refreshing) {
+        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"加载中..."];
+        [self performSelector:@selector(getAllExpendList) withObject:nil afterDelay:2];
+    }
 }
 @end

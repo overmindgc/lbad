@@ -95,7 +95,7 @@
 - (void)getAllTravelRouteDataByTravelId:(NSString *)travelId completion:(travelRouteCompleteBlock)completionBlock
 {
     NSMutableDictionary *resultDict = [[NSMutableDictionary alloc] init];
-    [resultDict setValue:@"14天" forKey:@"day_num"];
+    [resultDict setValue:@"16天" forKey:@"day_num"];
     [resultDict setValue:@"8月2日至8月16日" forKey:@"date_range"];
     
     TravelRouteCellVO *tr1 = [[TravelRouteCellVO alloc] init];
@@ -124,13 +124,13 @@
     w3.description = @"18-24度  东北风6-7级";
     WeatherVO *w4 = [[WeatherVO alloc] init];
     w4.place_name = @"乌鲁木齐";
-    w4.weather_type = @"rain";
-    w4.description = @"18-24度  东北风6-7级";
+    w4.weather_type = @"snow";
+    w4.description = @"-3-4度  东北风6-7级";
     WeatherVO *w5 = [[WeatherVO alloc] init];
     w5.place_name = @"张家口";
     w5.weather_type = @"cloudsun";
-    w5.description = @"18-24度  东北风6-7级";
-    NSArray *weatherArr = [NSArray arrayWithObjects:w1,w2,w3, nil];
+    w5.description = @"10-20度  东北风6-7级";
+    NSArray *weatherArr = [NSArray arrayWithObjects:w1,w2,w3,w4,w5, nil];
     [resultDict setValue:weatherArr forKey:@"weather_array"];
     
     [resultDict setValue:resultDict forKeyPath:@"data"];

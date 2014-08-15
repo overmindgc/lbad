@@ -12,6 +12,7 @@
 #import "WeatherVO.h"
 #import "TravelRouteCell.h"
 #import "WeatherCell.h"
+#import "TravelRouteTopCell.h"
 
 @implementation JourneyTravelRouteView
 {
@@ -35,6 +36,12 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
+    
+    self.refControl = [[UIRefreshControl alloc] init];
+    self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+    [self.refControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
+    [self.tableViewRoute addSubview:self.refControl];
+    
     [self getAllTravelRouteData];
 }
 
@@ -42,12 +49,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
+        return 1;
+    } else if (section == 1) {
         return routeArr.count;
     } else {
         return weatherArr.count;
@@ -66,6 +75,12 @@
     UITableViewCell *cell;
     
     if (section == 0) {
+        TravelRouteTopCell *topCell = [[[NSBundle mainBundle] loadNibNamed:@"TravelRouteTopCell" owner:self options:nil] objectAtIndex:0];
+        topCell.tag = section;
+        topCell.dayNumLabel.text = [travelRouteSource objectForKey:@"day_num"];
+        topCell.dateRangeLabel.text = [travelRouteSource objectForKey:@"date_range"];
+        cell = topCell;
+    } else if (section == 1) {
         TravelRouteCell *trCell = [[[NSBundle mainBundle] loadNibNamed:@"TravelRouteCell" owner:self options:nil] objectAtIndex:0];
         TravelRouteCellVO *trVO = [routeArr objectAtIndex:row];
         trCell.tag = section;
@@ -86,15 +101,33 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
+    if (indexPath.section == 1) {
         [SVProgressHUD showSuccessWithStatus:@"别着急，我还没实现呢!"];
     }
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger section = indexPath.section;
+    
+    if(section == 0) {
+        return 48.0f;
+    } else if (section == 1){
+        return 50.0f;
+    } else {
+        return 44.0f;
+    }
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 5;
+    if (section == 0)
+    {
+        return 0;
+    } else {
+        return 5;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
@@ -108,16 +141,26 @@
     [ApplicationDelegate.travelPlanService getAllTravelRouteDataByTravelId:@"1" completion:^(NSDictionary *resDict)
      {
          travelRouteSource = [resDict objectForKey:@"data"];
-         NSString *dayNumStr = [travelRouteSource objectForKey:@"day_num"];
-         self.dayNumLabel.text = dayNumStr;
-         self.dateRangLabel.text = [travelRouteSource objectForKey:@"date_range"];
          
          routeArr = [travelRouteSource objectForKey:@"route_array"];
          weatherArr = [travelRouteSource objectForKey:@"weather_array"];
          
          [self.tableViewRoute reloadData];
+         
+         self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+         [self.refControl endRefreshing];
+         
      }];
     
+}
+
+#pragma mark actions
+- (void)refreshTableView
+{
+    if (self.refControl.refreshing) {
+        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"加载中..."];
+        [self performSelector:@selector(getAllTravelRouteData) withObject:nil afterDelay:2];
+    }
 }
 
 @end

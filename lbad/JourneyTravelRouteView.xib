@@ -22,20 +22,8 @@
                     </subviews>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </view>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8天" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XkV-Mf-V3k">
-                    <rect key="frame" x="20" y="14" width="74" height="36"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4月8日至4月15日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHh-d9-t2I">
-                    <rect key="frame" x="102" y="27" width="206" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="7" sectionFooterHeight="7" translatesAutoresizingMaskIntoConstraints="NO" id="Hkc-6q-9ef">
-                    <rect key="frame" x="0.0" y="53" width="320" height="402"/>
+                    <rect key="frame" x="0.0" y="6" width="320" height="449"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -48,12 +36,10 @@
             <constraints>
                 <constraint firstItem="Hkc-6q-9ef" firstAttribute="leading" secondItem="PKM-KM-5gy" secondAttribute="leading" id="1oF-20-nPC"/>
                 <constraint firstAttribute="bottom" secondItem="Hkc-6q-9ef" secondAttribute="bottom" id="bgX-ka-1aq"/>
-                <constraint firstItem="Hkc-6q-9ef" firstAttribute="top" secondItem="PKM-KM-5gy" secondAttribute="top" constant="53" id="eMB-VZ-kDx"/>
+                <constraint firstItem="Hkc-6q-9ef" firstAttribute="top" secondItem="PKM-KM-5gy" secondAttribute="top" constant="6" id="eMB-VZ-kDx"/>
                 <constraint firstAttribute="trailing" secondItem="Hkc-6q-9ef" secondAttribute="trailing" id="wxP-62-bz9"/>
             </constraints>
             <connections>
-                <outlet property="dateRangLabel" destination="yHh-d9-t2I" id="p13-x3-civ"/>
-                <outlet property="dayNumLabel" destination="XkV-Mf-V3k" id="OU7-4b-dck"/>
                 <outlet property="tableViewRoute" destination="Hkc-6q-9ef" id="vjP-8w-jzh"/>
             </connections>
         </view>

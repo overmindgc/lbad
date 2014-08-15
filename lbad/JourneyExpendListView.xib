@@ -23,7 +23,7 @@
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3kh-BR-jeO">
-                    <rect key="frame" x="0.0" y="48" width="320" height="362"/>
+                    <rect key="frame" x="0.0" y="6" width="320" height="404"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -47,25 +47,6 @@
                         <action selector="accountAction:" destination="gJa-QL-dZE" eventType="touchUpInside" id="ktt-su-pTo"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rSi-Cv-ons">
-                    <rect key="frame" x="0.0" y="6" width="320" height="42"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="个人支出 ¥0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qh-wV-Kyu">
-                            <rect key="frame" x="15" y="10" width="140" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="实际消费 ¥0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvm-PK-S5I">
-                            <rect key="frame" x="161" y="10" width="140" height="21"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" red="1" green="0.80000001192092896" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -73,14 +54,12 @@
                 <constraint firstAttribute="bottom" secondItem="3kh-BR-jeO" secondAttribute="bottom" constant="45" id="9qy-yQ-2uO"/>
                 <constraint firstAttribute="trailing" secondItem="3kh-BR-jeO" secondAttribute="trailing" id="GNx-q0-NLC"/>
                 <constraint firstAttribute="bottom" secondItem="3ji-8G-PbO" secondAttribute="bottom" id="fQd-VR-5aa"/>
-                <constraint firstItem="3kh-BR-jeO" firstAttribute="top" secondItem="gJa-QL-dZE" secondAttribute="top" constant="48" id="i0U-6k-np5"/>
+                <constraint firstItem="3kh-BR-jeO" firstAttribute="top" secondItem="gJa-QL-dZE" secondAttribute="top" constant="6" id="i0U-6k-np5"/>
                 <constraint firstItem="3ji-8G-PbO" firstAttribute="leading" secondItem="gJa-QL-dZE" secondAttribute="leading" id="nsP-Rf-loX"/>
                 <constraint firstItem="3kh-BR-jeO" firstAttribute="leading" secondItem="gJa-QL-dZE" secondAttribute="leading" id="t5n-7z-hp5"/>
             </constraints>
             <connections>
-                <outlet property="personalExpendLabel" destination="2Qh-wV-Kyu" id="duJ-ik-Qv3"/>
                 <outlet property="tableViewExpend" destination="3kh-BR-jeO" id="yLK-cy-7QP"/>
-                <outlet property="totalExpendLabel" destination="pvm-PK-S5I" id="YWv-bV-fSD"/>
             </connections>
         </view>
     </objects>
