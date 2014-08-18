@@ -8,7 +8,9 @@
             <connections>
                 <outlet property="expendListLabel" destination="FMR-R3-2Mh" id="MhI-x6-ME9"/>
                 <outlet property="routeLabel" destination="DHZ-Pb-S2X" id="QPr-RD-6tF"/>
+                <outlet property="scrollViewMain" destination="dle-Gd-zX5" id="3UA-lS-4DE"/>
                 <outlet property="topNavBar" destination="2SU-ec-nqA" id="SdU-PA-wN8"/>
+                <outlet property="topStrip" destination="a6g-hc-N4M" id="q5o-Su-nw9"/>
                 <outlet property="topTitleItem" destination="r0h-5T-agK" id="QHK-n8-5zo"/>
                 <outlet property="travelersLabel" destination="pGj-G6-U1W" id="lcm-Xk-B2C"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -58,11 +60,29 @@
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6g-hc-N4M">
+                            <rect key="frame" x="110" y="33" width="100" height="5"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dle-Gd-zX5">
+                    <rect key="frame" x="0.0" y="101" width="320" height="467"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Zzi-QD-1aF"/>
+                    </connections>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="dle-Gd-zX5" secondAttribute="trailing" id="IQd-Bf-bw8"/>
+                <constraint firstItem="dle-Gd-zX5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="K3V-yM-ALc"/>
+                <constraint firstAttribute="bottom" secondItem="dle-Gd-zX5" secondAttribute="bottom" id="TSF-Gs-zeV"/>
+                <constraint firstItem="dle-Gd-zX5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="101" id="bWY-qY-Jz1"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

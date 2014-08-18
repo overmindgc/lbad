@@ -113,23 +113,23 @@
     WeatherVO *w1 = [[WeatherVO alloc] init];
     w1.place_name = @"南京";
     w1.weather_type = @"sunny";
-    w1.description = @"22-30度  西南风2-3级";
+    w1.description = @"22/30℃  西南风2-3级";
     WeatherVO *w2 = [[WeatherVO alloc] init];
     w2.place_name = @"上海";
     w2.weather_type = @"cloudsun";
-    w2.description = @"23-30度  微风";
+    w2.description = @"23/30℃  微风";
     WeatherVO *w3 = [[WeatherVO alloc] init];
     w3.place_name = @"北京";
     w3.weather_type = @"torrentrain";
-    w3.description = @"18-24度  东北风6-7级";
+    w3.description = @"18/24℃  东北风6-7级";
     WeatherVO *w4 = [[WeatherVO alloc] init];
     w4.place_name = @"乌鲁木齐";
     w4.weather_type = @"snow";
-    w4.description = @"-3-4度  东北风6-7级";
+    w4.description = @"-5/-1℃  东北风6-7级";
     WeatherVO *w5 = [[WeatherVO alloc] init];
     w5.place_name = @"张家口";
     w5.weather_type = @"cloudsun";
-    w5.description = @"10-20度  东北风6-7级";
+    w5.description = @"10/20℃  东北风6-7级";
     NSArray *weatherArr = [NSArray arrayWithObjects:w1,w2,w3,w4,w5, nil];
     [resultDict setValue:weatherArr forKey:@"weather_array"];
     

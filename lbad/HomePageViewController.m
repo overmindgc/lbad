@@ -43,6 +43,12 @@
     // Do any additional setup after loading the view from its nib.
     [self.homeBackgroundView setBackgroundColor:APP_MAIN_COLOR];
     
+    
+    self.refControl = [[UIRefreshControl alloc] init];
+    self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+    [self.refControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
+    [self.tableViewPlan addSubview:self.refControl];
+    
     //创建三个图标
     NSInteger imgSize = 55;//图标大小
     float imgGap = ([UIScreen mainScreen].bounds.size.width - imgSize*3) / 4;
@@ -165,6 +171,9 @@
     {
         runningPlanSource = [resDict objectForKey:@"data"];
         [self.tableViewPlan reloadData];
+        
+        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+        [self.refControl endRefreshing];
     }];
 }
 
@@ -178,6 +187,14 @@
 - (IBAction)createNewAction:(id)sender {
     CreateJourneyViewController *createVC = [[CreateJourneyViewController alloc] initWithNibName:@"CreateJourneyViewController" bundle:nil];
     [self.navigationController pushViewController:createVC animated:YES];
+}
+
+- (void)refreshTableView
+{
+    if (self.refControl.refreshing) {
+        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"加载中..."];
+        [self performSelector:@selector(getRunningPlanList) withObject:nil afterDelay:2];
+    }
 }
 
 @end

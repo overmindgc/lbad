@@ -7,23 +7,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JourneyTravelersView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="WyG-Hj-mg1" customClass="JourneyTravelersView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="467"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ec8-fD-Tsj">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="6"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="80o-hC-cnf">
-                            <rect key="frame" x="210" y="0.0" width="110" height="6"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oIp-W7-fA5">
-                    <rect key="frame" x="0.0" y="6" width="320" height="449"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="467"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -35,7 +23,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="oIp-W7-fA5" secondAttribute="bottom" id="9Yl-Ja-yCK"/>
-                <constraint firstItem="oIp-W7-fA5" firstAttribute="top" secondItem="WyG-Hj-mg1" secondAttribute="top" constant="6" id="IZy-KV-eIb"/>
+                <constraint firstItem="oIp-W7-fA5" firstAttribute="top" secondItem="WyG-Hj-mg1" secondAttribute="top" id="IZy-KV-eIb"/>
                 <constraint firstAttribute="trailing" secondItem="oIp-W7-fA5" secondAttribute="trailing" id="P80-M9-W78"/>
                 <constraint firstItem="oIp-W7-fA5" firstAttribute="leading" secondItem="WyG-Hj-mg1" secondAttribute="leading" id="sc7-xR-Iny"/>
             </constraints>

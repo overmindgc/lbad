@@ -7,23 +7,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JourneyTravelRouteView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="PKM-KM-5gy" customClass="JourneyTravelRouteView">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="467"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1O5-z6-BPs">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="6"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oIS-gG-7Zz">
-                            <rect key="frame" x="0.0" y="0.0" width="110" height="6"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        </view>
-                    </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="7" sectionFooterHeight="7" translatesAutoresizingMaskIntoConstraints="NO" id="Hkc-6q-9ef">
-                    <rect key="frame" x="0.0" y="6" width="320" height="449"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="467"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -36,7 +24,7 @@
             <constraints>
                 <constraint firstItem="Hkc-6q-9ef" firstAttribute="leading" secondItem="PKM-KM-5gy" secondAttribute="leading" id="1oF-20-nPC"/>
                 <constraint firstAttribute="bottom" secondItem="Hkc-6q-9ef" secondAttribute="bottom" id="bgX-ka-1aq"/>
-                <constraint firstItem="Hkc-6q-9ef" firstAttribute="top" secondItem="PKM-KM-5gy" secondAttribute="top" constant="6" id="eMB-VZ-kDx"/>
+                <constraint firstItem="Hkc-6q-9ef" firstAttribute="top" secondItem="PKM-KM-5gy" secondAttribute="top" id="eMB-VZ-kDx"/>
                 <constraint firstAttribute="trailing" secondItem="Hkc-6q-9ef" secondAttribute="trailing" id="wxP-62-bz9"/>
             </constraints>
             <connections>

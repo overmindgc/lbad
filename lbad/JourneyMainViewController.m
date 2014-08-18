@@ -33,13 +33,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
-        UISwipeGestureRecognizer * swipeleft = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeleft:)];
-        swipeleft.direction = UISwipeGestureRecognizerDirectionLeft;
-        [self.view addGestureRecognizer:swipeleft];
-        UISwipeGestureRecognizer * swipeRight = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swiperight:)];
-        swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
-        [self.view addGestureRecognizer:swipeRight];
+
     }
     return self;
 }
@@ -62,24 +56,27 @@
     //获得nib视图数组
     NSArray *nib1 = [[NSBundle mainBundle]loadNibNamed:@"JourneyTravelRouteView" owner:self options:nil];
     jurTravelRouteView = [nib1 objectAtIndex:0];
-    [jurTravelRouteView setFrame:CGRectMake(0, 96, SCREEN_WIDTH, SCREEN_HEIGHT - 96)];
-    [jurTravelRouteView setHidden:YES];
-    [self.view addSubview:jurTravelRouteView];
+    [jurTravelRouteView setFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - self.scrollViewMain.frame.origin.y)];
+    [self.scrollViewMain addSubview:jurTravelRouteView];
     
     //获得nib视图数组
     NSArray *nib2 = [[NSBundle mainBundle]loadNibNamed:@"JourneyExpendListView" owner:self options:nil];
     jurExpendListView = [nib2 objectAtIndex:0];
-    [jurExpendListView setFrame:CGRectMake(0, 96, SCREEN_WIDTH, SCREEN_HEIGHT - 96)];
-    [self.view addSubview:jurExpendListView];
+    [jurExpendListView setFrame:CGRectMake(SCREEN_WIDTH * 1, 0, SCREEN_WIDTH, SCREEN_HEIGHT - self.scrollViewMain.frame.origin.y)];
+    [self.scrollViewMain addSubview:jurExpendListView];
     currShowView = jurExpendListView;
     
     //获得nib视图数组
     NSArray *nib3 = [[NSBundle mainBundle]loadNibNamed:@"JourneyTravelersView" owner:self options:nil];
     jurTraversView = [nib3 objectAtIndex:0];
-    [jurTraversView setFrame:CGRectMake(0, 96, SCREEN_WIDTH, SCREEN_HEIGHT - 96)];
-    [jurTraversView setHidden:YES];
-    [self.view addSubview:jurTraversView];
+    [jurTraversView setFrame:CGRectMake(SCREEN_WIDTH * 2, 0, SCREEN_WIDTH, SCREEN_HEIGHT - self.scrollViewMain.frame.origin.y)];
+    [self.scrollViewMain addSubview:jurTraversView];
 
+    [self.scrollViewMain setContentSize:CGSizeMake(SCREEN_WIDTH * 3, SCREEN_HEIGHT - self.scrollViewMain.frame.origin.y)];
+    
+    [self.scrollViewMain scrollRectToVisible:CGRectMake(SCREEN_WIDTH * 1, 0, SCREEN_WIDTH, SCREEN_HEIGHT - self.scrollViewMain.frame.origin.y) animated:YES];
+    //监听滚动变化
+    [self.scrollViewMain addObserver:self forKeyPath:@"contentOffset" options:(NSKeyValueObservingOptionNew) context:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -94,6 +91,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark Observer
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"contentOffset"]) {
+        CGPoint newOffset = [change[@"new"] CGPointValue];// 0-640
+        self.topStrip.frame = CGRectMake(newOffset.x / 2.91, self.topStrip.frame.origin.y, self.topStrip.frame.size.width, self.topStrip.frame.size.height);
+    }
+}
 
 #pragma mark actions
 
@@ -103,89 +108,66 @@
 
 - (void)touchRoute:(UISwipeGestureRecognizer *)gestureRecognizer
 {
-    [self showViewFromRight:jurTravelRouteView];
+    [self.scrollViewMain scrollRectToVisible:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - self.scrollViewMain.frame.origin.y) animated:YES];
+    currShowView = jurTravelRouteView;
 }
 
 - (void)touchExpendList:(UISwipeGestureRecognizer *)gestureRecognizer
 {
-    if ([currShowView isEqual:jurTraversView]) {
-        [self showViewFromRight:jurExpendListView];
-    } else if ([currShowView isEqual:jurTravelRouteView]){
-        [self showViewFromLeft:jurExpendListView];
-    }
+    [self.scrollViewMain scrollRectToVisible:CGRectMake(SCREEN_WIDTH * 1, 0, SCREEN_WIDTH, SCREEN_HEIGHT - self.scrollViewMain.frame.origin.y) animated:YES];
+    currShowView = jurExpendListView;
 }
 
 - (void)touchTravelers:(UISwipeGestureRecognizer *)gestureRecognizer
 {
-    [self showViewFromLeft:jurTraversView];
+    [self.scrollViewMain scrollRectToVisible:CGRectMake(SCREEN_WIDTH * 2, 0, SCREEN_WIDTH, SCREEN_HEIGHT - self.scrollViewMain.frame.origin.y) animated:YES];
+    currShowView = jurTraversView;
 }
 
-- (void)swipeleft:(UISwipeGestureRecognizer *)gestureRecognizer
-{
-    if ([currShowView isEqual:jurExpendListView]) {
-        [self showViewFromLeft:jurTraversView];
-    } else if ([currShowView isEqual:jurTraversView]) {
-        [self showViewFromLeft:jurTravelRouteView];
-    } else if ([currShowView isEqual:jurTravelRouteView]){
-        [self showViewFromLeft:jurExpendListView];
-    }
-}
-
-- (void)swiperight:(UISwipeGestureRecognizer *)gestureRecognizer
-{
-    if ([currShowView isEqual:jurExpendListView]) {
-        [self showViewFromRight:jurTravelRouteView];
-    } else if ([currShowView isEqual:jurTravelRouteView]) {
-        [self showViewFromRight:jurTraversView];
-    } else if ([currShowView isEqual:jurTraversView]){
-        [self showViewFromRight:jurExpendListView];
-    }
-}
-
-- (void)showViewFromLeft:(UIView *)showView
-{
-    if (![currShowView isEqual:showView]) {
-        CATransition *animation = [CATransition animation];
-        animation.duration = 0.2f;
-        animation.type = kCATransitionPush;//设置上面4种动画效果
-        animation.subtype = kCATransitionFromLeft;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
-        [currShowView setHidden:YES];
-        [currShowView.layer addAnimation:animation forKey:@"animationIDLeft"];
-        
-        
-        CATransition *animation2 = [CATransition animation];
-        animation2.duration = 0.1f;
-        animation2.type = kCATransitionFade;//设置上面4种动画效果
-        animation2.subtype = kCATransitionFromLeft;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
-        [showView setHidden:NO];
-        [showView.layer addAnimation:animation2 forKey:@"animationIDLeft"];
-        
-        [showView setHidden:NO];
-        currShowView = showView;
-    }
-}
-
-- (void)showViewFromRight:(UIView *)showView
-{
-    if (![currShowView isEqual:showView]) {
-        CATransition *animation = [CATransition animation];
-        animation.duration = 0.2f;
-        animation.type = kCATransitionPush;//设置上面4种动画效果
-        animation.subtype = kCATransitionFromRight;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
-        [currShowView setHidden:YES];
-        [currShowView.layer addAnimation:animation forKey:@"animationIDRight"];
-        
-        
-        CATransition *animation2 = [CATransition animation];
-        animation2.duration = 0.1f;
-        animation2.type = kCATransitionFade;//设置上面4种动画效果
-        animation2.subtype = kCATransitionFromRight;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
-        [showView setHidden:NO];
-        [showView.layer addAnimation:animation2 forKey:@"animationIDRight"];
-        
-        [showView setHidden:NO];
-        currShowView = showView;
-    }
-}
+//- (void)showViewFromLeft:(UIView *)showView
+//{
+//    if (![currShowView isEqual:showView]) {
+//        CATransition *animation = [CATransition animation];
+//        animation.duration = 0.2f;
+//        animation.type = kCATransitionPush;//设置上面4种动画效果
+//        animation.subtype = kCATransitionFromLeft;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
+//        [currShowView setHidden:YES];
+//        [currShowView.layer addAnimation:animation forKey:@"animationIDLeft"];
+//        
+//        
+//        CATransition *animation2 = [CATransition animation];
+//        animation2.duration = 0.1f;
+//        animation2.type = kCATransitionFade;//设置上面4种动画效果
+//        animation2.subtype = kCATransitionFromLeft;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
+//        [showView setHidden:NO];
+//        [showView.layer addAnimation:animation2 forKey:@"animationIDLeft"];
+//        
+//        [showView setHidden:NO];
+//        currShowView = showView;
+//    }
+//}
+//
+//- (void)showViewFromRight:(UIView *)showView
+//{
+//    if (![currShowView isEqual:showView]) {
+//        CATransition *animation = [CATransition animation];
+//        animation.duration = 0.2f;
+//        animation.type = kCATransitionPush;//设置上面4种动画效果
+//        animation.subtype = kCATransitionFromRight;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
+//        [currShowView setHidden:YES];
+//        [currShowView.layer addAnimation:animation forKey:@"animationIDRight"];
+//        
+//        
+//        CATransition *animation2 = [CATransition animation];
+//        animation2.duration = 0.1f;
+//        animation2.type = kCATransitionFade;//设置上面4种动画效果
+//        animation2.subtype = kCATransitionFromRight;//设置动画的方向，有四种，分别为kCATransitionFromRight、kCATransitionFromLeft、kCATransitionFromTop、kCATransitionFromBottom
+//        [showView setHidden:NO];
+//        [showView.layer addAnimation:animation2 forKey:@"animationIDRight"];
+//        
+//        [showView setHidden:NO];
+//        currShowView = showView;
+//    }
+//}
 
 @end

@@ -12,4 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIView *homeBackgroundView;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewPlan;
 
+@property (nonatomic, strong) UIRefreshControl *refControl;
+
 @end

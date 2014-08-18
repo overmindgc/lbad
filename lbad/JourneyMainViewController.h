@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "TravelPlanVO.h"
 
-@interface JourneyMainViewController : UIViewController
+@interface JourneyMainViewController : UIViewController <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UINavigationBar *topNavBar;
 @property (weak, nonatomic) IBOutlet UINavigationItem *topTitleItem;
 @property (weak, nonatomic) IBOutlet UILabel *routeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *expendListLabel;
 @property (weak, nonatomic) IBOutlet UILabel *travelersLabel;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollViewMain;
+@property (weak, nonatomic) IBOutlet UIView *topStrip;
 
 /*存储当前旅程的model对象*/
 @property (nonatomic, strong) TravelPlanVO *currTPVO;
