@@ -166,4 +166,16 @@
     completionBlock(resultDict);
 }
 
+- (void)getRecentlyArrivedPlace:(recentlyArrivedCompleteBlock)completionBlock
+{
+    NSMutableDictionary *resultDict = [[NSMutableDictionary alloc] init];
+    
+    NSMutableDictionary *cityDict = [[NSMutableDictionary alloc] init];
+    [cityDict setValue:@"南京" forKey:@"0"];
+    [cityDict setValue:@"上海" forKey:@"1"];
+    
+    [resultDict setValue:cityDict forKeyPath:@"data"];
+    completionBlock(resultDict);
+}
+
 @end

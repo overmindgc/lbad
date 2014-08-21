@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AreaSingleSelectViewController">
+            <connections>
+                <outlet property="searchBar" destination="mKu-w6-o2c" id="s6m-Ze-LyY"/>
+                <outlet property="tableView" destination="Vs7-rN-cHq" id="rap-QQ-Z3r"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KfL-hh-tUx">
+                    <rect key="frame" x="0.0" y="18" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <navigationItem title="选择目的地" id="oUO-Lq-wEm">
+                            <barButtonItem key="leftBarButtonItem" image="back.png" id="gXh-Sy-o9T">
+                                <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <connections>
+                                    <action selector="backAction:" destination="-1" id="1BI-ZM-vUt"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vs7-rN-cHq">
+                    <rect key="frame" x="0.0" y="62" width="320" height="506"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <searchBar key="tableHeaderView" contentMode="redraw" text="" placeholder="搜索城市" id="mKu-w6-o2c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <textInputTraits key="textInputTraits"/>
+                        <connections>
+                            <outlet property="delegate" destination="-1" id="94R-Ze-2Yg"/>
+                        </connections>
+                    </searchBar>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="MY2-N3-XvD"/>
+                        <outlet property="delegate" destination="-1" id="NZR-gF-WhI"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Vs7-rN-cHq" secondAttribute="trailing" id="Nvh-Cl-yAg"/>
+                <constraint firstAttribute="bottom" secondItem="Vs7-rN-cHq" secondAttribute="bottom" id="ZcX-tU-ahd"/>
+                <constraint firstItem="Vs7-rN-cHq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="62" id="a3A-Bc-vk4"/>
+                <constraint firstItem="Vs7-rN-cHq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="n8v-aW-bcb"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="back.png" width="13" height="22"/>
+    </resources>
+</document>

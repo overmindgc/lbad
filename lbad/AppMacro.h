@@ -1,8 +1,6 @@
 /**
  *  系统常量有关的宏
  **/
-/*后台访问域名*/
-#define APP_NETWORK_HOST @"expo2014.smpcloud.com/index.php"
 /*系统主色*/
 #define  APP_MAIN_COLOR [UIColor colorWithRed:66.0f/255.0f green:133.0f/255.0f blue:60.0f/255.0f alpha:1]
 /*系统字体*/

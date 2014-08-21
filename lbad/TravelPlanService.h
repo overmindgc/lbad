@@ -26,4 +26,8 @@ typedef void (^travelRouteCompleteBlock)(NSDictionary *resDict);
 typedef void (^sameRouteTravelerCompleteBlock)(NSDictionary *resDict);
 - (void)getSameRouteTravelerListByTravelId:(NSString *)travelId completion:(sameRouteTravelerCompleteBlock)completionBlock;
 
+/*获取最近去过的地点*/
+typedef void (^recentlyArrivedCompleteBlock)(NSDictionary *resDict);
+- (void)getRecentlyArrivedPlace:(recentlyArrivedCompleteBlock)completionBlock;
+
 @end

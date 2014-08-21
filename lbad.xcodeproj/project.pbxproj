@@ -94,6 +94,12 @@
 		7B7E4DA71999A3E5002B90DF /* post_type_bubble_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B7E4D9F1999A3E5002B90DF /* post_type_bubble_video@2x.png */; };
 		7B7E4DA81999A3E5002B90DF /* tab_bar_button_compose_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B7E4DA01999A3E5002B90DF /* tab_bar_button_compose_selected@2x.png */; };
 		7B7E4DA91999A3E5002B90DF /* tab_bar_button_compose_unselected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B7E4DA11999A3E5002B90DF /* tab_bar_button_compose_unselected@2x.png */; };
+		7B82960D19A59F84001D8A98 /* CitySingleSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B82960B19A59F84001D8A98 /* CitySingleSelectViewController.m */; };
+		7B82960E19A59F84001D8A98 /* CitySingleSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B82960C19A59F84001D8A98 /* CitySingleSelectViewController.xib */; };
+		7B8E4A2E19A2EAE200DB223D /* AppConsts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8E4A2D19A2EAE200DB223D /* AppConsts.m */; };
+		7B8E4A3119A325EE00DB223D /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B8E4A3019A325EE00DB223D /* area.plist */; };
+		7B8E4A3519A3319F00DB223D /* AreaSingleSelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8E4A3319A3319F00DB223D /* AreaSingleSelectViewController.m */; };
+		7B8E4A3619A3319F00DB223D /* AreaSingleSelectViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B8E4A3419A3319F00DB223D /* AreaSingleSelectViewController.xib */; };
 		7BA12B3F199DCCE100DDC471 /* TravelerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA12B3D199DCCE100DDC471 /* TravelerCell.m */; };
 		7BA12B40199DCCE100DDC471 /* TravelerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BA12B3E199DCCE100DDC471 /* TravelerCell.xib */; };
 		7BA12B44199DF1AC00DDC471 /* TravelRouteTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA12B42199DF1AC00DDC471 /* TravelRouteTopCell.m */; };
@@ -251,6 +257,16 @@
 		7B7E4D9F1999A3E5002B90DF /* post_type_bubble_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post_type_bubble_video@2x.png"; sourceTree = "<group>"; };
 		7B7E4DA01999A3E5002B90DF /* tab_bar_button_compose_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_button_compose_selected@2x.png"; sourceTree = "<group>"; };
 		7B7E4DA11999A3E5002B90DF /* tab_bar_button_compose_unselected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_bar_button_compose_unselected@2x.png"; sourceTree = "<group>"; };
+		7B82960A19A59F84001D8A98 /* CitySingleSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CitySingleSelectViewController.h; sourceTree = "<group>"; };
+		7B82960B19A59F84001D8A98 /* CitySingleSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CitySingleSelectViewController.m; sourceTree = "<group>"; };
+		7B82960C19A59F84001D8A98 /* CitySingleSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CitySingleSelectViewController.xib; sourceTree = "<group>"; };
+		7B82960F19A5DBCF001D8A98 /* CitySelectDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CitySelectDelegate.h; sourceTree = "<group>"; };
+		7B8E4A2C19A2EAE200DB223D /* AppConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConsts.h; sourceTree = "<group>"; };
+		7B8E4A2D19A2EAE200DB223D /* AppConsts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppConsts.m; sourceTree = "<group>"; };
+		7B8E4A3019A325EE00DB223D /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		7B8E4A3219A3319F00DB223D /* AreaSingleSelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaSingleSelectViewController.h; sourceTree = "<group>"; };
+		7B8E4A3319A3319F00DB223D /* AreaSingleSelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaSingleSelectViewController.m; sourceTree = "<group>"; };
+		7B8E4A3419A3319F00DB223D /* AreaSingleSelectViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AreaSingleSelectViewController.xib; sourceTree = "<group>"; };
 		7B9CC2EC1990E251000D2A4E /* AppMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 		7BA12B3C199DCCE100DDC471 /* TravelerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TravelerCell.h; sourceTree = "<group>"; };
 		7BA12B3D199DCCE100DDC471 /* TravelerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TravelerCell.m; sourceTree = "<group>"; };
@@ -427,6 +443,7 @@
 		7B5A127F1981F0A900482191 /* lbad */ = {
 			isa = PBXGroup;
 			children = (
+				7B8E4A2F19A325AF00DB223D /* resources */,
 				7B5A12A81982191B00482191 /* assets */,
 				7B9CC2EB1990E0D3000D2A4E /* macro */,
 				7B5A12B119821A6900482191 /* utils */,
@@ -513,10 +530,6 @@
 			children = (
 				7B5A12B319821AEA00482191 /* login */,
 				7B5A12B419821AF000482191 /* home */,
-				7B7E4D7619986793002B90DF /* journey */,
-				7B7E4D791998699D002B90DF /* accounting */,
-				7B7E4D77199868BA002B90DF /* bills */,
-				7B7E4D78199868CD002B90DF /* messages */,
 				7B7E4D7A19986A1C002B90DF /* setting */,
 			);
 			name = controllers;
@@ -556,6 +569,8 @@
 		7B5A12B119821A6900482191 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				7B8E4A2C19A2EAE200DB223D /* AppConsts.h */,
+				7B8E4A2D19A2EAE200DB223D /* AppConsts.m */,
 				7BBE7FCF1994B4FB008D22FF /* UserInfo.h */,
 				7BBE7FD01994B4FB008D22FF /* UserInfo.m */,
 				7B1693231989090E008C4EBC /* DateUtils.h */,
@@ -592,6 +607,10 @@
 			isa = PBXGroup;
 			children = (
 				7B5A12CA1982506E00482191 /* create */,
+				7B7E4D7619986793002B90DF /* journey */,
+				7B7E4D791998699D002B90DF /* accounting */,
+				7B7E4D77199868BA002B90DF /* bills */,
+				7B7E4D78199868CD002B90DF /* messages */,
 				7B5A12BD1982226300482191 /* HomePageViewController.h */,
 				7B5A12BE1982226300482191 /* HomePageViewController.m */,
 				7B5A12BF1982226300482191 /* HomePageViewController.xib */,
@@ -619,6 +638,13 @@
 				7B5A12CB198250CA00482191 /* CreateJourneyViewController.h */,
 				7B5A12CC198250CA00482191 /* CreateJourneyViewController.m */,
 				7B5A12CD198250CA00482191 /* CreateJourneyViewController.xib */,
+				7B8E4A3219A3319F00DB223D /* AreaSingleSelectViewController.h */,
+				7B8E4A3319A3319F00DB223D /* AreaSingleSelectViewController.m */,
+				7B8E4A3419A3319F00DB223D /* AreaSingleSelectViewController.xib */,
+				7B82960A19A59F84001D8A98 /* CitySingleSelectViewController.h */,
+				7B82960B19A59F84001D8A98 /* CitySingleSelectViewController.m */,
+				7B82960C19A59F84001D8A98 /* CitySingleSelectViewController.xib */,
+				7B82960F19A5DBCF001D8A98 /* CitySelectDelegate.h */,
 			);
 			name = create;
 			sourceTree = "<group>";
@@ -753,6 +779,14 @@
 			path = TumblrMenu;
 			sourceTree = "<group>";
 		};
+		7B8E4A2F19A325AF00DB223D /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				7B8E4A3019A325EE00DB223D /* area.plist */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
 		7B9CC2EB1990E0D3000D2A4E /* macro */ = {
 			isa = PBXGroup;
 			children = (
@@ -858,6 +892,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B2204C0199B170100A1757A /* snow.png in Resources */,
+				7B8E4A3119A325EE00DB223D /* area.plist in Resources */,
 				7B7E4DA31999A3E5002B90DF /* post_type_bubble_link@2x.png in Resources */,
 				7B5A12841981F0A900482191 /* InfoPlist.strings in Resources */,
 				7BA12B40199DCCE100DDC471 /* TravelerCell.xib in Resources */,
@@ -897,6 +932,8 @@
 				7B5A12BC1982216100482191 /* login_bg.png in Resources */,
 				7B7E4D951998A361002B90DF /* JourneyTravelRouteView.xib in Resources */,
 				7B7E4DA61999A3E5002B90DF /* post_type_bubble_text@2x.png in Resources */,
+				7B82960E19A59F84001D8A98 /* CitySingleSelectViewController.xib in Resources */,
+				7B8E4A3619A3319F00DB223D /* AreaSingleSelectViewController.xib in Resources */,
 				7B2204B5199B05D700A1757A /* ExpendMoneyCell.xib in Resources */,
 				7B7E4DA41999A3E5002B90DF /* post_type_bubble_photo@2x.png in Resources */,
 				7B2204C1199B170100A1757A /* sunny.png in Resources */,
@@ -945,6 +982,7 @@
 				7B1692BB19875C0D008C4EBC /* LbadDateSelectorViewController.m in Sources */,
 				7BBE7FCB19949E69008D22FF /* TravelPlanVO.m in Sources */,
 				7B5A12B9198220FC00482191 /* LoginHomeViewController.m in Sources */,
+				7B8E4A3519A3319F00DB223D /* AreaSingleSelectViewController.m in Sources */,
 				7B1693251989090E008C4EBC /* DateUtils.m in Sources */,
 				7B7850871991D5A800214260 /* NSString+MKNetworkKitAdditions.m in Sources */,
 				7B16930F19879147008C4EBC /* LbadDateSquare.m in Sources */,
@@ -963,12 +1001,14 @@
 				7B2204D0199B33A900A1757A /* TravelRouteCellVO.m in Sources */,
 				7B2204D4199B444600A1757A /* TravelRouteCell.m in Sources */,
 				7B7E4D901998A24C002B90DF /* JourneyTravelersView.m in Sources */,
+				7B8E4A2E19A2EAE200DB223D /* AppConsts.m in Sources */,
 				7B5A12C41982465200482191 /* LoginNavigationController.m in Sources */,
 				7B16930919878C5D008C4EBC /* LbadCalendarView.m in Sources */,
 				7BF32CFA1999EA2700C7F72B /* TravelerVO.m in Sources */,
 				7B2204E0199B5B8100A1757A /* CommonUtils.m in Sources */,
 				7B78508B1991D5A800214260 /* MKNetworkOperation.m in Sources */,
 				7B7850951991F67900214260 /* BaseNetEngine.m in Sources */,
+				7B82960D19A59F84001D8A98 /* CitySingleSelectViewController.m in Sources */,
 				7B7850891991D5A800214260 /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				7B7E4D8919989784002B90DF /* JourneyExpendListView.m in Sources */,
 				7B5A12C01982226300482191 /* HomePageViewController.m in Sources */,

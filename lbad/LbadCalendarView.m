@@ -66,7 +66,7 @@
     components.day = 1;
     NSDate *firstDayOfMonth = [gregorian dateFromComponents:components];
     NSDateComponents *comps = [gregorian components:NSWeekdayCalendarUnit fromDate:firstDayOfMonth];
-    int weekday = [comps weekday];
+    NSInteger weekday = [comps weekday];
     //      NSLog(@"components%d %d %d",_selectedDay,_selectedMonth,_selectedYear);
     weekday = weekday - 2;
     
@@ -221,7 +221,7 @@
     NSInteger remainingDays = (monthLength + weekday) % columns;
 
     if(remainingDays > 0){
-        for (int i=remainingDays; i<columns; i++) {
+        for (NSInteger i=remainingDays; i<columns; i++) {
             LbadDateSquare *dateSq = [LbadDateSquare buttonWithType:UIButtonTypeCustom];
             dateSq.tag = i%columns + ((monthLength+weekday)/columns)*columns + 1;
             dateSq.titleLabel.text = [NSString stringWithFormat:@"%ld",(i+1)-remainingDays];

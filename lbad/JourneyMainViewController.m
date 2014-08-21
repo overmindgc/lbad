@@ -43,13 +43,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     //给标签添加点击手势
-    UITapGestureRecognizer * tapRoute = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchRoute:)];
+    UITapGestureRecognizer *tapRoute = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchRoute:)];
     self.routeLabel.userInteractionEnabled = YES;
     [self.routeLabel addGestureRecognizer:tapRoute];
-    UITapGestureRecognizer * tapExpendList = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchExpendList:)];
+    UITapGestureRecognizer *tapExpendList = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchExpendList:)];
     self.expendListLabel.userInteractionEnabled = YES;
     [self.expendListLabel addGestureRecognizer:tapExpendList];
-    UITapGestureRecognizer * tapTravelers = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchTravelers:)];
+    UITapGestureRecognizer *tapTravelers = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchTravelers:)];
     self.travelersLabel.userInteractionEnabled = YES;
     [self.travelersLabel addGestureRecognizer:tapTravelers];
     
@@ -95,7 +95,7 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"contentOffset"]) {
-        CGPoint newOffset = [change[@"new"] CGPointValue];// 0-640
+        CGPoint newOffset = [change[NSKeyValueChangeNewKey] CGPointValue];// 0-640
         self.topStrip.frame = CGRectMake(newOffset.x / 2.91, self.topStrip.frame.origin.y, self.topStrip.frame.size.width, self.topStrip.frame.size.height);
     }
 }
@@ -103,6 +103,8 @@
 #pragma mark actions
 
 - (IBAction)backAction:(id)sender {
+    //注意移除监听
+    [self.scrollViewMain removeObserver:self forKeyPath:@"contentOffset"];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
