@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "LoginService.h"
 #import "TravelPlanService.h"
+#import "BillService.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -17,6 +18,8 @@
 @property (strong, nonatomic) LoginService *loginService;
 
 @property (strong, nonatomic) TravelPlanService *travelPlanService;
+
+@property (strong, nonatomic) BillService *billService;
 
 - (void)openLoginView;
 

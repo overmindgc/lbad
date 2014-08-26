@@ -41,7 +41,6 @@
     self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
     [self.refControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
     [self.tableViewExpend addSubview:self.refControl];
-    
     [self getAllExpendList];
 }
 

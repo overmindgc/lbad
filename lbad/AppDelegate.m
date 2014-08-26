@@ -29,6 +29,9 @@
     //旅程计划服务
     self.travelPlanService = [[TravelPlanService alloc] initWithHostName:APP_NETWORK_HOST];
     [self.travelPlanService useCache];
+    //账单服务
+    self.billService = [[BillService alloc] initWithHostName:APP_NETWORK_HOST];
+    [self.billService useCache];
     
     [self openHomeView];
     

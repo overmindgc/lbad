@@ -41,12 +41,19 @@
 //                             [DateUtils stringToDate:@"yyyy-MM-dd" dateString:@"2014-07-31"],
 //                             [DateUtils stringToDate:@"yyyy-MM-dd" dateString:@"2014-08-01"],nil];
         
-        UISwipeGestureRecognizer * swipeleft = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeleft:)];
+        UISwipeGestureRecognizer * swipeleft = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(showNextMonth)];
         swipeleft.direction = UISwipeGestureRecognizerDirectionLeft;
         [self addGestureRecognizer:swipeleft];
-        UISwipeGestureRecognizer * swipeRight = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swiperight:)];
+        UISwipeGestureRecognizer * swipeRight = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(showLastMonth)];
         swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
         [self addGestureRecognizer:swipeRight];
+        
+        UISwipeGestureRecognizer * swipeUp = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(showNextMonth)];
+        swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
+        [self addGestureRecognizer:swipeUp];
+        UISwipeGestureRecognizer * swipeDown = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(showLastMonth)];
+        swipeDown.direction = UISwipeGestureRecognizerDirectionDown;
+        [self addGestureRecognizer:swipeDown];
         
     }
     return self;
@@ -326,16 +333,6 @@
 }
 
 - (IBAction)clickLeftAction:(id)sender
-{
-    [self showLastMonth];
-}
-
-- (void)swipeleft:(UISwipeGestureRecognizer*)gestureRecognizer
-{
-    [self showNextMonth];
-}
-
-- (void)swiperight:(UISwipeGestureRecognizer*)gestureRecognizer
 {
     [self showLastMonth];
 }

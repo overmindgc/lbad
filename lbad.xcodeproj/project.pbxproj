@@ -15,6 +15,15 @@
 		7B1693211988F7EC008C4EBC /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B16931F1988F7EC008C4EBC /* left.png */; };
 		7B1693221988F7EC008C4EBC /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B1693201988F7EC008C4EBC /* right.png */; };
 		7B1693251989090E008C4EBC /* DateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1693241989090E008C4EBC /* DateUtils.m */; };
+		7B18D2AE19AC6216004A31D4 /* SettlementListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B18D2AC19AC6216004A31D4 /* SettlementListViewController.m */; };
+		7B18D2AF19AC6216004A31D4 /* SettlementListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B18D2AD19AC6216004A31D4 /* SettlementListViewController.xib */; };
+		7B18D2BB19AC7E20004A31D4 /* TotalPanCountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B18D2B919AC7E20004A31D4 /* TotalPanCountCell.m */; };
+		7B18D2BC19AC7E20004A31D4 /* TotalPanCountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B18D2BA19AC7E20004A31D4 /* TotalPanCountCell.xib */; };
+		7B18D2C019AC810B004A31D4 /* CollectionAmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B18D2BE19AC810B004A31D4 /* CollectionAmountCell.m */; };
+		7B18D2C119AC810B004A31D4 /* CollectionAmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B18D2BF19AC810B004A31D4 /* CollectionAmountCell.xib */; };
+		7B18D2C519AC812E004A31D4 /* PaymentAmountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B18D2C319AC812E004A31D4 /* PaymentAmountCell.m */; };
+		7B18D2C619AC812E004A31D4 /* PaymentAmountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B18D2C419AC812E004A31D4 /* PaymentAmountCell.xib */; };
+		7B18D2C919AC8DC6004A31D4 /* BillService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B18D2C819AC8DC6004A31D4 /* BillService.m */; };
 		7B2204A9199AFE9600A1757A /* back_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2204A8199AFE9600A1757A /* back_clear.png */; };
 		7B2204AB199AFE9D00A1757A /* more_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2204AA199AFE9D00A1757A /* more_clear.png */; };
 		7B2204B4199B05D700A1757A /* ExpendMoneyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2204B2199B05D700A1757A /* ExpendMoneyCell.m */; };
@@ -140,6 +149,20 @@
 		7B1693201988F7EC008C4EBC /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		7B1693231989090E008C4EBC /* DateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtils.h; sourceTree = "<group>"; };
 		7B1693241989090E008C4EBC /* DateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtils.m; sourceTree = "<group>"; };
+		7B18D2AB19AC6216004A31D4 /* SettlementListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettlementListViewController.h; sourceTree = "<group>"; };
+		7B18D2AC19AC6216004A31D4 /* SettlementListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettlementListViewController.m; sourceTree = "<group>"; };
+		7B18D2AD19AC6216004A31D4 /* SettlementListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettlementListViewController.xib; sourceTree = "<group>"; };
+		7B18D2B819AC7E20004A31D4 /* TotalPanCountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TotalPanCountCell.h; sourceTree = "<group>"; };
+		7B18D2B919AC7E20004A31D4 /* TotalPanCountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TotalPanCountCell.m; sourceTree = "<group>"; };
+		7B18D2BA19AC7E20004A31D4 /* TotalPanCountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TotalPanCountCell.xib; sourceTree = "<group>"; };
+		7B18D2BD19AC810B004A31D4 /* CollectionAmountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionAmountCell.h; sourceTree = "<group>"; };
+		7B18D2BE19AC810B004A31D4 /* CollectionAmountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionAmountCell.m; sourceTree = "<group>"; };
+		7B18D2BF19AC810B004A31D4 /* CollectionAmountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionAmountCell.xib; sourceTree = "<group>"; };
+		7B18D2C219AC812E004A31D4 /* PaymentAmountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentAmountCell.h; sourceTree = "<group>"; };
+		7B18D2C319AC812E004A31D4 /* PaymentAmountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentAmountCell.m; sourceTree = "<group>"; };
+		7B18D2C419AC812E004A31D4 /* PaymentAmountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaymentAmountCell.xib; sourceTree = "<group>"; };
+		7B18D2C719AC8DC6004A31D4 /* BillService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillService.h; sourceTree = "<group>"; };
+		7B18D2C819AC8DC6004A31D4 /* BillService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillService.m; sourceTree = "<group>"; };
 		7B2204A8199AFE9600A1757A /* back_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_clear.png; sourceTree = "<group>"; };
 		7B2204AA199AFE9D00A1757A /* more_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_clear.png; sourceTree = "<group>"; };
 		7B2204B1199B05D700A1757A /* ExpendMoneyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpendMoneyCell.h; sourceTree = "<group>"; };
@@ -337,6 +360,39 @@
 				7B1692B61987586C008C4EBC /* UIViewController+MJPopupViewController.m */,
 			);
 			name = MJPopupViewController;
+			sourceTree = "<group>";
+		};
+		7B18D2B019AC625A004A31D4 /* settlementlist */ = {
+			isa = PBXGroup;
+			children = (
+				7B18D2AB19AC6216004A31D4 /* SettlementListViewController.h */,
+				7B18D2AC19AC6216004A31D4 /* SettlementListViewController.m */,
+				7B18D2AD19AC6216004A31D4 /* SettlementListViewController.xib */,
+				7B18D2B819AC7E20004A31D4 /* TotalPanCountCell.h */,
+				7B18D2B919AC7E20004A31D4 /* TotalPanCountCell.m */,
+				7B18D2BA19AC7E20004A31D4 /* TotalPanCountCell.xib */,
+				7B18D2C219AC812E004A31D4 /* PaymentAmountCell.h */,
+				7B18D2C319AC812E004A31D4 /* PaymentAmountCell.m */,
+				7B18D2C419AC812E004A31D4 /* PaymentAmountCell.xib */,
+				7B18D2BD19AC810B004A31D4 /* CollectionAmountCell.h */,
+				7B18D2BE19AC810B004A31D4 /* CollectionAmountCell.m */,
+				7B18D2BF19AC810B004A31D4 /* CollectionAmountCell.xib */,
+			);
+			name = settlementlist;
+			sourceTree = "<group>";
+		};
+		7B18D2B119AC626C004A31D4 /* accounts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = accounts;
+			sourceTree = "<group>";
+		};
+		7B18D2B219AC62A8004A31D4 /* common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = common;
 			sourceTree = "<group>";
 		};
 		7B2204B0199B045F00A1757A /* tablecells */ = {
@@ -562,6 +618,8 @@
 				7B5F384D1991FF8B00177671 /* LoginService.m */,
 				7BBE7FCC19949F65008D22FF /* TravelPlanService.h */,
 				7BBE7FCD19949F65008D22FF /* TravelPlanService.m */,
+				7B18D2C719AC8DC6004A31D4 /* BillService.h */,
+				7B18D2C819AC8DC6004A31D4 /* BillService.m */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -606,9 +664,9 @@
 		7B5A12B419821AF000482191 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				7B18D2B219AC62A8004A31D4 /* common */,
 				7B5A12CA1982506E00482191 /* create */,
 				7B7E4D7619986793002B90DF /* journey */,
-				7B7E4D791998699D002B90DF /* accounting */,
 				7B7E4D77199868BA002B90DF /* bills */,
 				7B7E4D78199868CD002B90DF /* messages */,
 				7B5A12BD1982226300482191 /* HomePageViewController.h */,
@@ -699,6 +757,7 @@
 				7B7E4D8219986B1C002B90DF /* travelroute */,
 				7B7E4D8119986B1A002B90DF /* expendlist */,
 				7B7E4D8019986B18002B90DF /* travelers */,
+				7B7E4D791998699D002B90DF /* accounting */,
 				7B7E4D7B19986B0B002B90DF /* JourneyMainViewController.h */,
 				7B7E4D7C19986B0B002B90DF /* JourneyMainViewController.m */,
 				7B7E4D7D19986B0B002B90DF /* JourneyMainViewController.xib */,
@@ -709,6 +768,8 @@
 		7B7E4D77199868BA002B90DF /* bills */ = {
 			isa = PBXGroup;
 			children = (
+				7B18D2B019AC625A004A31D4 /* settlementlist */,
+				7B18D2B119AC626C004A31D4 /* accounts */,
 			);
 			name = bills;
 			sourceTree = "<group>";
@@ -893,6 +954,7 @@
 			files = (
 				7B2204C0199B170100A1757A /* snow.png in Resources */,
 				7B8E4A3119A325EE00DB223D /* area.plist in Resources */,
+				7B18D2BC19AC7E20004A31D4 /* TotalPanCountCell.xib in Resources */,
 				7B7E4DA31999A3E5002B90DF /* post_type_bubble_link@2x.png in Resources */,
 				7B5A12841981F0A900482191 /* InfoPlist.strings in Resources */,
 				7BA12B40199DCCE100DDC471 /* TravelerCell.xib in Resources */,
@@ -926,8 +988,11 @@
 				7B2204AB199AFE9D00A1757A /* more_clear.png in Resources */,
 				7B7E4D861998952D002B90DF /* JourneyExpendListView.xib in Resources */,
 				7BA12B4A199DFBAC00DDC471 /* TravelExpendTopCell.xib in Resources */,
+				7B18D2AF19AC6216004A31D4 /* SettlementListViewController.xib in Resources */,
 				7B5A12BA198220FC00482191 /* LoginHomeViewController.xib in Resources */,
+				7B18D2C619AC812E004A31D4 /* PaymentAmountCell.xib in Resources */,
 				7B24858C199A1DC300C387E1 /* wangbaoqiang.jpeg in Resources */,
+				7B18D2C119AC810B004A31D4 /* CollectionAmountCell.xib in Resources */,
 				7B2204D5199B444600A1757A /* TravelRouteCell.xib in Resources */,
 				7B5A12BC1982216100482191 /* login_bg.png in Resources */,
 				7B7E4D951998A361002B90DF /* JourneyTravelRouteView.xib in Resources */,
@@ -972,6 +1037,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B18D2C519AC812E004A31D4 /* PaymentAmountCell.m in Sources */,
 				7B7850831991D5A800214260 /* NSAlert+MKNetworkKitAdditions.m in Sources */,
 				7B7850861991D5A800214260 /* NSDictionary+RequestEncoding.m in Sources */,
 				7B5A128A1981F0A900482191 /* AppDelegate.m in Sources */,
@@ -981,18 +1047,21 @@
 				7BBE7FC81994699F008D22FF /* SVProgressHUD.m in Sources */,
 				7B1692BB19875C0D008C4EBC /* LbadDateSelectorViewController.m in Sources */,
 				7BBE7FCB19949E69008D22FF /* TravelPlanVO.m in Sources */,
+				7B18D2C019AC810B004A31D4 /* CollectionAmountCell.m in Sources */,
 				7B5A12B9198220FC00482191 /* LoginHomeViewController.m in Sources */,
 				7B8E4A3519A3319F00DB223D /* AreaSingleSelectViewController.m in Sources */,
 				7B1693251989090E008C4EBC /* DateUtils.m in Sources */,
 				7B7850871991D5A800214260 /* NSString+MKNetworkKitAdditions.m in Sources */,
 				7B16930F19879147008C4EBC /* LbadDateSquare.m in Sources */,
 				7B7E4D991999A3BC002B90DF /* CHTumblrMenuView.m in Sources */,
+				7B18D2BB19AC7E20004A31D4 /* TotalPanCountCell.m in Sources */,
 				7B2204B4199B05D700A1757A /* ExpendMoneyCell.m in Sources */,
 				7B2BFF25198F6DF6000BE62E /* ButtonWithNumTipView.m in Sources */,
 				7B78508C1991D5A800214260 /* Reachability.m in Sources */,
 				7B1692B81987586C008C4EBC /* UIViewController+MJPopupViewController.m in Sources */,
 				7B7850851991D5A800214260 /* NSDate+RFC1123.m in Sources */,
 				7B2204CD199B31C300A1757A /* WeatherVO.m in Sources */,
+				7B18D2C919AC8DC6004A31D4 /* BillService.m in Sources */,
 				7B78508A1991D5A800214260 /* MKNetworkEngine.m in Sources */,
 				7B1692B71987586C008C4EBC /* MJPopupBackgroundView.m in Sources */,
 				7BA12B3F199DCCE100DDC471 /* TravelerCell.m in Sources */,
@@ -1007,6 +1076,7 @@
 				7BF32CFA1999EA2700C7F72B /* TravelerVO.m in Sources */,
 				7B2204E0199B5B8100A1757A /* CommonUtils.m in Sources */,
 				7B78508B1991D5A800214260 /* MKNetworkOperation.m in Sources */,
+				7B18D2AE19AC6216004A31D4 /* SettlementListViewController.m in Sources */,
 				7B7850951991F67900214260 /* BaseNetEngine.m in Sources */,
 				7B82960D19A59F84001D8A98 /* CitySingleSelectViewController.m in Sources */,
 				7B7850891991D5A800214260 /* UIImageView+MKNetworkKitAdditions.m in Sources */,
