@@ -33,9 +33,9 @@
     // Drawing code
     
     self.refControl = [[UIRefreshControl alloc] init];
-    self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+    self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:PULL_TIP_TEXT];
     [self.refControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
-    [self.tableViewTraverler addSubview:self.refControl];
+    [self.tableViewTraverler insertSubview:self.refControl atIndex:0];
     
     [self getTravelersList];
     
@@ -98,7 +98,7 @@
          travelersSource = [resDict objectForKey:@"data"];
          [self.tableViewTraverler reloadData];
         
-        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:PULL_TIP_TEXT];
         [self.refControl endRefreshing];
     }];
     
@@ -109,7 +109,7 @@
 - (void)refreshTableView
 {
     if (self.refControl.refreshing) {
-        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"加载中..."];
+        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:PULL_LOAD_DATA_TEXT];
         [self performSelector:@selector(getTravelersList) withObject:nil afterDelay:2];
     }
 }

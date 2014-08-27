@@ -13,4 +13,10 @@
 /*后台根目录*/
 FOUNDATION_EXPORT NSString *const APP_NETWORK_HOST;
 
+/*下拉刷新提示文字*/
+FOUNDATION_EXPORT NSString *const PULL_TIP_TEXT;
+
+/*下拉刷新加载数据文字*/
+FOUNDATION_EXPORT NSString *const PULL_LOAD_DATA_TEXT;
+
 @end

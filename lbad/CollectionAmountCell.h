@@ -10,4 +10,8 @@
 
 @interface CollectionAmountCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
+
 @end

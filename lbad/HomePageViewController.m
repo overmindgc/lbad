@@ -12,6 +12,7 @@
 #import "ButtonWithNumTipView.h"
 #import "TravelPlanVO.h"
 #import "JourneyMainViewController.h"
+#import "SettlementListViewController.h"
 
 @interface HomePageViewController ()
 {
@@ -45,9 +46,9 @@
     
     
     self.refControl = [[UIRefreshControl alloc] init];
-    self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+    self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:PULL_TIP_TEXT];
     [self.refControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
-    [self.tableViewPlan addSubview:self.refControl];
+    [self.tableViewPlan insertSubview:self.refControl atIndex:0];
     
     //创建三个图标
     NSInteger imgSize = 55;//图标大小
@@ -55,6 +56,7 @@
     payListBtn = [[ButtonWithNumTipView alloc] initWithFrame:CGRectMake(imgGap, 115, imgSize, imgSize)];
     payListBtn.btnText = @"账单";
     payListBtn.imgPath = @"paylist.png";
+    [payListBtn addTarget:self action:@selector(payListOnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:payListBtn];
     
     myLbBtn = [[ButtonWithNumTipView alloc] initWithFrame:CGRectMake(imgGap*2+imgSize, 115, imgSize, imgSize)];
@@ -172,7 +174,7 @@
         runningPlanSource = [resDict objectForKey:@"data"];
         [self.tableViewPlan reloadData];
         
-        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:PULL_TIP_TEXT];
         [self.refControl endRefreshing];
     }];
 }
@@ -192,9 +194,15 @@
 - (void)refreshTableView
 {
     if (self.refControl.refreshing) {
-        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"加载中..."];
+        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:PULL_LOAD_DATA_TEXT];
         [self performSelector:@selector(getRunningPlanList) withObject:nil afterDelay:2];
     }
+}
+
+- (void)payListOnClick:(id)sender
+{
+    SettlementListViewController *settlementVC = [[SettlementListViewController alloc] initWithNibName:@"SettlementListViewController" bundle:nil];
+    [self.navigationController pushViewController:settlementVC animated:YES];
 }
 
 @end

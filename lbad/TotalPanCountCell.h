@@ -10,4 +10,8 @@
 
 @interface TotalPanCountCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *paymentLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *collectionLabel;
+
 @end

@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vn1-W5-smZ">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="530"/>
+                    <rect key="frame" x="0.0" y="43" width="320" height="487"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -37,6 +37,20 @@
                         <action selector="clearAllSettlement:" destination="-1" eventType="touchUpInside" id="4e4-ho-QBO"/>
                     </connections>
                 </button>
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTc-y1-QJS">
+                    <rect key="frame" x="0.0" y="18" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <items>
+                        <navigationItem title="结算" id="YsK-nJ-Kbb">
+                            <barButtonItem key="leftBarButtonItem" image="back.png" id="ETG-Mb-UU3">
+                                <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <connections>
+                                    <action selector="backAction:" destination="-1" id="8f5-7u-2Dq"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -45,7 +59,7 @@
                 <constraint firstItem="vn1-W5-smZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="g5P-40-fCI"/>
                 <constraint firstItem="aS9-Ah-mVI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gL0-Pl-3V0"/>
                 <constraint firstItem="aS9-Ah-mVI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="530" id="kuu-Ma-AqE"/>
-                <constraint firstItem="vn1-W5-smZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="suE-Ly-mhl"/>
+                <constraint firstItem="vn1-W5-smZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="43" id="suE-Ly-mhl"/>
                 <constraint firstAttribute="trailing" secondItem="vn1-W5-smZ" secondAttribute="trailing" id="tEr-lP-yeV"/>
                 <constraint firstAttribute="trailing" secondItem="aS9-Ah-mVI" secondAttribute="trailing" id="yZg-R4-hRY"/>
             </constraints>
@@ -53,4 +67,7 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="back.png" width="13" height="22"/>
+    </resources>
 </document>

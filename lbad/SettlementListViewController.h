@@ -14,4 +14,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *clearButton;
 
+@property (nonatomic, strong) UIRefreshControl *refControl;
+
 @end

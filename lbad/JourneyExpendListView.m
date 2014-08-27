@@ -38,9 +38,9 @@
     // Drawing code
     
     self.refControl = [[UIRefreshControl alloc] init];
-    self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+    self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:PULL_TIP_TEXT];
     [self.refControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
-    [self.tableViewExpend addSubview:self.refControl];
+    [self.tableViewExpend insertSubview:self.refControl atIndex:0];
     [self getAllExpendList];
 }
 
@@ -167,7 +167,7 @@
          
          [self.tableViewExpend reloadData];
          
-         self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@" "];
+         self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:PULL_TIP_TEXT];
          [self.refControl endRefreshing];
      }];
     
@@ -220,7 +220,7 @@
 - (void)refreshTableView
 {
     if (self.refControl.refreshing) {
-        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"加载中..."];
+        self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:PULL_LOAD_DATA_TEXT];
         [self performSelector:@selector(getAllExpendList) withObject:nil afterDelay:2];
     }
 }
