@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AccountListViewController : UIViewController
+@interface AccountListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSString *settlementId;
+
+@property (nonatomic, strong) NSString *payOrCollectionName;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak, nonatomic) IBOutlet UIButton *clearButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *payButton;
+
+@property (nonatomic, strong) UIRefreshControl *refControl;
 
 @end

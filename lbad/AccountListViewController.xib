@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountListViewController">
             <connections>
+                <outlet property="clearButton" destination="yrS-Dn-J5g" id="tGg-1G-wKd"/>
+                <outlet property="payButton" destination="IEb-vQ-yh6" id="bYu-ag-86u"/>
+                <outlet property="tableView" destination="5jQ-Pb-2JC" id="aSC-7b-dVs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,13 +17,16 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rN4-gy-Oh0">
+                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rN4-gy-Oh0">
                     <rect key="frame" x="0.0" y="18" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <items>
                         <navigationItem title="核算单" id="F1C-Xc-UOi">
                             <barButtonItem key="leftBarButtonItem" image="back.png" id="YQg-Ul-evr">
                                 <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <connections>
+                                    <action selector="backAction:" destination="-1" id="MsI-P9-s3G"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem key="rightBarButtonItem" title="分享" id="TGx-g3-RR8">
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -28,13 +34,54 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5jQ-Pb-2JC">
-                    <rect key="frame" x="0.0" y="62" width="320" height="506"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5jQ-Pb-2JC">
+                    <rect key="frame" x="0.0" y="62" width="320" height="466"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="9zO-1S-Jxo"/>
+                        <outlet property="delegate" destination="-1" id="2V4-fs-yii"/>
+                    </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrS-Dn-J5g">
+                    <rect key="frame" x="0.0" y="528" width="160" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.80000007152557373" green="0.80000007152557373" blue="0.80000007152557373" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="h7i-wA-CqK"/>
+                    </constraints>
+                    <state key="normal" title="清帐">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IEb-vQ-yh6">
+                    <rect key="frame" x="160" y="528" width="160" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.40000003576278687" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="160" id="k3o-Mt-yl1"/>
+                    </constraints>
+                    <state key="normal" title="支付">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="IEb-vQ-yh6" secondAttribute="trailing" id="3dN-Ny-Fx3"/>
+                <constraint firstItem="5jQ-Pb-2JC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="62" id="4Wl-Nu-kfD"/>
+                <constraint firstAttribute="bottom" secondItem="yrS-Dn-J5g" secondAttribute="bottom" id="58Z-nn-z7W"/>
+                <constraint firstItem="yrS-Dn-J5g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8fl-L0-2Jz"/>
+                <constraint firstAttribute="bottom" secondItem="5jQ-Pb-2JC" secondAttribute="bottom" constant="40" id="FlG-Qc-0y2"/>
+                <constraint firstItem="IEb-vQ-yh6" firstAttribute="top" secondItem="5jQ-Pb-2JC" secondAttribute="bottom" id="J0r-hL-4t3"/>
+                <constraint firstAttribute="bottom" secondItem="IEb-vQ-yh6" secondAttribute="bottom" id="XqM-x3-O07"/>
+                <constraint firstItem="yrS-Dn-J5g" firstAttribute="top" secondItem="5jQ-Pb-2JC" secondAttribute="bottom" id="gp3-Hw-FZi"/>
+                <constraint firstItem="5jQ-Pb-2JC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="rWg-Ri-Iw3"/>
+                <constraint firstItem="IEb-vQ-yh6" firstAttribute="leading" secondItem="yrS-Dn-J5g" secondAttribute="trailing" id="wop-eW-dwM"/>
+                <constraint firstAttribute="trailing" secondItem="5jQ-Pb-2JC" secondAttribute="trailing" id="xNb-he-oO1"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>

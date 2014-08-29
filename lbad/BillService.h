@@ -14,4 +14,8 @@
 typedef void (^settlementListCompleteBlock)(NSDictionary *resDict);
 - (void)getSettlementListData:(settlementListCompleteBlock)completionBlock;
 
+/*获取核算单列表数据*/
+typedef void (^getAccountListCompleteBlock)(NSDictionary *resDict);
+- (void)getAccountListDataById:(NSString *)settlementId completion:(getAccountListCompleteBlock)completionBlock;
+
 @end

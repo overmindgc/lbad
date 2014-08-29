@@ -26,9 +26,9 @@
                     </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS9-Ah-mVI">
-                    <rect key="frame" x="0.0" y="530" width="320" height="38"/>
+                    <rect key="frame" x="0.0" y="528" width="320" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.80000007149999997" green="0.80000007149999997" blue="0.80000007149999997" alpha="1" colorSpace="deviceRGB"/>
                     <state key="normal" title="标记全部已结算">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,14 +54,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="vn1-W5-smZ" secondAttribute="bottom" constant="38" id="4JM-Me-agE"/>
-                <constraint firstAttribute="bottom" secondItem="aS9-Ah-mVI" secondAttribute="bottom" id="YOB-k7-j63"/>
-                <constraint firstItem="vn1-W5-smZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="g5P-40-fCI"/>
-                <constraint firstItem="aS9-Ah-mVI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gL0-Pl-3V0"/>
-                <constraint firstItem="aS9-Ah-mVI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="530" id="kuu-Ma-AqE"/>
-                <constraint firstItem="vn1-W5-smZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="43" id="suE-Ly-mhl"/>
-                <constraint firstAttribute="trailing" secondItem="vn1-W5-smZ" secondAttribute="trailing" id="tEr-lP-yeV"/>
-                <constraint firstAttribute="trailing" secondItem="aS9-Ah-mVI" secondAttribute="trailing" id="yZg-R4-hRY"/>
+                <constraint firstAttribute="trailing" secondItem="vn1-W5-smZ" secondAttribute="trailing" id="0sU-mc-59k"/>
+                <constraint firstItem="aS9-Ah-mVI" firstAttribute="top" secondItem="vn1-W5-smZ" secondAttribute="bottom" constant="-2" id="5CM-CK-Voz"/>
+                <constraint firstAttribute="bottom" secondItem="aS9-Ah-mVI" secondAttribute="bottom" id="Tcr-Bl-aTH"/>
+                <constraint firstItem="vn1-W5-smZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="V0S-oD-VqM"/>
+                <constraint firstItem="vn1-W5-smZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="43" id="Vog-WL-Y3G"/>
+                <constraint firstItem="aS9-Ah-mVI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="aVh-no-P2q"/>
+                <constraint firstAttribute="bottom" secondItem="vn1-W5-smZ" secondAttribute="bottom" constant="38" id="dM3-Tg-K8R"/>
+                <constraint firstAttribute="trailing" secondItem="aS9-Ah-mVI" secondAttribute="trailing" id="ejz-OR-4rA"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

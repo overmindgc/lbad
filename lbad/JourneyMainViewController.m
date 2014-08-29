@@ -63,6 +63,7 @@
     NSArray *nib2 = [[NSBundle mainBundle]loadNibNamed:@"JourneyExpendListView" owner:self options:nil];
     jurExpendListView = [nib2 objectAtIndex:0];
     [jurExpendListView setFrame:CGRectMake(SCREEN_WIDTH * 1, 0, SCREEN_WIDTH, SCREEN_HEIGHT - self.scrollViewMain.frame.origin.y)];
+    jurExpendListView.parentViewController = self;
     [self.scrollViewMain addSubview:jurExpendListView];
     currShowView = jurExpendListView;
     

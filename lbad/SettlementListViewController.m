@@ -11,6 +11,7 @@
 #import "TotalPanCountCell.h"
 #import "PaymentAmountCell.h"
 #import "CollectionAmountCell.h"
+#import "AccountListViewController.h"
 
 @interface SettlementListViewController ()
 {
@@ -42,6 +43,8 @@
     self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:PULL_TIP_TEXT];
     [self.refControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refControl atIndex:0];
+    
+    [self.tableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
     
     [self getSettlementListData];
 }
@@ -83,19 +86,20 @@
     
     if (section == 0) {
         TotalPanCountCell *topCell = [[[NSBundle mainBundle] loadNibNamed:@"TotalPanCountCell" owner:self options:nil] objectAtIndex:0];
-        topCell.tag = section;
+        topCell.tag = 0;
         topCell.paymentLabel.text = [listSourceDict objectForKey:@"payment"];
         topCell.collectionLabel.text = [listSourceDict objectForKey:@"collection"];
         cell = topCell;
     } else if (section == 1) {
         PaymentAmountCell *payCell = [[[NSBundle mainBundle] loadNibNamed:@"PaymentAmountCell" owner:self options:nil] objectAtIndex:0];
-        payCell.tag = section;
+        payCell.tag = 1;
         NSDictionary *dp = [paymentArray objectAtIndex:row];
         payCell.nameLabel.text = [dp objectForKey:@"name"];
         payCell.amountLabel.text = [dp objectForKey:@"amount"];
         cell = payCell;
     } else {
         CollectionAmountCell *colCell = [[[NSBundle mainBundle] loadNibNamed:@"CollectionAmountCell" owner:self options:nil] objectAtIndex:0];
+        colCell.tag = 2;
         NSDictionary *dc = [collectionArray objectAtIndex:row];
         colCell.nameLabel.text = [dc objectForKey:@"name"];
         colCell.amountLabel.text = [dc objectForKey:@"amount"];
@@ -108,7 +112,19 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section > 0) {
-        [SVProgressHUD showSuccessWithStatus:@"别着急，我还没实现呢!"];
+        AccountListViewController *accountVC = [[AccountListViewController alloc] initWithNibName:@"AccountListViewController" bundle:nil];
+        accountVC.settlementId = @"1";
+        switch (indexPath.section) {
+            case 1:
+                accountVC.payOrCollectionName = @"付款给";
+                break;
+            case 2:
+                accountVC.payOrCollectionName = @"收取";
+                break;
+            default:
+                break;
+        }
+        [self.navigationController pushViewController:accountVC animated:YES];
     }
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
 }
@@ -120,7 +136,7 @@
     if(section == 0) {
         return 95.0f;
     } else {
-        return 44.0f;
+        return 50.0f;
     }
 }
 
@@ -202,11 +218,27 @@
     [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
+#pragma mark Observer
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"contentOffset"]) {
+//        CGPoint newOffset = [change[NSKeyValueChangeNewKey] CGPointValue];
+//        CGPoint oldOffset = [change[NSKeyValueChangeOldKey] CGPointValue];
+//        NSLog(@"%@, %@",NSStringFromCGPoint(newOffset),NSStringFromCGPoint(oldOffset));
+//        float newOffectY = ABS(newOffset.y) - 20.0f;
+//        float oldOffectY = ABS(oldOffset.y) - 20.0f;
+//        if (self.refControl.frame.origin.y <= 0) {61769
+//            [self.refControl setFrame:CGRectMake(0, 0 - newOffectY, self.refControl.frame.size.width, self.refControl.frame.size.height)];
+//        }
+//        NSLog(@"%f",self.refControl.frame.origin.y);
+    }
+}
 
 #pragma mark actions
 
 - (IBAction)backAction:(id)sender
 {
+    [self.tableView removeObserver:self forKeyPath:@"contentOffset" context:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

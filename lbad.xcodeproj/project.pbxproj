@@ -26,6 +26,8 @@
 		7B18D2C919AC8DC6004A31D4 /* BillService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B18D2C819AC8DC6004A31D4 /* BillService.m */; };
 		7B18D2CD19ADB76E004A31D4 /* AccountListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B18D2CB19ADB76E004A31D4 /* AccountListViewController.m */; };
 		7B18D2CE19ADB76E004A31D4 /* AccountListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B18D2CC19ADB76E004A31D4 /* AccountListViewController.xib */; };
+		7B1B904A19AF1D9A00F6C2FC /* AccountTotalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B1B904819AF1D9A00F6C2FC /* AccountTotalCell.m */; };
+		7B1B904B19AF1D9A00F6C2FC /* AccountTotalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B904919AF1D9A00F6C2FC /* AccountTotalCell.xib */; };
 		7B2204A9199AFE9600A1757A /* back_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2204A8199AFE9600A1757A /* back_clear.png */; };
 		7B2204AB199AFE9D00A1757A /* more_clear.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B2204AA199AFE9D00A1757A /* more_clear.png */; };
 		7B2204B4199B05D700A1757A /* ExpendMoneyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2204B2199B05D700A1757A /* ExpendMoneyCell.m */; };
@@ -52,6 +54,8 @@
 		7B24858A199A13CD00C387E1 /* ExpendVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B248589199A13CD00C387E1 /* ExpendVO.m */; };
 		7B24858C199A1DC300C387E1 /* wangbaoqiang.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7B24858B199A1DC300C387E1 /* wangbaoqiang.jpeg */; };
 		7B2BFF25198F6DF6000BE62E /* ButtonWithNumTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B2BFF24198F6DF6000BE62E /* ButtonWithNumTipView.m */; };
+		7B4087C219B06D4600246DEA /* ExpendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B4087C019B06D4600246DEA /* ExpendDetailViewController.m */; };
+		7B4087C319B06D4600246DEA /* ExpendDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B4087C119B06D4600246DEA /* ExpendDetailViewController.xib */; };
 		7B5A127A1981F0A800482191 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5A12791981F0A800482191 /* Foundation.framework */; };
 		7B5A127C1981F0A800482191 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5A127B1981F0A800482191 /* CoreGraphics.framework */; };
 		7B5A127E1981F0A800482191 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B5A127D1981F0A800482191 /* UIKit.framework */; };
@@ -168,6 +172,9 @@
 		7B18D2CA19ADB76E004A31D4 /* AccountListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountListViewController.h; sourceTree = "<group>"; };
 		7B18D2CB19ADB76E004A31D4 /* AccountListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountListViewController.m; sourceTree = "<group>"; };
 		7B18D2CC19ADB76E004A31D4 /* AccountListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountListViewController.xib; sourceTree = "<group>"; };
+		7B1B904719AF1D9A00F6C2FC /* AccountTotalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTotalCell.h; sourceTree = "<group>"; };
+		7B1B904819AF1D9A00F6C2FC /* AccountTotalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTotalCell.m; sourceTree = "<group>"; };
+		7B1B904919AF1D9A00F6C2FC /* AccountTotalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountTotalCell.xib; sourceTree = "<group>"; };
 		7B2204A8199AFE9600A1757A /* back_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_clear.png; sourceTree = "<group>"; };
 		7B2204AA199AFE9D00A1757A /* more_clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more_clear.png; sourceTree = "<group>"; };
 		7B2204B1199B05D700A1757A /* ExpendMoneyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpendMoneyCell.h; sourceTree = "<group>"; };
@@ -203,6 +210,9 @@
 		7B2BFF22198F27DC000BE62E /* LbadCalendarDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LbadCalendarDelegate.h; sourceTree = "<group>"; };
 		7B2BFF23198F6DF6000BE62E /* ButtonWithNumTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonWithNumTipView.h; sourceTree = "<group>"; };
 		7B2BFF24198F6DF6000BE62E /* ButtonWithNumTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonWithNumTipView.m; sourceTree = "<group>"; };
+		7B4087BF19B06D4600246DEA /* ExpendDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpendDetailViewController.h; sourceTree = "<group>"; };
+		7B4087C019B06D4600246DEA /* ExpendDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpendDetailViewController.m; sourceTree = "<group>"; };
+		7B4087C119B06D4600246DEA /* ExpendDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpendDetailViewController.xib; sourceTree = "<group>"; };
 		7B5A12761981F0A800482191 /* lbad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lbad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B5A12791981F0A800482191 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7B5A127B1981F0A800482191 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -392,6 +402,9 @@
 				7B18D2CA19ADB76E004A31D4 /* AccountListViewController.h */,
 				7B18D2CB19ADB76E004A31D4 /* AccountListViewController.m */,
 				7B18D2CC19ADB76E004A31D4 /* AccountListViewController.xib */,
+				7B1B904719AF1D9A00F6C2FC /* AccountTotalCell.h */,
+				7B1B904819AF1D9A00F6C2FC /* AccountTotalCell.m */,
+				7B1B904919AF1D9A00F6C2FC /* AccountTotalCell.xib */,
 			);
 			name = account;
 			sourceTree = "<group>";
@@ -399,6 +412,7 @@
 		7B18D2B219AC62A8004A31D4 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				7B4087BE19B06D1800246DEA /* expenddetail */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -447,6 +461,16 @@
 				7B2204BF199B170100A1757A /* torrentrain.png */,
 			);
 			name = weather;
+			sourceTree = "<group>";
+		};
+		7B4087BE19B06D1800246DEA /* expenddetail */ = {
+			isa = PBXGroup;
+			children = (
+				7B4087BF19B06D4600246DEA /* ExpendDetailViewController.h */,
+				7B4087C019B06D4600246DEA /* ExpendDetailViewController.m */,
+				7B4087C119B06D4600246DEA /* ExpendDetailViewController.xib */,
+			);
+			name = expenddetail;
 			sourceTree = "<group>";
 		};
 		7B42013719862457000FEA19 /* dateselector */ = {
@@ -978,6 +1002,7 @@
 				7B2204C2199B170100A1757A /* thunder.png in Resources */,
 				7B1693211988F7EC008C4EBC /* left.png in Resources */,
 				7B2204E2199B63CC00A1757A /* back.png in Resources */,
+				7B1B904B19AF1D9A00F6C2FC /* AccountTotalCell.xib in Resources */,
 				7B248581199A0B1500C387E1 /* message.png in Resources */,
 				7B248585199A0B1E00C387E1 /* peoples.png in Resources */,
 				7B7E4DA21999A3E5002B90DF /* post_type_bubble_chat@2x.png in Resources */,
@@ -990,6 +1015,7 @@
 				7B7E4DA81999A3E5002B90DF /* tab_bar_button_compose_selected@2x.png in Resources */,
 				7BA12B45199DF1AC00DDC471 /* TravelRouteTopCell.xib in Resources */,
 				7B2204C3199B170100A1757A /* cloudsun.png in Resources */,
+				7B4087C319B06D4600246DEA /* ExpendDetailViewController.xib in Resources */,
 				7B248587199A0D9B00C387E1 /* config.png in Resources */,
 				7B7E4D7F19986B0B002B90DF /* JourneyMainViewController.xib in Resources */,
 				7B5A128C1981F0A900482191 /* Images.xcassets in Resources */,
@@ -1052,6 +1078,7 @@
 				7B5A128A1981F0A900482191 /* AppDelegate.m in Sources */,
 				7B7E4D931998A348002B90DF /* JourneyTravelRouteView.m in Sources */,
 				7B5F384E1991FF8B00177671 /* LoginService.m in Sources */,
+				7B4087C219B06D4600246DEA /* ExpendDetailViewController.m in Sources */,
 				7B7850881991D5A800214260 /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				7BBE7FC81994699F008D22FF /* SVProgressHUD.m in Sources */,
 				7B1692BB19875C0D008C4EBC /* LbadDateSelectorViewController.m in Sources */,
@@ -1060,6 +1087,7 @@
 				7B5A12B9198220FC00482191 /* LoginHomeViewController.m in Sources */,
 				7B8E4A3519A3319F00DB223D /* AreaSingleSelectViewController.m in Sources */,
 				7B1693251989090E008C4EBC /* DateUtils.m in Sources */,
+				7B1B904A19AF1D9A00F6C2FC /* AccountTotalCell.m in Sources */,
 				7B7850871991D5A800214260 /* NSString+MKNetworkKitAdditions.m in Sources */,
 				7B16930F19879147008C4EBC /* LbadDateSquare.m in Sources */,
 				7B7E4D991999A3BC002B90DF /* CHTumblrMenuView.m in Sources */,

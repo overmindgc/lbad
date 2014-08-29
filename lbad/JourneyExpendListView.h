@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewExpend;
 
+@property (weak, nonatomic) UIViewController *parentViewController;
+
 @property (nonatomic, strong) UIRefreshControl *refControl;
 
 @end

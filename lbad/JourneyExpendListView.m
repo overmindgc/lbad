@@ -12,6 +12,7 @@
 #import "ExpendVO.h"
 #import "ExpendMoneyCell.h"
 #import "TravelExpendTopCell.h"
+#import "ExpendDetailViewController.h"
 
 @implementation JourneyExpendListView
 {
@@ -99,7 +100,10 @@
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
     
     if (indexPath.section > 0) {
-        [SVProgressHUD showSuccessWithStatus:@"别着急，我还没实现呢!"];
+        ExpendDetailViewController *edVC = [[ExpendDetailViewController alloc] initWithNibName:@"ExpendDetailViewController" bundle:nil];
+        ExpendMoneyCell *emCell = (ExpendMoneyCell *)[tableView cellForRowAtIndexPath:indexPath];
+        edVC.titleName = emCell.nameLabel.text;
+        [self.parentViewController.navigationController pushViewController:edVC animated:YES];
     }
 }
 
