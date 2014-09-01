@@ -13,6 +13,10 @@
 #import "CollectionAmountCell.h"
 #import "AccountListViewController.h"
 
+static NSString *const TotalPanCountCellId = @"TotalPanCountCellId";
+static NSString *const PaymentAmountCellId = @"PaymentAmountCellId";
+static NSString *const CollectionAmountCellId = @"CollectionAmountCell";
+
 @interface SettlementListViewController ()
 {
     NSDictionary *listSourceDict;
@@ -39,6 +43,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    //提前注册cell
+    [self.tableView registerNib:[UINib nibWithNibName:@"TotalPanCountCell" bundle:nil] forCellReuseIdentifier:TotalPanCountCellId];
+    [self.tableView registerNib:[UINib nibWithNibName:@"PaymentAmountCell" bundle:nil] forCellReuseIdentifier:PaymentAmountCellId];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CollectionAmountCell" bundle:nil] forCellReuseIdentifier:CollectionAmountCellId];
+    
     self.refControl = [[UIRefreshControl alloc] init];
     self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:PULL_TIP_TEXT];
     [self.refControl addTarget:self action:@selector(refreshTableView) forControlEvents:UIControlEventValueChanged];
@@ -85,20 +94,20 @@
     UITableViewCell *cell;
     
     if (section == 0) {
-        TotalPanCountCell *topCell = [[[NSBundle mainBundle] loadNibNamed:@"TotalPanCountCell" owner:self options:nil] objectAtIndex:0];
+        TotalPanCountCell *topCell = [self.tableView dequeueReusableCellWithIdentifier:TotalPanCountCellId forIndexPath:indexPath];
         topCell.tag = 0;
         topCell.paymentLabel.text = [listSourceDict objectForKey:@"payment"];
         topCell.collectionLabel.text = [listSourceDict objectForKey:@"collection"];
         cell = topCell;
     } else if (section == 1) {
-        PaymentAmountCell *payCell = [[[NSBundle mainBundle] loadNibNamed:@"PaymentAmountCell" owner:self options:nil] objectAtIndex:0];
+        PaymentAmountCell *payCell = [self.tableView dequeueReusableCellWithIdentifier:PaymentAmountCellId forIndexPath:indexPath];
         payCell.tag = 1;
         NSDictionary *dp = [paymentArray objectAtIndex:row];
         payCell.nameLabel.text = [dp objectForKey:@"name"];
         payCell.amountLabel.text = [dp objectForKey:@"amount"];
         cell = payCell;
     } else {
-        CollectionAmountCell *colCell = [[[NSBundle mainBundle] loadNibNamed:@"CollectionAmountCell" owner:self options:nil] objectAtIndex:0];
+        CollectionAmountCell *colCell = [self.tableView dequeueReusableCellWithIdentifier:CollectionAmountCellId forIndexPath:indexPath];
         colCell.tag = 2;
         NSDictionary *dc = [collectionArray objectAtIndex:row];
         colCell.nameLabel.text = [dc objectForKey:@"name"];
