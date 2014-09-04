@@ -106,6 +106,13 @@
 - (IBAction)backAction:(id)sender {
     //注意移除监听
     [self.scrollViewMain removeObserver:self forKeyPath:@"contentOffset"];
+    CATransition *transition = [CATransition animation];
+    transition.duration = 0.4f;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    transition.type = @"oglFlip";
+    transition.subtype = kCATransitionFromLeft;
+    transition.delegate = self;
+    [self.navigationController.view.layer addAnimation:transition forKey:nil];
     [self.navigationController popViewControllerAnimated:YES];
 }
 

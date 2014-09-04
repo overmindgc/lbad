@@ -12,10 +12,13 @@
 
 @interface AreaSingleSelectViewController ()
 {
+    
     NSMutableDictionary *areaSourceDict;
     //记录完整的数据源，用于结束搜索时恢复
     NSMutableDictionary *originAreaSourceDict;
 }
+
+@property (nonatomic, strong) UISearchDisplayController *searchController;
 
 @end
 
@@ -34,6 +37,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.searchController = [[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self];
     [self getAreaSource];
 }
 
