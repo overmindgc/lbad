@@ -42,6 +42,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.topStrip.backgroundColor = APP_MAIN_COLOR;
+    
     //给标签添加点击手势
     UITapGestureRecognizer *tapRoute = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(touchRoute:)];
     self.routeLabel.userInteractionEnabled = YES;

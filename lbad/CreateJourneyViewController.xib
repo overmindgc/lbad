@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="dateLabel" destination="XII-r5-zzc" id="ul4-Ap-mnN"/>
                 <outlet property="destinationLabel" destination="zMY-eo-98p" id="8KC-qW-iIO"/>
+                <outlet property="doneBarButton" destination="3cN-BC-4OO" id="Bvy-JY-RSU"/>
                 <outlet property="textFieldDesc" destination="hgN-lc-VAB" id="Qud-EN-tZS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

@@ -33,6 +33,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.doneBarButton setTintColor:APP_MAIN_COLOR];
+    self.dateLabel.textColor = APP_MAIN_COLOR;
+    
     //监听点击选择日期label
     UITapGestureRecognizer *tapGr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dateLabelTaped:)];
     dateLabel.userInteractionEnabled = YES;

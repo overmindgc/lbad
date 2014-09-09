@@ -14,6 +14,8 @@
 
 @property (weak, nonatomic) UIViewController *parentViewController;
 
+@property (weak, nonatomic) IBOutlet UIButton *accountButton;
+
 @property (nonatomic, strong) UIRefreshControl *refControl;
 
 @end

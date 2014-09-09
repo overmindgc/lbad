@@ -13,6 +13,7 @@
 @property (nonatomic, strong) NSString *titleName;
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *topTitleItem;
+@property (weak, nonatomic) IBOutlet UIView *topBackgroundView;
 @property (weak, nonatomic) IBOutlet UILabel *expendMoneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;

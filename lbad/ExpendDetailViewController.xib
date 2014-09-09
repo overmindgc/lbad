@@ -12,6 +12,7 @@
                 <outlet property="payInfoLabel" destination="mXD-sk-g2k" id="wzp-PO-Vmm"/>
                 <outlet property="resultMoneyLabel" destination="LIX-Qy-2PU" id="lYc-3V-QF0"/>
                 <outlet property="tableView" destination="ccI-hO-kd0" id="7kH-Kq-DqB"/>
+                <outlet property="topBackgroundView" destination="QT7-lS-LI0" id="wX6-Q6-kaV"/>
                 <outlet property="topTitleItem" destination="929-P9-ke8" id="51t-iv-w5K"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

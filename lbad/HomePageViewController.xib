@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePageViewController">
             <connections>
+                <outlet property="createButton" destination="7HT-5w-uW2" id="qnp-5K-grJ"/>
                 <outlet property="homeBackgroundView" destination="MNB-o8-btj" id="9qW-AS-lkb"/>
                 <outlet property="tableViewPlan" destination="ca0-EF-d0j" id="pnm-02-16u"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -31,19 +32,23 @@
                                 <action selector="logoutAction:" destination="-1" eventType="touchUpInside" id="Vij-RT-8Vd"/>
                             </connections>
                         </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="liuqiang" translatesAutoresizingMaskIntoConstraints="NO" id="wCE-OK-foA">
+                            <rect key="frame" x="120" y="30" width="80" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.2588235438" green="0.52156865600000002" blue="0.23529413339999999" alpha="1" colorSpace="deviceRGB"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HT-5w-uW2">
-                    <rect key="frame" x="80" y="518" width="160" height="35"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HT-5w-uW2">
+                    <rect key="frame" x="20" y="518" width="280" height="35"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.2588235438" green="0.52156865600000002" blue="0.23529413339999999" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="35" id="idd-cK-0kD"/>
                     </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="创建旅程">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                     <connections>
                         <action selector="createNewAction:" destination="-1" eventType="touchUpInside" id="Rb1-zR-NUz"/>
@@ -61,9 +66,9 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="7HT-5w-uW2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="80" id="AyG-Ir-MzO"/>
+                <constraint firstItem="7HT-5w-uW2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="AyG-Ir-MzO"/>
                 <constraint firstAttribute="trailing" secondItem="ca0-EF-d0j" secondAttribute="trailing" id="DIT-Kw-GgT"/>
-                <constraint firstAttribute="trailing" secondItem="7HT-5w-uW2" secondAttribute="trailing" constant="80" id="Mfq-MR-CTX"/>
+                <constraint firstAttribute="trailing" secondItem="7HT-5w-uW2" secondAttribute="trailing" constant="20" id="Mfq-MR-CTX"/>
                 <constraint firstItem="ca0-EF-d0j" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OKr-2x-ygH"/>
                 <constraint firstAttribute="bottom" secondItem="7HT-5w-uW2" secondAttribute="bottom" constant="15" id="gQJ-oJ-WON"/>
                 <constraint firstItem="ca0-EF-d0j" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="rRR-hs-bAA"/>
@@ -75,6 +80,7 @@
         </view>
     </objects>
     <resources>
-        <image name="config.png" width="50" height="50"/>
+        <image name="config.png" width="13" height="22"/>
+        <image name="liuqiang" width="90" height="90"/>
     </resources>
 </document>

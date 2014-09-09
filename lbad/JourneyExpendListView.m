@@ -37,6 +37,7 @@
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
+    self.accountButton.backgroundColor = APP_MAIN_COLOR;
     
     self.refControl = [[UIRefreshControl alloc] init];
     self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:PULL_TIP_TEXT];

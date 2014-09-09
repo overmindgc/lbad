@@ -11,6 +11,8 @@
 @interface HomePageViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *homeBackgroundView;
 @property (weak, nonatomic) IBOutlet UITableView *tableViewPlan;
+@property (weak, nonatomic) IBOutlet UIButton *createButton;
+@property (weak, nonatomic) IBOutlet UIImageView *portraitImageView;
 
 @property (nonatomic, strong) UIRefreshControl *refControl;
 

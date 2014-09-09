@@ -43,7 +43,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self.homeBackgroundView setBackgroundColor:APP_MAIN_COLOR];
-    
+    [self.createButton.layer setMasksToBounds:YES];
+    [self.createButton.layer setCornerRadius:8.0f];
+    [self.createButton.layer setBorderWidth:1.0f];
     
     self.refControl = [[UIRefreshControl alloc] init];
     self.refControl.attributedTitle = [[NSAttributedString alloc] initWithString:PULL_TIP_TEXT];

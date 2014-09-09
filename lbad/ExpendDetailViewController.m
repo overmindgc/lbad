@@ -32,6 +32,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.topBackgroundView.backgroundColor = APP_MAIN_COLOR;
+    
     TravelerVO *t1 = [[TravelerVO alloc] init];
     t1.user_id = @"1";
     t1.user_name = @"刘强";

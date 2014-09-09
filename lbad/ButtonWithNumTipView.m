@@ -43,13 +43,13 @@
     [self addSubview:textLabel];
     
     cicleView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.size.width - 15, -2, 18, 18)];
-    cicleView.backgroundColor = [UIColor orangeColor];
+    cicleView.backgroundColor = [UIColor whiteColor];
     cicleView.layer.cornerRadius = 8.5;
     [cicleView setHidden:YES];
     
     numLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
     numLab.font = APP_FONT_BOLD(12);
-    numLab.textColor = [UIColor whiteColor];
+    numLab.textColor = APP_MAIN_COLOR;
     numLab.textAlignment = NSTextAlignmentCenter;
     [numLab setHidden:YES];
     [cicleView addSubview:numLab];
