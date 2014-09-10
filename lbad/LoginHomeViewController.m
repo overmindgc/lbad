@@ -27,7 +27,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
+    self.loginQQBtn.backgroundColor = APP_MAIN_COLOR;
+    [self.loginQQBtn.layer setCornerRadius:10.0f];
+    [self.registerButton.layer setCornerRadius:10.0f];
+    
+    [self.loginBtn setFrame:CGRectMake(SCREEN_WIDTH/2 - self.loginBtn.frame.size.width/2, SCREEN_HEIGHT - 66, self.loginBtn.frame.size.width, self.loginBtn.frame.size.height)];
+    
 }
 
 - (void)didReceiveMemoryWarning

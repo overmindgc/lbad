@@ -33,7 +33,7 @@
     self.billService = [[BillService alloc] initWithHostName:APP_NETWORK_HOST];
     [self.billService useCache];
     
-    [self openHomeView];
+    [self openLoginView];
     
     return YES;
 }
